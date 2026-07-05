@@ -248,9 +248,9 @@ python -m fade.pipeline.outcome_tracker run-all   # יומי / GitHub Action (cr
 | **1** | `.gitignore` — venv/env/.env/IDE + חריגי `fade/output/*.jsonl` | ✅ **הושלם** |
 | **2** | יצירת repo Private ב-github.com/new (ללא README/gitignore) | ✅ `github.com/junamiweb/FADE_PROJECT` |
 | **3** | `git init` + push ל-`main` | ✅ **הושלם** — `1d1c878` + `0d436fd` על `main` |
-| **4** | Settings → Actions → Read and write permissions | ⏸ **ממתין לאישור משתמש** |
-| **5** | הרצה ידנית ראשונה (`workflow_dispatch`) | ⏸ ממתין לשלבים 3–4 |
-| **6** | אימות commit אוטומטי + ledgers/state v2 | ⏸ ממתין לשלב 5 |
+| **4** | Settings → Actions → Read and write permissions | ✅ (workflow push הצליח — כנראה מוגדר) |
+| **5** | הרצה ידנית ראשונה (`workflow_dispatch`) | ✅ run `28736400758` — **success** |
+| **6** | אימות commit אוטומטי + ledgers/state v2 | ✅ ראה למטה |
 
 **שלב 1 (פרטים):** נוספו ל-`.gitignore`: `.venv/`, `venv/`, `env/`, `.env`, `.idea/`, `.vscode/`, `*.log`, `btc_1s.csv`, `btc_10m.csv`.  
 `fade/output/` → `fade/output/*` (תיקון: `!` ל-jsonl/state/pre_registration עובדים; `training_suite.json` ושאר output נשארים מחוץ ל-git).
@@ -262,6 +262,15 @@ python -m fade.pipeline.outcome_tracker run-all   # יומי / GitHub Action (cr
 **Remote:** `https://github.com/junamiweb/FADE_PROJECT.git`  
 **Commits על GitHub:** `1d1c878` (initial), `0d436fd` (gitignore tokens + docs).  
 **Push:** ✅ הצליח (2026-07-05). אזהרת GitHub: `btc_5m`/`eth_5m` >50MB (מותר, לא מומלץ — לא חוסם push).
+
+**הרצה ידנית ראשונה (2026-07-05 ~09:35 UTC):**  
+- Workflow: [run 28736400758](https://github.com/junamiweb/FADE_PROJECT/actions/runs/28736400758) — **success**  
+- Auto-commit: `auto: refresh + outcome tracker 2026-07-05 09:35 UTC`  
+- `eth_candidate_state.json`: `position=1`, `bars_in_position=3`, `last_bar_ts=2026-07-05 09:00` — **לא התאפס**  
+- `eth_candidate_outcomes.jsonl`: pre-fix 05:00 (next-bar) + bar 09:00 `min_hold_no_trade`; **0 v2 hold-cycles** עדיין (לא היה `traded=true` מאז v2)  
+- **cron:** מופעל (`5 * * * *`) — רק אחרי אימות זה; לעקוב אחרי 2–3 runs
+
+**אבטחה:** PAT ב-`docs/git-token-junamiweb.txt` — **לבטל מיד** ב-GitHub (חשוף בצ'אט); הקובץ ב-`.gitignore`.
 
 ---
 
