@@ -18,3 +18,8 @@ env/
 # Research-only CSVs (not in refresh/workflow; keep local backup if needed)
 btc_1s.csv
 btc_10m.csv
+
+# Secrets — never commit
+docs/git-token*.txt
+**/git-token*.txt
+*.pat
