@@ -247,8 +247,8 @@ python -m fade.pipeline.outcome_tracker run-all   # יומי / GitHub Action (cr
 |-----|--------|--------|
 | **1** | `.gitignore` — venv/env/.env/IDE + חריגי `fade/output/*.jsonl` | ✅ **הושלם** |
 | **2** | יצירת repo Private ב-github.com/new (ללא README/gitignore) | ✅ `github.com/junamiweb/FADE_PROJECT` |
-| **3** | `git init` + push ל-`main` | ⚠️ **commit מקומי** `1d1c878` — push נכשל (repo not found / auth) |
-| **4** | Settings → Actions → Read and write permissions | ⏸ ממתין לאישור משתמש |
+| **3** | `git init` + push ל-`main` | ✅ **הושלם** — `1d1c878` + `0d436fd` על `main` |
+| **4** | Settings → Actions → Read and write permissions | ⏸ **ממתין לאישור משתמש** |
 | **5** | הרצה ידנית ראשונה (`workflow_dispatch`) | ⏸ ממתין לשלבים 3–4 |
 | **6** | אימות commit אוטומטי + ledgers/state v2 | ⏸ ממתין לשלב 5 |
 
@@ -260,11 +260,8 @@ python -m fade.pipeline.outcome_tracker run-all   # יומי / GitHub Action (cr
 `btc_5m`/`eth_5m` (~60MB כל אחד) **ייכללו** — נדרשים ל-sparse PRIMARY multi-res.
 
 **Remote:** `https://github.com/junamiweb/FADE_PROJECT.git`  
-**Commit מקומי:** `1d1c878` — Initial commit (162 files, workflow + batch 37 scoring).  
-**Push:** נכשל — `Repository not found` (repo לא קיים עדיין, private ללא auth, או URL שגוי).  
-**פתרון:** (1) ודא repo קיים ב-GitHub ריק; (2) `git push -u origin main` עם credentials (PAT / `gh auth login`).
-
-**git add preview (לפני commit):** btc_1s/10m/cache/pyc — מוחרגים ✓; jsonl/state/pre_registration — נכללים ✓.
+**Commits על GitHub:** `1d1c878` (initial), `0d436fd` (gitignore tokens + docs).  
+**Push:** ✅ הצליח (2026-07-05). אזהרת GitHub: `btc_5m`/`eth_5m` >50MB (מותר, לא מומלץ — לא חוסם push).
 
 ---
 
