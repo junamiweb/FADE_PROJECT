@@ -1,0 +1,20 @@
+__pycache__/
+*.pyc
+fade/.cache/
+fade/output/*
+# Forward-validation artifacts (committed by GitHub Action + manual runs)
+!fade/output/*.jsonl
+!fade/output/eth_candidate_state.json
+!fade/output/pre_registration.json
+
+.venv/
+venv/
+env/
+.env
+.idea/
+.vscode/
+*.log
+
+# Research-only CSVs (not in refresh/workflow; keep local backup if needed)
+btc_1s.csv
+btc_10m.csv

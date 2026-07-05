@@ -1,0 +1,131 @@
+{
+  "version": 1,
+  "protocol": "Register config + success criteria BEFORE running on any final-test data. Lockbox v1 burned after batch 33. Live outcome_tracker for forward validation.",
+  "lockboxes": {
+    "v1_18pct": {
+      "status": "BURNED",
+      "burned_at_utc": "2026-07-05T07:30:00+00:00",
+      "burned_reason": "Used for path_lean3 one-shot (batch 30) and regime_minhold one-shot (batch 33). No further config tests permitted on this slice.",
+      "manifest_file": "fade/output/lockbox_manifest.json"
+    },
+    "v2": {
+      "status": "RESERVED",
+      "note": "Next final-test lockbox must be NEWEST data sealed AFTER all candidates pre-registered; hash recorded before any eval."
+    }
+  },
+  "candidates": [
+    {
+      "track_id": "eth_low_vr_minhold12",
+      "status": "candidate_not_validated",
+      "asset": "eth_1h",
+      "config": {
+        "vr_regime": "LOW_VR",
+        "min_hold_bars": 12,
+        "fee_bps_reference": 5
+      },
+      "selection_history": {
+        "where_selected": "batch 32 holdout 70/30 grid (3 VR x 9 min_hold)",
+        "selected_before_lockbox_test": true,
+        "lockbox_search_on_slice": false,
+        "lockbox_v1_one_shot_result": {
+          "batch": 33,
+          "return_5bps": 0.232,
+          "directional_hit": 0.5246,
+          "note": "Informational only \u2014 lockbox v1 now BURNED; NOT validation."
+        },
+        "holdout_grid_winner_return_5bps": 0.942,
+        "same_class_risk_as_btc": "Post-hoc grid on holdout (like BTC HIGH_VR+48). Lockbox did NOT select this combo; one-shot confirmed positive but cannot certify without forward live track."
+      },
+      "validation": {
+        "method": "live_outcome_tracker_hold_cycle_pnl",
+        "ledger": "fade/output/eth_candidate_outcomes.jsonl",
+        "primary_metric": "hold_cycle_profitable_rate",
+        "min_signals": 100,
+        "min_profitable_rate": 0.55,
+        "fee_bps": 5,
+        "fee_bps_round_trip": 10,
+        "metric_changed_utc": "2026-07-05T08:30:00+00:00",
+        "metric_change_note": "v2: hold-cycle net PnL via pnl_sim._equity (aligns with lockbox batch 33). Pre-fix signals (next-bar only) excluded from n=100.",
+        "start_collecting_utc": "2026-07-05T07:30:00+00:00",
+        "start_collecting_v2_utc": "2026-07-05T08:30:00+00:00",
+        "legacy_next_bar": {
+          "supplementary_only": true,
+          "min_hit_rate": 0.55
+        }
+      },
+      "pre_registered_utc": "2026-07-05T07:30:00+00:00"
+    }
+  ],
+  "pending_preregistrations": [],
+  "studies": [
+    {
+      "study_id": "horizon_sweep_4h_8h",
+      "pre_registered_utc": "2026-07-05T07:52:10.935010+00:00",
+      "assets": [
+        "btc",
+        "eth"
+      ],
+      "intervals": [
+        "1h",
+        "4h",
+        "8h"
+      ],
+      "metrics": [
+        "reversion_index",
+        "path_lean3_holdout",
+        "pnl_5bps_raw",
+        "pnl_5bps_minhold24"
+      ],
+      "data_split": "holdout_70_30_exploratory_only",
+      "lockbox_policy": "v1 BURNED; v2 reserved for winner one-shot",
+      "success_criteria": {
+        "exploratory_pnl_positive_5bps": "raw_ls or min_hold_24 positive on holdout",
+        "beats_1h_same_asset": "better total_return @5bps than same-asset 1h baseline",
+        "final_claim_requires": "lockbox_v2 one-shot after pre-register"
+      }
+    },
+    {
+      "study_id": "lead_lag_btc_eth_1h",
+      "pre_registered_utc": "2026-07-05T07:53:25.309736+00:00",
+      "pair": "BTC 1h -> ETH 1h",
+      "lags_bars": [
+        0,
+        1,
+        2,
+        4
+      ],
+      "metrics": [
+        "return_corr",
+        "reversal_hit_eth_given_btc_streak"
+      ],
+      "data_split": "full_history_exploratory",
+      "lockbox_policy": "v1 BURNED; no final claim without v2"
+    },
+    {
+      "study_id": "sparse_primary_replay",
+      "pre_registered_utc": "2026-07-05T07:54:48.400879+00:00",
+      "tiers_included": [
+        "elite",
+        "high",
+        "strong"
+      ],
+      "data_split": "holdout_70_30_exploratory",
+      "success_criteria": {
+        "min_hit_rate": 0.58,
+        "note": "exploratory; forward tracker is truth"
+      }
+    },
+    {
+      "study_id": "funding_streak_combo_1h",
+      "pre_registered_utc": "2026-07-05T07:54:57.993289+00:00",
+      "rule": "streak>=3 contrarian on next 1h bar",
+      "funding_buckets": [
+        "EXTREME_NEG",
+        "NEUTRAL",
+        "EXTREME_POS"
+      ],
+      "thresholds": "dev p10/p90 on funding",
+      "data_split": "holdout_70_30_exploratory"
+    }
+  ]
+}

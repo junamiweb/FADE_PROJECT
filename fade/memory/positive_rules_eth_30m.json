@@ -1,0 +1,90 @@
+{
+  "close_pos=LOW|range_pct=HIGH": {
+    "avg_confidence": 0.5863,
+    "avg_oos_hit": 0.5651,
+    "consistency": 1.0,
+    "direction": 1,
+    "folds_present": 3,
+    "stability": 0.6
+  },
+  "close_pos=LOW|range_pct=HIGH|streak_signed=LOW": {
+    "avg_confidence": 0.5976,
+    "avg_oos_hit": 0.567,
+    "consistency": 1.0,
+    "direction": 1,
+    "folds_present": 3,
+    "stability": 0.6
+  },
+  "close_pos=LOW|range_pct=HIGH|streak_signed=MID": {
+    "avg_confidence": 0.5957,
+    "avg_oos_hit": 0.5645,
+    "consistency": 1.0,
+    "direction": 1,
+    "folds_present": 3,
+    "stability": 0.6
+  },
+  "close_pos=LOW|range_pct=LOW|streak_signed=LOW": {
+    "avg_confidence": 0.5917,
+    "avg_oos_hit": 0.5518,
+    "consistency": 1.0,
+    "direction": 1,
+    "folds_present": 4,
+    "stability": 0.8
+  },
+  "close_pos=LOW|streak_signed=LOW": {
+    "avg_confidence": 0.5853,
+    "avg_oos_hit": 0.5548,
+    "consistency": 1.0,
+    "direction": 1,
+    "folds_present": 3,
+    "stability": 0.6
+  },
+  "close_pos=MID|range_pct=HIGH|streak_signed=LOW": {
+    "avg_confidence": 0.6376,
+    "avg_oos_hit": 0.5535,
+    "consistency": 1.0,
+    "direction": 1,
+    "folds_present": 4,
+    "stability": 0.8
+  },
+  "close_pos=MID|range_pct=MID|streak_signed=LOW": {
+    "avg_confidence": 0.6036,
+    "avg_oos_hit": 0.5695,
+    "consistency": 1.0,
+    "direction": 1,
+    "folds_present": 3,
+    "stability": 0.6
+  },
+  "close_pos=MID|streak_signed=LOW": {
+    "avg_confidence": 0.5627,
+    "avg_oos_hit": 0.5379,
+    "consistency": 1.0,
+    "direction": 1,
+    "folds_present": 4,
+    "stability": 0.8
+  },
+  "range_pct=HIGH|streak_signed=LOW": {
+    "avg_confidence": 0.5852,
+    "avg_oos_hit": 0.5593,
+    "consistency": 1.0,
+    "direction": 1,
+    "folds_present": 5,
+    "stability": 1.0
+  },
+  "range_pct=MID|streak_signed=HIGH": {
+    "avg_confidence": 0.5608,
+    "avg_oos_hit": 0.5465,
+    "consistency": 1.0,
+    "direction": 0,
+    "folds_present": 3,
+    "stability": 0.6
+  },
+  "range_pct=MID|streak_signed=LOW": {
+    "avg_confidence": 0.5796,
+    "avg_oos_hit": 0.5611,
+    "consistency": 1.0,
+    "direction": 1,
+    "folds_present": 3,
+    "stability": 0.6
+  }
+}

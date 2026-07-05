@@ -1,0 +1,34 @@
+{
+  "close_pos=HIGH|range_pct=HIGH|streak_signed=HIGH": {
+    "avg_confidence": 0.5676,
+    "avg_oos_hit": 0.5539,
+    "consistency": 1.0,
+    "direction": 0,
+    "folds_present": 3,
+    "stability": 0.6
+  },
+  "close_pos=HIGH|range_pct=LOW|streak_signed=LOW": {
+    "avg_confidence": 0.5689,
+    "avg_oos_hit": 0.5197,
+    "consistency": 1.0,
+    "direction": 0,
+    "folds_present": 4,
+    "stability": 0.8
+  },
+  "close_pos=LOW|range_pct=HIGH|streak_signed=LOW": {
+    "avg_confidence": 0.5602,
+    "avg_oos_hit": 0.55,
+    "consistency": 1.0,
+    "direction": 1,
+    "folds_present": 5,
+    "stability": 1.0
+  },
+  "range_pct=HIGH|streak_signed=LOW": {
+    "avg_confidence": 0.5562,
+    "avg_oos_hit": 0.545,
+    "consistency": 1.0,
+    "direction": 1,
+    "folds_present": 4,
+    "stability": 0.8
+  }
+}

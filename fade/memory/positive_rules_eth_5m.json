@@ -1,0 +1,26 @@
+{
+  "close_pos=HIGH|range_pct=HIGH|streak_signed=HIGH": {
+    "avg_confidence": 0.5528,
+    "avg_oos_hit": 0.5566,
+    "consistency": 1.0,
+    "direction": 0,
+    "folds_present": 3,
+    "stability": 0.6
+  },
+  "close_pos=HIGH|range_pct=HIGH|streak_signed=LOW": {
+    "avg_confidence": 0.5762,
+    "avg_oos_hit": 0.5196,
+    "consistency": 1.0,
+    "direction": 1,
+    "folds_present": 3,
+    "stability": 0.6
+  },
+  "close_pos=LOW|range_pct=MID|streak_signed=LOW": {
+    "avg_confidence": 0.5658,
+    "avg_oos_hit": 0.5422,
+    "consistency": 1.0,
+    "direction": 1,
+    "folds_present": 3,
+    "stability": 0.6
+  }
+}

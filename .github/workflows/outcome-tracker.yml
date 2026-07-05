@@ -1,0 +1,53 @@
+name: FADE outcome tracker
+
+# רץ כל שעה, 5 דקות אחרי שכל bar שעתי נסגר ב-Binance, כדי לתפוס אותו בהקדם.
+# אפשר גם להריץ ידנית מה-Actions tab (workflow_dispatch).
+on:
+  schedule:
+    - cron: "5 * * * *"
+  workflow_dispatch: {}
+
+# נדרש כדי שה-Action יוכל לעשות git push בחזרה ל-repo (commit של CSVs/JSONL מעודכנים).
+permissions:
+  contents: write
+
+jobs:
+  refresh-and-track:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repo
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+
+      - name: Install dependencies
+        run: pip install -r requirements.txt
+
+      - name: Refresh historical data (BTC + ETH, incremental)
+        run: python download_history.py refresh
+
+      # אם/כשקורסור מוסיף תמיכה במספר נכסים (SOL/BNB/XRP וכו') כפי שביקשנו,
+      # יש להוסיף כאן שורת refresh נוספת לכל נכס, למשל:
+      # run: python download_history.py asset sol 1h
+      # לפני שמוסיפים - לוודא שה-asset מוגדר גם ב-pre_registration.json.
+
+      - name: Run outcome tracker — sparse PRIMARY + ETH candidate (log + score + report)
+        run: python -m fade.pipeline.outcome_tracker run-all
+        # run-all (לא run) — run לבדו מדלג על ה-ETH candidate track לגמרי.
+
+      - name: Report ETH candidate
+        run: python -m fade.pipeline.outcome_tracker report-candidate
+
+      - name: Commit and push updated data/ledgers
+        run: |
+          git config user.name "fade-bot"
+          git config user.email "fade-bot@users.noreply.github.com"
+          # refresh מעדכן 5m/15m/30m/1h — sparse PRIMARY צריך multi-res; state.json שומר min_hold
+          git add btc_*.csv eth_*.csv fade/output/*.jsonl fade/output/eth_candidate_state.json
+          git diff --cached --quiet || git commit -m "auto: refresh + outcome tracker $(date -u +'%Y-%m-%d %H:%M UTC')"
+          git push
