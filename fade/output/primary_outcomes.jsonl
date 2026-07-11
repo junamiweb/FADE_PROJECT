@@ -102,3 +102,5 @@
 {"asset": "eth_1h", "bar_ts": "2026-07-11 13:00:00+00:00", "logged_at": "2026-07-11T13:28:03.769505+00:00", "primary_status": "no_signal", "reason": "sparse_abstain", "sparse_mode": true, "outcome": null}
 {"asset": "btc_1h", "bar_ts": "2026-07-11 14:00:00+00:00", "logged_at": "2026-07-11T14:59:22.969676+00:00", "primary_status": "no_signal", "reason": "sparse_abstain", "sparse_mode": true, "outcome": null}
 {"asset": "eth_1h", "bar_ts": "2026-07-11 14:00:00+00:00", "logged_at": "2026-07-11T14:59:30.487568+00:00", "primary_status": "no_signal", "reason": "sparse_abstain", "sparse_mode": true, "outcome": null}
+{"asset": "btc_1h", "bar_ts": "2026-07-11 17:00:00+00:00", "logged_at": "2026-07-11T17:02:43.131963+00:00", "primary_status": "no_signal", "reason": "sparse_abstain", "sparse_mode": true, "outcome": null}
+{"asset": "eth_1h", "bar_ts": "2026-07-11 17:00:00+00:00", "logged_at": "2026-07-11T17:02:50.653996+00:00", "primary_status": "no_signal", "reason": "sparse_abstain (tier=streak4, need high/strong/elite)", "sparse_mode": true, "outcome": null, "active_conviction_tier": "streak4"}
