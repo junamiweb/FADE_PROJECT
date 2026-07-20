@@ -38,9 +38,10 @@ jobs:
 
       - name: Run outcome tracker — sparse PRIMARY + ETH candidate (log + score + report)
         run: |
+          set -e
           python -m fade.pipeline.ultra_next_bar refine
           python -m fade.pipeline.outcome_tracker run-all
-        # run-all (לא run) — run לבדו מדלג על ה-ETH candidate track לגמרי.
+        # run-all includes PRIMARY + ETH candidate + ULTRA. Re-run after fixes — schedule uses commit at trigger.
 
       - name: Forward validation snapshot (Track A / ETH / E progress)
         run: python -m fade.pipeline.forward_validation_snapshot

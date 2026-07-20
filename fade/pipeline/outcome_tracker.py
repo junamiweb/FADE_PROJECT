@@ -360,11 +360,15 @@ def log_eth_candidate(csv_path: str = "eth_1h.csv",
 
     cand = get_candidate(TRACK_ID) or {}
 
-    ev = evaluate_eth_candidate(
-        csv_path,
-        state_path=state_path,
-        reference_csv=reference_csv,
-    )
+    try:
+        ev = evaluate_eth_candidate(
+            csv_path,
+            state_path=state_path,
+            reference_csv=reference_csv,
+        )
+    except TypeError:
+        # Older deploy without state_path/reference_csv kwargs
+        ev = evaluate_eth_candidate(csv_path)
 
 
 
