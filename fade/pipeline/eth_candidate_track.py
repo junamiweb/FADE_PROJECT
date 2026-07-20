@@ -19,6 +19,7 @@ from datetime import datetime, timezone
 from pathlib import Path
 
 import numpy as np
+import pandas as pd
 
 from fade.config import Config, lean_config
 from fade.core.data_loader import load_ohlcv
@@ -32,30 +33,52 @@ STATE_PATH = Path("fade/output/eth_candidate_state.json")
 SCORING_VERSION_V2 = "v2_hold_cycle_pnl"
 
 
-def _frozen_vr_regime(csv_path: str) -> tuple[str | None, dict]:
-    """VR regime at latest bar; thresholds frozen on pre-lockbox slice."""
+def _frozen_vr_regime(
+    csv_path: str,
+    reference_csv: str | None = None,
+    lockbox_frac: float = DEFAULT_LOCKBOX_FRAC,
+) -> tuple[str | None, dict]:
+    """VR regime at latest bar; thresholds frozen on pre-lockbox slice.
+
+    When ``reference_csv`` is set (paper replay), tertiles are fit on the full
+    reference series while regime is read from the visible ``csv_path`` tail.
+    """
     config = Config()
+    ref_df = load_ohlcv(reference_csv or csv_path)
     df = load_ohlcv(csv_path)
-    ret = df["close"].pct_change()
-    vr = compute_vol_ratio(ret, config.vol_ratio_short_window, config.vol_ratio_long_window)
-    cut = int(len(df) * (1.0 - DEFAULT_LOCKBOX_FRAC))
-    dev_vr = vr.iloc[:cut].dropna()
+    cut = int(len(ref_df) * (1.0 - lockbox_frac))
+    ret_ref = ref_df["close"].pct_change()
+    vr_ref = compute_vol_ratio(
+        ret_ref, config.vol_ratio_short_window, config.vol_ratio_long_window,
+    )
+    dev_vr = vr_ref.iloc[:cut].dropna()
     low = float(dev_vr.quantile(1 / 3))
     high = float(dev_vr.quantile(2 / 3))
+
+    ret = df["close"].pct_change()
+    vr = compute_vol_ratio(ret, config.vol_ratio_short_window, config.vol_ratio_long_window)
     reg = assign_vr_regime(vr, low, high)
     latest = str(reg.iloc[-1]) if reg.notna().any() else None
-    return latest, {"low_threshold": low, "high_threshold": high, "cut_bar": cut}
+    return latest, {
+        "low_threshold": low,
+        "high_threshold": high,
+        "cut_bar": cut,
+        "reference_n": len(ref_df),
+        "visible_n": len(df),
+    }
 
 
-def _load_state() -> dict:
-    if STATE_PATH.exists():
-        return json.loads(STATE_PATH.read_text(encoding="utf-8"))
+def _load_state(state_path: Path | None = None) -> dict:
+    path = state_path or STATE_PATH
+    if path.exists():
+        return json.loads(path.read_text(encoding="utf-8"))
     return {"position": 0.0, "bars_in_position": 0, "last_bar_ts": None}
 
 
-def _save_state(state: dict) -> None:
-    STATE_PATH.parent.mkdir(parents=True, exist_ok=True)
-    STATE_PATH.write_text(json.dumps(state, indent=2), encoding="utf-8")
+def _save_state(state: dict, state_path: Path | None = None) -> None:
+    path = state_path or STATE_PATH
+    path.parent.mkdir(parents=True, exist_ok=True)
+    path.write_text(json.dumps(state, indent=2), encoding="utf-8")
 
 
 def _target_direction(infer: dict) -> float:
@@ -114,6 +137,8 @@ def evaluate_eth_candidate(
     csv_path: str = "eth_1h.csv",
     min_hold: int | None = None,
     required_regime: str | None = None,
+    state_path: Path | None = None,
+    reference_csv: str | None = None,
 ) -> dict:
     cand = get_candidate(TRACK_ID) or {}
     cfg = cand.get("config", {})
@@ -124,20 +149,22 @@ def evaluate_eth_candidate(
         return {"track_id": TRACK_ID, "status": "missing_file"}
 
     bar_ts = str(load_ohlcv(csv_path).index[-1])
-    vr_regime, vr_meta = _frozen_vr_regime(csv_path)
+    vr_regime, vr_meta = _frozen_vr_regime(
+        csv_path, reference_csv=reference_csv,
+    )
     infer = infer_latest(csv_path, config=lean_config())
     raw_target = _target_direction(infer)
 
     # Gate: only active in required VR regime
     gated_want = raw_target if vr_regime == required_regime else 0.0
 
-    state = _load_state()
+    state = _load_state(state_path)
     if state.get("last_bar_ts") == bar_ts:
         return {"track_id": TRACK_ID, "status": "duplicate", "bar_ts": bar_ts}
 
     new_pos, traded = _min_hold_step(state, gated_want, min_hold)
     state["last_bar_ts"] = bar_ts
-    _save_state(state)
+    _save_state(state, state_path)
 
     direction = None
     hold_cycle = None
