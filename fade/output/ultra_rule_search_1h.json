@@ -1,0 +1,253 @@
+{
+  "horizon": "1h",
+  "evaluated_at_utc": "2026-07-16T07:42:36.293709+00:00",
+  "data_split": "holdout_70_30",
+  "holdout_bars": 23334,
+  "target_hit_rate": 0.9,
+  "min_n_for_90_claim": 10,
+  "results": [
+    {
+      "rule_id": "cross_elite_bigmove05_fund_q90",
+      "description": "cross_elite_bigmove05 & |btc_funding|>=dev_q90",
+      "n": 2,
+      "coverage_pct": 0.0086,
+      "hit_rate": 1.0,
+      "meets_90": false
+    },
+    {
+      "rule_id": "cross_elite_fund_q90",
+      "description": "cross_elite & |btc_funding|>=dev_q90",
+      "n": 2,
+      "coverage_pct": 0.0086,
+      "hit_rate": 1.0,
+      "meets_90": false
+    },
+    {
+      "rule_id": "cross_elite_bigmove05_eth_s4",
+      "description": "cross_elite_bigmove05 & eth_slen>=4",
+      "n": 7,
+      "coverage_pct": 0.03,
+      "hit_rate": 0.8571,
+      "meets_90": false
+    },
+    {
+      "rule_id": "cross_elite_bigmove08_eth_s4",
+      "description": "cross_elite_bigmove08 & eth_slen>=4",
+      "n": 6,
+      "coverage_pct": 0.0257,
+      "hit_rate": 0.8333,
+      "meets_90": false
+    },
+    {
+      "rule_id": "cross_elite_highvr_bigmove05",
+      "description": "cross_elite_highvr & |btc_ret|>=0.5%",
+      "n": 11,
+      "coverage_pct": 0.0471,
+      "hit_rate": 0.8182,
+      "meets_90": false
+    },
+    {
+      "rule_id": "cross_elite_highvr",
+      "description": "cross_elite & both HIGH_VR",
+      "n": 15,
+      "coverage_pct": 0.0643,
+      "hit_rate": 0.8,
+      "meets_90": false
+    },
+    {
+      "rule_id": "cross_elite_bigmove05_s4",
+      "description": "cross_elite_bigmove05 & btc_slen>=4",
+      "n": 5,
+      "coverage_pct": 0.0214,
+      "hit_rate": 0.8,
+      "meets_90": false
+    },
+    {
+      "rule_id": "cross_elite_bigmove08_s4",
+      "description": "cross_elite_bigmove08 & btc_slen>=4",
+      "n": 5,
+      "coverage_pct": 0.0214,
+      "hit_rate": 0.8,
+      "meets_90": false
+    },
+    {
+      "rule_id": "cross_elite_s4_bigmove05",
+      "description": "cross_elite_s4 & |btc_ret|>=0.5%",
+      "n": 4,
+      "coverage_pct": 0.0171,
+      "hit_rate": 0.75,
+      "meets_90": false
+    },
+    {
+      "rule_id": "cross_elite_bigmove05_both_s4",
+      "description": "cross_elite_bigmove05 & btc_slen>=4 & eth_slen>=4",
+      "n": 4,
+      "coverage_pct": 0.0171,
+      "hit_rate": 0.75,
+      "meets_90": false
+    },
+    {
+      "rule_id": "cross_elite_bigmove08_both_s4",
+      "description": "cross_elite_bigmove08 & btc_slen>=4 & eth_slen>=4",
+      "n": 4,
+      "coverage_pct": 0.0171,
+      "hit_rate": 0.75,
+      "meets_90": false
+    },
+    {
+      "rule_id": "both_s4_4tf_bigmove05",
+      "description": "both_s4_4tf & |btc_ret|>=0.5%",
+      "n": 4,
+      "coverage_pct": 0.0171,
+      "hit_rate": 0.75,
+      "meets_90": false
+    },
+    {
+      "rule_id": "cross_elite_bigmove05",
+      "description": "cross_elite & |btc_ret|>=0.5%",
+      "n": 32,
+      "coverage_pct": 0.1371,
+      "hit_rate": 0.7188,
+      "meets_90": false
+    },
+    {
+      "rule_id": "cross_elite_bigmove05_lowvr",
+      "description": "cross_elite_lowvr & |btc_ret|>=0.5%",
+      "n": 7,
+      "coverage_pct": 0.03,
+      "hit_rate": 0.7143,
+      "meets_90": false
+    },
+    {
+      "rule_id": "btc_s4_eth_agree",
+      "description": "btc slen>=4 4TF & eth agrees dir",
+      "n": 35,
+      "coverage_pct": 0.15,
+      "hit_rate": 0.6857,
+      "meets_90": false
+    },
+    {
+      "rule_id": "cross_elite_v1",
+      "description": "btc_elite & eth_elite & same_dir",
+      "n": 55,
+      "coverage_pct": 0.2357,
+      "hit_rate": 0.6727,
+      "meets_90": false
+    },
+    {
+      "rule_id": "cross_elite_freq",
+      "description": "cross_elite & both frequent 15/30/1h",
+      "n": 55,
+      "coverage_pct": 0.2357,
+      "hit_rate": 0.6727,
+      "meets_90": false
+    },
+    {
+      "rule_id": "cross_elite_bigmove08",
+      "description": "cross_elite & |btc_ret|>=0.8%",
+      "n": 21,
+      "coverage_pct": 0.09,
+      "hit_rate": 0.6667,
+      "meets_90": false
+    },
+    {
+      "rule_id": "cross_elite_bigmove10",
+      "description": "cross_elite & |btc_ret|>=1%",
+      "n": 15,
+      "coverage_pct": 0.0643,
+      "hit_rate": 0.6667,
+      "meets_90": false
+    },
+    {
+      "rule_id": "cross_elite_s4",
+      "description": "cross_elite & btc_slen>=4 & eth_slen>=4",
+      "n": 6,
+      "coverage_pct": 0.0257,
+      "hit_rate": 0.6667,
+      "meets_90": false
+    },
+    {
+      "rule_id": "both_s4_4tf",
+      "description": "both slen>=4 & 4TF aligned & same_dir",
+      "n": 6,
+      "coverage_pct": 0.0257,
+      "hit_rate": 0.6667,
+      "meets_90": false
+    },
+    {
+      "rule_id": "cross_elite_bigmove10_s4",
+      "description": "cross_elite_bigmove10 & btc_slen>=4",
+      "n": 3,
+      "coverage_pct": 0.0129,
+      "hit_rate": 0.6667,
+      "meets_90": false
+    },
+    {
+      "rule_id": "cross_elite_bigmove10_both_s4",
+      "description": "cross_elite_bigmove10 & btc_slen>=4 & eth_slen>=4",
+      "n": 3,
+      "coverage_pct": 0.0129,
+      "hit_rate": 0.6667,
+      "meets_90": false
+    },
+    {
+      "rule_id": "btc_elite_bigmove05",
+      "description": "btc elite only & |btc_ret|>=0.5%",
+      "n": 149,
+      "coverage_pct": 0.6386,
+      "hit_rate": 0.6174,
+      "meets_90": false
+    },
+    {
+      "rule_id": "btc_elite_bigmove10",
+      "description": "btc elite only & |btc_ret|>=1%",
+      "n": 60,
+      "coverage_pct": 0.2571,
+      "hit_rate": 0.6167,
+      "meets_90": false
+    },
+    {
+      "rule_id": "btc_elite_s4_bigmove05",
+      "description": "btc elite s4 4TF & |btc_ret|>=0.5%",
+      "n": 24,
+      "coverage_pct": 0.1029,
+      "hit_rate": 0.5833,
+      "meets_90": false
+    },
+    {
+      "rule_id": "cross_elite_lowvr",
+      "description": "cross_elite & both LOW_VR",
+      "n": 19,
+      "coverage_pct": 0.0814,
+      "hit_rate": 0.5789,
+      "meets_90": false
+    },
+    {
+      "rule_id": "both_s4_4tf_lowvr",
+      "description": "both_s4_4tf & btc LOW_VR",
+      "n": 3,
+      "coverage_pct": 0.0129,
+      "hit_rate": 0.3333,
+      "meets_90": false
+    },
+    {
+      "rule_id": "cross_elite_s5",
+      "description": "cross_elite & btc_slen>=5 & eth_slen>=5",
+      "n": 2,
+      "coverage_pct": 0.0086,
+      "hit_rate": 0.0,
+      "meets_90": false
+    }
+  ],
+  "best_meeting_90": null,
+  "best_overall": {
+    "rule_id": "cross_elite_bigmove05_fund_q90",
+    "description": "cross_elite_bigmove05 & |btc_funding|>=dev_q90",
+    "n": 2,
+    "coverage_pct": 0.0086,
+    "hit_rate": 1.0,
+    "meets_90": false
+  },
+  "recommendation": "cross_elite_bigmove05_fund_q90",
+  "verdict": "No rule meets 90% with n>=10 on holdout. Best: cross_elite_bigmove05_fund_q90 hit=1.0 n=2."
+}

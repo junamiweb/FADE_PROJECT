@@ -1,0 +1,194 @@
+{
+  "snapshot_utc": "2026-07-20T09:59:29.007302+00:00",
+  "phase2_track_a": {
+    "track_id": "A",
+    "study_id": "phase2_a_sparse_product_v1",
+    "sparse_primary_logged": 10,
+    "sparse_scored": 2,
+    "overall_hit": 0.5,
+    "recent_hit": 0.5,
+    "target_hit": 0.58,
+    "target_min_signals": 500,
+    "progress": "2/500 scored signals",
+    "status": "collecting",
+    "note": "forward live truth \u2014 holdout replay is exploratory only"
+  },
+  "eth_candidate": {
+    "track_id": "eth_candidate",
+    "track_name": "eth_low_vr_minhold12",
+    "hold_cycles_scored": 0,
+    "hold_cycles_pending": 0,
+    "profitable_rate": null,
+    "progress": "0/100 hold-cycles",
+    "validated": false,
+    "candidate_status": "candidate_not_validated",
+    "next_bar_hit_supplementary": 1.0
+  },
+  "ultra_next_bar": {
+    "track_id": "ULTRA",
+    "study_id": "ultra_next_bar_90_target_v1",
+    "rule": "cross_elite_bigmove05_eth_s4",
+    "holdout_reference_hit": 0.8571,
+    "holdout_reference_n": 7,
+    "scored": 0,
+    "overall_hit": null,
+    "target_hit": 0.9,
+    "target_min_signals": 50,
+    "progress": "0/50 scored signals",
+    "validated": false,
+    "status": "collecting",
+    "note": "90% target on live forward only; holdout reference ~0.7188"
+  },
+  "phase2_track_e": {
+    "track_id": "E",
+    "study_id": "phase2_e_decay_meter_v1",
+    "status": "waiting_data",
+    "forward_scored": 2,
+    "min_for_90d_proxy": 90,
+    "note": "decay meter activates when PRIMARY ledger has ~90d of scored sparse signals"
+  },
+  "primary_report": {
+    "ledger": "C:\\Users\\Yonat\\Projects\\FADE_PROJECT\\fade\\output\\primary_outcomes.jsonl",
+    "track_id": null,
+    "total_logged": 10,
+    "total_scored": 2,
+    "pending": 0,
+    "overall_hit_rate": 0.5,
+    "recent_n": 2,
+    "recent_hit_rate": 0.5,
+    "by_asset": {
+      "btc_1h": {
+        "n": 1,
+        "hit_rate": 0.0,
+        "hits": 0,
+        "misses": 1
+      },
+      "eth_1h": {
+        "n": 1,
+        "hit_rate": 1.0,
+        "hits": 1,
+        "misses": 0
+      }
+    },
+    "by_source": {
+      "conviction": {
+        "n": 1,
+        "hit_rate": 0.0,
+        "hits": 0,
+        "misses": 1
+      },
+      "frequent": {
+        "n": 1,
+        "hit_rate": 1.0,
+        "hits": 1,
+        "misses": 0
+      }
+    },
+    "last_5": [
+      {
+        "asset": "btc_1h",
+        "bar_ts": "2026-07-05 05:00:00+00:00",
+        "direction": "DOWN",
+        "source": "conviction",
+        "track_id": null,
+        "outcome": "miss",
+        "forward_return_pct": 0.1562
+      },
+      {
+        "asset": "eth_1h",
+        "bar_ts": "2026-07-05 05:00:00+00:00",
+        "direction": "UP",
+        "source": "frequent",
+        "track_id": null,
+        "outcome": "hit",
+        "forward_return_pct": 0.1566
+      }
+    ]
+  },
+  "eth_candidate_report": {
+    "ledger": "fade\\output\\eth_candidate_outcomes.jsonl",
+    "track_id": "eth_low_vr_minhold12",
+    "total_logged": 5,
+    "pre_fix_next_bar_only": {
+      "n": 1,
+      "note": "pre-fix, next-bar metric only \u2014 excluded from n=100 hold-cycle criterion",
+      "rows": [
+        {
+          "bar_ts": "2026-07-05 05:00:00+00:00",
+          "direction": "UP",
+          "outcome": "hit",
+          "forward_return_pct": 0.1566
+        }
+      ]
+    },
+    "next_bar_directional": {
+      "label": "next-bar directional hit (supplementary)",
+      "total_scored": 1,
+      "overall_hit_rate": 1.0,
+      "recent_n": 1,
+      "recent_hit_rate": 1.0,
+      "pending": 0
+    },
+    "hold_cycle_pnl": {
+      "label": "hold-cycle PnL, net of fees (validation metric)",
+      "scoring_version": "v2_hold_cycle_pnl",
+      "total_scored": 0,
+      "pending": 0,
+      "profitable_rate": null,
+      "avg_pnl_pct": null,
+      "recent_n": 0,
+      "recent_profitable_rate": null,
+      "fee_bps_round_trip": 10
+    },
+    "validation": {
+      "min_signals": 100,
+      "min_profitable_rate": 0.55,
+      "metric": "hold_cycle_profitable_rate",
+      "metric_changed_utc": "2026-07-05T08:30:00+00:00",
+      "start_collecting_v2_utc": "2026-07-05T08:30:00+00:00",
+      "candidate_status": "candidate_not_validated",
+      "validated": false,
+      "progress": "0/100 hold-cycles"
+    },
+    "last_5_hold_cycles": [],
+    "last_5_next_bar": [
+      {
+        "bar_ts": "2026-07-05 05:00:00+00:00",
+        "direction": "UP",
+        "outcome": "hit",
+        "forward_return_pct": 0.1566,
+        "scoring_era": null
+      }
+    ]
+  },
+  "ultra_report": {
+    "ledger": "fade\\output\\ultra_primary_outcomes.jsonl",
+    "track_id": "ultra_cross_elite_v1",
+    "total_logged": 2,
+    "total_scored": 0,
+    "pending": 0,
+    "overall_hit_rate": null,
+    "recent_n": 0,
+    "recent_hit_rate": null,
+    "validation": {
+      "min_signals": 50,
+      "min_hit_rate": 0.9,
+      "metric": "next_bar_hit_rate",
+      "progress": "0/50 scored signals",
+      "candidate_status": "candidate_not_validated",
+      "validated": false,
+      "target_note": "90% target on live forward only; holdout reference ~0.7188"
+    },
+    "historical_holdout_reference": {
+      "hit_rate": 0.7188,
+      "signals": 32,
+      "rule": "cross_elite_bigmove05",
+      "note": null
+    },
+    "last_5": []
+  },
+  "actions": {
+    "hourly": "GitHub Action .github/workflows/outcome-tracker.yml (cron :05)",
+    "manual": "python -m fade.pipeline.forward_validation_snapshot --run"
+  }
+}

@@ -37,8 +37,16 @@ jobs:
       # לפני שמוסיפים - לוודא שה-asset מוגדר גם ב-pre_registration.json.
 
       - name: Run outcome tracker — sparse PRIMARY + ETH candidate (log + score + report)
-        run: python -m fade.pipeline.outcome_tracker run-all
+        run: |
+          python -m fade.pipeline.ultra_next_bar refine
+          python -m fade.pipeline.outcome_tracker run-all
         # run-all (לא run) — run לבדו מדלג על ה-ETH candidate track לגמרי.
+
+      - name: Forward validation snapshot (Track A / ETH / E progress)
+        run: python -m fade.pipeline.forward_validation_snapshot
+
+      - name: Council forward digest (Forward Watcher session)
+        run: python -m fade.pipeline.council_session forward-digest
 
       - name: Report ETH candidate
         run: python -m fade.pipeline.outcome_tracker report-candidate
@@ -48,6 +56,6 @@ jobs:
           git config user.name "fade-bot"
           git config user.email "fade-bot@users.noreply.github.com"
           # refresh מעדכן 5m/15m/30m/1h — sparse PRIMARY צריך multi-res; state.json שומר min_hold
-          git add btc_*.csv eth_*.csv fade/output/*.jsonl fade/output/eth_candidate_state.json
+          git add btc_*.csv eth_*.csv fade/output/*.jsonl fade/output/eth_candidate_state.json fade/output/forward_validation_snapshot.json fade/output/ultra_next_bar_holdout.json fade/output/ultra_active_rule.json fade/output/ultra_rule_search.json fade/output/ultra_rule_search_1h.json fade/output/ultra_lockbox_eval.json fade/output/ultra_refinement_log.jsonl fade/output/council_digest.json fade/output/council_board.json
           git diff --cached --quiet || git commit -m "auto: refresh + outcome tracker $(date -u +'%Y-%m-%d %H:%M UTC')"
           git push

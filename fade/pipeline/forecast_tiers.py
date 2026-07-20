@@ -53,7 +53,9 @@ def _res_files(primary_csv: str) -> dict[str, str]:
 
 def run_tiered_forecast(primary_csv: str = "btc_1h.csv",
                         config: Config | None = None,
-                        sparse_primary: bool = True) -> dict:
+                        sparse_primary: bool = True,
+                        ultra_primary: bool = False,
+                        pair_csv: str | None = None) -> dict:
     config = config or lean_config()
     root = Path(primary_csv).parent
     res_files = _res_files(primary_csv)
@@ -189,6 +191,35 @@ def run_tiered_forecast(primary_csv: str = "btc_1h.csv",
         result["tiers"]["conviction"] = inactive
 
     result["primary"] = _pick_primary(result, sparse=sparse_primary)
+    if ultra_primary:
+        from fade.pipeline.ultra_next_bar import evaluate_ultra_signal
+
+        eth_csv = pair_csv or (
+            "eth_1h.csv" if Path(primary_csv).stem.startswith("btc") else "btc_1h.csv"
+        )
+        ultra = evaluate_ultra_signal(primary_csv, eth_csv, config=config)
+        result["ultra"] = ultra
+        if ultra.get("status") == "ok":
+            result["primary"] = {
+                "status": "ok",
+                "source": "ultra_cross_elite",
+                "label": "ULTRA cross-elite (BTC+ETH)",
+                "direction": ultra["direction"],
+                "confidence_pct": ultra.get("confidence_pct"),
+                "historical_hit": ultra.get("historical_hit"),
+                "target_hit_rate": ultra.get("target_hit_rate"),
+                "rule": ultra.get("rule"),
+                "sparse_mode": True,
+                "ultra_mode": True,
+            }
+        else:
+            result["primary"] = {
+                "status": "no_signal",
+                "reason": ultra.get("reason", "ultra_abstain"),
+                "ultra_mode": True,
+                "btc_tier": ultra.get("btc_tier"),
+                "eth_tier": ultra.get("eth_tier"),
+            }
     if result["primary"].get("status") == "ok":
         result["status"] = "ok"
 
@@ -426,11 +457,19 @@ def main() -> None:
     parser.add_argument("--json", action="store_true")
     parser.add_argument("--legacy-primary", action="store_true",
                         help="Use pre-Phase-1 PRIMARY (all tiers, not sparse)")
+    parser.add_argument("--ultra", action="store_true",
+                        help="ULTRA mode: cross-elite only (90%% forward target)")
+    parser.add_argument("--pair", default=None, help="Pair CSV for --ultra (default eth/btc)")
     args = parser.parse_args()
     if not Path(args.csv).exists():
         print(f"File not found: {args.csv}", file=sys.stderr)
         sys.exit(1)
-    result = run_tiered_forecast(args.csv, sparse_primary=not args.legacy_primary)
+    result = run_tiered_forecast(
+        args.csv,
+        sparse_primary=not args.legacy_primary,
+        ultra_primary=args.ultra,
+        pair_csv=args.pair,
+    )
     if args.json:
         print(json.dumps(result, indent=2, ensure_ascii=False))
     else:

@@ -1,0 +1,1 @@
+{"ts": "2026-07-16T07:42:36.315548+00:00", "action": "upgrade", "from_rule": "cross_elite_bigmove05", "to_rule": "cross_elite_bigmove05_eth_s4", "holdout_hit": 0.8571, "holdout_n": 7, "meets_90": false, "horizon": "1h"}

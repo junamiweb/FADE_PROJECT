@@ -61,6 +61,14 @@ from fade.pipeline.eth_candidate_track import (
 from fade.pipeline.forecast_tiers import run_tiered_forecast
 from fade.pipeline.pnl_sim import _equity
 from fade.pipeline.pre_registration import get_candidate, init_manifest
+from fade.pipeline.ultra_next_bar import (
+    LEDGER as ULTRA_LEDGER,
+    MIN_FORWARD_SIGNALS as ULTRA_MIN_SIGNALS,
+    OUTPUT_REPLAY as ULTRA_REPLAY_PATH,
+    TARGET_HIT as ULTRA_TARGET_HIT,
+    TRACK_ID as ULTRA_TRACK_ID,
+    evaluate_ultra_signal,
+)
 
 
 
@@ -153,7 +161,10 @@ def _forward_return(csv_path: str, bar_ts: str) -> float | None:
     return (c1 - c0) / c0
 
 
-def _asset_csv(asset: str) -> str:
+def _asset_csv(asset: str, csv_dir: Path | None = None) -> str:
+    if csv_dir is not None:
+        stem = Path(asset).stem if str(asset).endswith(".csv") else str(asset)
+        return str(csv_dir / f"{stem}.csv")
     return asset if str(asset).endswith(".csv") else f"{asset}.csv"
 
 
@@ -337,7 +348,9 @@ def log_forecast(primary_csv: str, config: Config | None = None,
 
 def log_eth_candidate(csv_path: str = "eth_1h.csv",
 
-                    ledger: Path | None = None) -> dict:
+                    ledger: Path | None = None,
+                    state_path: Path | None = None,
+                    reference_csv: str | None = None) -> dict:
 
     """Log ETH candidate track signal (LOW_VR + min_hold=12) for latest bar."""
 
@@ -347,7 +360,11 @@ def log_eth_candidate(csv_path: str = "eth_1h.csv",
 
     cand = get_candidate(TRACK_ID) or {}
 
-    ev = evaluate_eth_candidate(csv_path)
+    ev = evaluate_eth_candidate(
+        csv_path,
+        state_path=state_path,
+        reference_csv=reference_csv,
+    )
 
 
 
@@ -440,12 +457,167 @@ def log_eth_candidate(csv_path: str = "eth_1h.csv",
     }
 
 
+def log_ultra_forecast(
+    btc_csv: str = "btc_1h.csv",
+    eth_csv: str = "eth_1h.csv",
+    ledger: Path | None = None,
+    config: Config | None = None,
+) -> dict:
+    """Log cross-elite next-bar signal when both BTC+ETH elite agree."""
+    config = config or lean_config()
+    init_manifest()
+    ledger = ledger or ULTRA_LEDGER
+    ev = evaluate_ultra_signal(btc_csv, eth_csv, config=config)
+    bar_ts = ev.get("bar_ts")
+    rows = _load_ledger(ledger)
+    if any(r.get("track_id") == ULTRA_TRACK_ID and r.get("bar_ts") == bar_ts for r in rows):
+        return {"status": "duplicate", "track_id": ULTRA_TRACK_ID, "bar_ts": bar_ts}
 
+    entry = {
+        "track_id": ULTRA_TRACK_ID,
+        "rule": ev.get("rule"),
+        "bar_ts": bar_ts,
+        "logged_at": datetime.now(timezone.utc).isoformat(),
+        "collection_mode": "live_forward",
+        "btc_csv": btc_csv,
+        "eth_csv": eth_csv,
+        "btc_tier": ev.get("btc_tier"),
+        "eth_tier": ev.get("eth_tier"),
+        "btc_abs_return_pct": ev.get("btc_abs_return_pct"),
+        "target_hit_rate": ev.get("target_hit_rate", ULTRA_TARGET_HIT),
+        "signal_status": ev.get("status"),
+        "outcome": None,
+    }
+    if ev.get("status") == "ok":
+        entry["direction"] = ev["direction"]
+        entry["confidence_pct"] = ev.get("confidence_pct")
+    else:
+        entry["primary_status"] = "no_signal"
+        entry["reason"] = ev.get("reason", "no_signal")
+
+    rows.append(entry)
+    _save_ledger(ledger, rows)
+    return {
+        "status": "logged" if entry.get("direction") else "logged_no_signal",
+        "track_id": ULTRA_TRACK_ID,
+        "bar_ts": bar_ts,
+        "direction": entry.get("direction"),
+    }
+
+
+def score_ultra_outcomes(ledger: Path | None = None) -> dict:
+    """Score ULTRA next-bar hits using BTC 1h forward return."""
+    ledger = ledger or ULTRA_LEDGER
+    return score_outcomes(ledger=ledger, csv_key="btc_csv")
+
+
+def build_ultra_report(ledger: Path | None = None, recent: int = 30) -> dict:
+    """Report for ULTRA cross-elite forward track."""
+    ledger = ledger or ULTRA_LEDGER
+    cand = get_candidate(ULTRA_TRACK_ID) or {}
+    val = cand.get("validation", {})
+    min_n = int(val.get("min_signals", ULTRA_MIN_SIGNALS))
+    min_hit = float(val.get("min_hit_rate", ULTRA_TARGET_HIT))
+
+    rows = _load_ledger(ledger)
+    rows = [
+        r for r in rows
+        if r.get("track_id") == ULTRA_TRACK_ID
+        and r.get("collection_mode", "live_forward") == "live_forward"
+    ]
+    scored = [r for r in rows if r.get("outcome") in ("hit", "miss")]
+    hits = sum(1 for r in scored if r["outcome"] == "hit")
+    n = len(scored)
+    overall = round(hits / n, 4) if n else None
+    recent_rows = scored[-recent:] if recent else scored
+    r_hits = sum(1 for r in recent_rows if r["outcome"] == "hit")
+    r_n = len(recent_rows)
+    recent_hit = round(r_hits / r_n, 4) if r_n else None
+    pending = sum(
+        1 for r in rows
+        if r.get("direction") and r.get("outcome") is None
+    )
+    validated = bool(n >= min_n and overall is not None and overall >= min_hit)
+
+    historical_ref = None
+    if ULTRA_REPLAY_PATH.exists():
+        try:
+            historical_ref = json.loads(ULTRA_REPLAY_PATH.read_text(encoding="utf-8"))
+        except json.JSONDecodeError:
+            historical_ref = None
+
+    return {
+        "ledger": str(ledger),
+        "track_id": ULTRA_TRACK_ID,
+        "total_logged": len(rows),
+        "total_scored": n,
+        "pending": pending,
+        "overall_hit_rate": overall,
+        "recent_n": r_n,
+        "recent_hit_rate": recent_hit,
+        "validation": {
+            "min_signals": min_n,
+            "min_hit_rate": min_hit,
+            "metric": "next_bar_hit_rate",
+            "progress": f"{n}/{min_n} scored signals",
+            "candidate_status": "validated" if validated else "candidate_not_validated",
+            "validated": validated,
+            "target_note": (
+                "90% target on live forward only; "
+                f"holdout reference ~{historical_ref.get('hit_rate') if historical_ref else '?'}"
+            ),
+        },
+        "historical_holdout_reference": (
+            {
+                "hit_rate": historical_ref.get("hit_rate"),
+                "signals": historical_ref.get("signals"),
+                "rule": historical_ref.get("rule"),
+                "note": historical_ref.get("note"),
+            }
+            if historical_ref
+            else None
+        ),
+        "last_5": [
+            {
+                "bar_ts": r.get("bar_ts"),
+                "direction": r.get("direction"),
+                "outcome": r.get("outcome"),
+                "forward_return_pct": r.get("forward_return_pct"),
+                "btc_tier": r.get("btc_tier"),
+                "eth_tier": r.get("eth_tier"),
+            }
+            for r in scored[-5:]
+        ],
+    }
+
+
+def _print_ultra_report(r: dict) -> None:
+    line = "=" * 72
+    print("\n" + line)
+    print("ULTRA PRIMARY — cross-elite next-bar (90% forward target)")
+    print(line)
+    v = r.get("validation", {})
+    hr = r.get("overall_hit_rate")
+    hr_s = f"{hr:.1%}" if hr is not None else "n/a"
+    print(f"  scored     : {r.get('total_scored')}  pending={r.get('pending')}")
+    print(f"  hit rate   : {hr_s}  recent={r.get('recent_hit_rate')}")
+    print(f"  progress   : {v.get('progress')}  need hit>={v.get('min_hit_rate', 0):.0%}")
+    print(f"  validated  : {v.get('validated')}  ({v.get('candidate_status')})")
+    if r.get("last_5"):
+        print("\n  LAST SCORED")
+        for x in r["last_5"]:
+            ret = x.get("forward_return_pct")
+            ret_s = f"{ret:+.2f}%" if ret is not None else "?"
+            print(
+                f"    {str(x.get('bar_ts', ''))[:16]}  pred={x.get('direction', '?'):<4} "
+                f"{x.get('outcome', '?'):<4}  ret={ret_s}"
+            )
+    print(line + "\n")
 
 
 def score_outcomes(config: Config | None = None, ledger: Path | None = None,
 
-                   csv_key: str = "asset") -> dict:
+                   csv_key: str = "asset", csv_dir: Path | None = None) -> dict:
 
     """Fill hit/miss for pending entries where the next bar exists in CSV."""
 
@@ -479,7 +651,7 @@ def score_outcomes(config: Config | None = None, ledger: Path | None = None,
 
         asset = r.get(csv_key, r.get("asset"))
 
-        csv = f"{asset}.csv" if not str(asset).endswith(".csv") else asset
+        csv = _asset_csv(asset, csv_dir=csv_dir)
 
         if not Path(csv).exists():
 
@@ -515,13 +687,13 @@ def score_outcomes(config: Config | None = None, ledger: Path | None = None,
 
 
 
-def score_eth_candidate(ledger: Path | None = None) -> dict:
+def score_eth_candidate(ledger: Path | None = None, csv_dir: Path | None = None) -> dict:
     """Score next-bar directional hit (legacy supplementary metric)."""
     ledger = ledger or ETH_CANDIDATE_LEDGER
-    return score_outcomes(ledger=ledger, csv_key="asset")
+    return score_outcomes(ledger=ledger, csv_key="asset", csv_dir=csv_dir)
 
 
-def score_eth_candidate_pnl(ledger: Path | None = None) -> dict:
+def score_eth_candidate_pnl(ledger: Path | None = None, csv_dir: Path | None = None) -> dict:
     """Score hold-cycle net PnL when planned_exit_bar_ts has closed in CSV."""
     ledger = ledger or ETH_CANDIDATE_LEDGER
     rows = _load_ledger(ledger)
@@ -538,7 +710,7 @@ def score_eth_candidate_pnl(ledger: Path | None = None) -> dict:
             continue
 
         asset = r.get("asset", "eth_1h")
-        csv_path = _asset_csv(asset)
+        csv_path = _asset_csv(asset, csv_dir=csv_dir)
         cfg = r.get("config", {})
         min_hold = int(cfg.get("min_hold_bars", 12))
         fee_bps = float(r.get("fee_bps") or cfg.get("fee_bps_reference", 5))
@@ -702,9 +874,9 @@ def build_report(config: Config | None = None, ledger: Path | None = None,
     return report
 
 
-def build_candidate_report(recent: int = 30) -> dict:
+def build_candidate_report(recent: int = 30, ledger: Path | None = None) -> dict:
     """ETH candidate report — next-bar (legacy) + hold-cycle PnL (validation metric)."""
-    ledger = ETH_CANDIDATE_LEDGER
+    ledger = ledger or ETH_CANDIDATE_LEDGER
     rows = _load_ledger(ledger)
     rows = [r for r in rows if r.get("track_id") == TRACK_ID]
 
@@ -947,9 +1119,9 @@ def main() -> None:
 
         "command",
 
-        choices=("log", "log-candidate", "score", "score-candidate",
-
-                 "report", "report-candidate", "run", "run-all"),
+        choices=("log", "log-candidate", "log-ultra", "score", "score-candidate",
+                 "score-ultra", "report", "report-candidate", "report-ultra",
+                 "run", "run-all"),
 
         default="run-all",
 
@@ -1001,6 +1173,12 @@ def main() -> None:
 
         return
 
+    if args.command == "log-ultra":
+        r = log_ultra_forecast()
+        print(f"  ultra {r['status']}"
+              + (f"  {r.get('direction')}" if r.get("direction") else ""))
+        return
+
 
 
     if args.command == "score":
@@ -1022,6 +1200,10 @@ def main() -> None:
               f"pending {r_pnl.get('pending', 0)}")
         return
 
+    if args.command == "score-ultra":
+        r = score_ultra_outcomes()
+        print(f"ultra scored {r.get('scored', 0)}  pending {r.get('pending', 0)}")
+        return
 
 
     if args.command == "report":
@@ -1034,6 +1216,10 @@ def main() -> None:
 
     if args.command == "report-candidate":
         _print_candidate_report(build_candidate_report(recent=args.recent))
+        return
+
+    if args.command == "report-ultra":
+        _print_ultra_report(build_ultra_report(recent=args.recent))
         return
 
 
@@ -1052,18 +1238,21 @@ def main() -> None:
 
 
 
-    # run-all: primary + eth candidate
+    # run-all: primary + eth candidate + ultra cross-elite
 
     for f in (args.csv or ["btc_1h.csv", "eth_1h.csv"]):
 
         log_forecast(f, config=config, sparse_primary=not args.legacy_primary)
 
     log_eth_candidate("eth_1h.csv")
+    log_ultra_forecast()
     score_outcomes(config=config)
     score_eth_candidate()
     score_eth_candidate_pnl()
+    score_ultra_outcomes()
     _print_report(build_report(config=config, recent=args.recent))
     _print_candidate_report(build_candidate_report(recent=args.recent))
+    _print_ultra_report(build_ultra_report(recent=args.recent))
 
 
 

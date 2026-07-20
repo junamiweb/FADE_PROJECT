@@ -1,0 +1,25 @@
+{
+  "generated_utc": "2026-07-20T10:00:18.729181+00:00",
+  "note": "Gap window since local data stall; not live Action ledger but real next-bar outcomes",
+  "strict": {
+    "rule": "cross_elite_bigmove05_eth_s4",
+    "window": "2026-07-07..2026-07-20",
+    "n": 0,
+    "hit_rate": null
+  },
+  "loose": {
+    "rule": "cross_elite_bigmove05",
+    "window": "2026-07-07..2026-07-20",
+    "n": 1,
+    "hit_rate": 1.0
+  },
+  "strict_trades": [],
+  "loose_trades": [
+    {
+      "bar_ts": "2026-07-13 17:00:00+00:00",
+      "direction": "UP",
+      "hit": true,
+      "fwd_pct": 0.1858
+    }
+  ]
+}

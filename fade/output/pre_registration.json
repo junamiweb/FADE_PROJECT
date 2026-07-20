@@ -54,6 +54,37 @@
         }
       },
       "pre_registered_utc": "2026-07-05T07:30:00+00:00"
+    },
+    {
+      "track_id": "ultra_cross_elite_v1",
+      "status": "candidate_not_validated",
+      "asset": "btc_1h+eth_1h",
+      "config": {
+        "rule": "cross_elite_bigmove05",
+        "btc_tier": "elite",
+        "eth_tier": "elite",
+        "require_same_direction": true,
+        "abstain_policy": "default_no_signal"
+      },
+      "selection_history": {
+        "where_selected": "Frozen TIER_DEFS elite; cross-asset rule pre-specified before holdout eval",
+        "lockbox_search_on_slice": false,
+        "holdout_exploratory": {
+          "n": 32,
+          "hit_rate": 0.7188,
+          "coverage_pct": 0.1371,
+          "rule": "cross_elite_bigmove05"
+        }
+      },
+      "validation": {
+        "method": "live_outcome_tracker_next_bar",
+        "ledger": "fade/output/ultra_primary_outcomes.jsonl",
+        "primary_metric": "next_bar_hit_rate",
+        "min_signals": 50,
+        "min_hit_rate": 0.9,
+        "start_collecting_utc": "2026-07-09T07:55:57.022214+00:00"
+      },
+      "pre_registered_utc": "2026-07-09T07:55:57.022781+00:00"
     }
   ],
   "pending_preregistrations": [],
@@ -126,6 +157,447 @@
       ],
       "thresholds": "dev p10/p90 on funding",
       "data_split": "holdout_70_30_exploratory"
+    },
+    {
+      "study_id": "ml_challenger_suite_v1",
+      "pre_registered_utc": "2026-07-05T10:00:00+00:00",
+      "models": [
+        "gradient_boosting",
+        "logistic_regression",
+        "random_forest",
+        "extra_trees",
+        "hist_gradient_boosting",
+        "knn_k15"
+      ],
+      "features": "path_lean3 atoms",
+      "data_split": "holdout_70_30_sandbox_only",
+      "lockbox_policy": "v1 BURNED; no production without forward validation"
+    },
+    {
+      "study_id": "ml_challenger_suite_v2_batch39",
+      "pre_registered_utc": "2026-07-05T10:04:00+00:00",
+      "evaluated_utc": "2026-07-05T10:05:18+00:00",
+      "models": [
+        "gradient_boosting",
+        "logistic_regression",
+        "random_forest",
+        "extra_trees",
+        "hist_gradient_boosting",
+        "knn_k15",
+        "lightgbm",
+        "catboost",
+        "svm_rbf",
+        "adaboost",
+        "mlp_64_32",
+        "gaussian_nb",
+        "stacking_rf_et_hgb",
+        "baseline_contrarian_last_bar",
+        "baseline_momentum_last_bar",
+        "baseline_contrarian_streak2"
+      ],
+      "feature_sets": [
+        "path_lean3",
+        "plus7",
+        "full9",
+        "ml_rich"
+      ],
+      "data_split": "holdout_70_30_sandbox_only",
+      "verdict": "REJECT \u2014 none beat FADE rules (BTC best \u22120.99pp, ETH best \u22120.08pp)",
+      "lockbox_policy": "v1 BURNED; no production without forward validation"
+    },
+    {
+      "study_id": "tiktok_chart_holdout_v1",
+      "pre_registered_utc": "2026-07-05T10:00:00+00:00",
+      "patterns": [
+        "breakout_up",
+        "breakout_down",
+        "bull_flag",
+        "bear_flag",
+        "double_top",
+        "double_bottom",
+        "trend_hh_hl",
+        "trend_lh_ll"
+      ],
+      "note": "TikTok-popular NAMES mapped to causal OHLC geometry \u2014 no social API",
+      "atom_set": "path_tiktok vs path_lean3",
+      "data_split": "holdout_70_30_exploratory"
+    },
+    {
+      "study_id": "paper_replay_v1",
+      "pre_registered_utc": "2026-07-05T11:10:25.943271+00:00",
+      "purpose": "sandbox bar-by-bar replay; NOT forward validation",
+      "default_window": "lockbox_tail",
+      "isolated_output": "fade/output/paper_replay/<session>/",
+      "forward_validation_policy": "live only \u2014 paper replay excluded"
+    },
+    {
+      "study_id": "altcoin_screen_v1",
+      "pre_registered_utc": "2026-07-05T12:24:01.801157+00:00",
+      "universe_tiers": [
+        "reference",
+        "major",
+        "mid",
+        "obscure"
+      ],
+      "interval": "1h",
+      "source": "Binance data-api.binance.vision (historical only)",
+      "metrics": [
+        "rev_index",
+        "close_pos_edge",
+        "core5_hit",
+        "path_lean3_hit",
+        "delta"
+      ],
+      "advance_criteria": {
+        "min_rev_index": 0.038,
+        "min_lean3_hit": 0.535,
+        "min_n_total": 8760,
+        "must_beat_btc_rev_index": false,
+        "note": "Screening only; any advance requires new pre-registration + forward track"
+      },
+      "data_split": "holdout_70_30_exploratory",
+      "lockbox_policy": "v1 BURNED; no production from screen alone",
+      "rate_limit": "Binance: 0.35s/page + 2s between tickers; use --sleep-between to increase",
+      "evaluated_utc": "2026-07-05T13:10:00+00:00",
+      "watch_candidates": [
+        {
+          "ticker": "pepe",
+          "lean3_hit_holdout": 0.6082,
+          "rev_index": 0.0518,
+          "n_bars": 27764,
+          "status": "watch_short_history",
+          "note": "ADVANCE on holdout; ~2y history \u2014 high overfit risk; no forward track yet"
+        },
+        {
+          "ticker": "rose",
+          "lean3_hit_holdout": 0.5431,
+          "rev_index": 0.0386,
+          "status": "watch",
+          "note": "ADVANCE threshold met; forward track requires separate pre-registration"
+        },
+        {
+          "ticker": "bnb",
+          "lean3_hit_holdout": 0.5628,
+          "rev_index": 0.0363,
+          "status": "watch",
+          "note": "High lean3 hit; rev below ADVANCE threshold"
+        }
+      ]
+    },
+    {
+      "study_id": "mcap_dominance_modulator_v1",
+      "pre_registered_utc": "2026-07-05T13:01:09.926912+00:00",
+      "hypotheses": {
+        "H1": "mcap_7d_falling -> stronger streak>=3 reversal",
+        "H2": "btc_dominance_7d_rising -> stronger alt reversal",
+        "H3": "high volume/mcap -> stronger reversal"
+      },
+      "features": [
+        "mcap_7d_pct_change",
+        "btc_dominance_7d_pct_change",
+        "vol_mcap_ratio"
+      ],
+      "thresholds": "dev tertiles per feature; buckets FALLING/FLAT/RISING etc.",
+      "rule": "streak>=3 contrarian next 1h bar",
+      "data_split": "holdout_70_30_exploratory",
+      "lockbox_policy": "v1 BURNED; not production without forward validation",
+      "data_source": "CoinGecko CSV or OHLCV proxy via download_marketcap.py"
+    },
+    {
+      "study_id": "funding_oi_combo_v1",
+      "pre_registered_utc": "2026-07-05T14:06:42.211732+00:00",
+      "hypotheses": {
+        "H1": "EXTREME funding + OI rising -> stronger streak>=3 reversal",
+        "H2": "EXTREME_NEG funding boost vs NEUTRAL (replicate batch 36)",
+        "H3": "high long/short ratio -> stronger reversal (crowded longs fade)"
+      },
+      "rule": "streak>=3 contrarian next 1h bar",
+      "funding_buckets": [
+        "EXTREME_NEG",
+        "NEUTRAL",
+        "EXTREME_POS"
+      ],
+      "oi_buckets": [
+        "OI_FALLING",
+        "OI_FLAT",
+        "OI_RISING"
+      ],
+      "data_split": "holdout_70_30_exploratory",
+      "oi_coverage_note": "Binance OI history short; oi_window subset reported separately",
+      "not_atoms": "gate study only \u2014 not path_lean3 vocabulary"
+    },
+    {
+      "study_id": "netflow_gate_v1",
+      "pre_registered_utc": "2026-07-05T14:06:43.147112+00:00",
+      "hypotheses": {
+        "H1": "exchange inflow (positive netflow) -> stronger streak>=3 reversal",
+        "H2": "outflow -> weaker reversal"
+      },
+      "buckets": [
+        "INFLOW",
+        "FLAT",
+        "OUTFLOW"
+      ],
+      "thresholds": "dev tertiles on daily netflow aligned to prior day",
+      "rule": "streak>=3 contrarian next 1h bar",
+      "data_split": "holdout_70_30_exploratory",
+      "not_atoms": "gate study only",
+      "data_source": "Glassnode CSV or OHLCV proxy via download_netflow.py"
+    },
+    {
+      "study_id": "phase2_program_v1",
+      "pre_registered_utc": "2026-07-05T17:00:00+00:00",
+      "status": "active",
+      "note": "Phase 2 bold tracks \u2014 NOT path_lean3 atom mining. Forward truth for promotion.",
+      "tracks": [
+        {
+          "id": "A",
+          "study_id": "phase2_a_sparse_product_v1",
+          "order": 1
+        },
+        {
+          "id": "B",
+          "study_id": "phase2_b_vol_range_v1",
+          "order": 2
+        },
+        {
+          "id": "C",
+          "study_id": "phase2_c_cross_spread_v1",
+          "order": 3
+        },
+        {
+          "id": "D",
+          "study_id": "phase2_d_regime_fsm_v1",
+          "order": 4
+        },
+        {
+          "id": "E",
+          "study_id": "phase2_e_decay_meter_v1",
+          "order": 5
+        }
+      ],
+      "production_core_unchanged": "path_lean3 rules until forward validates a track"
+    },
+    {
+      "study_id": "phase2_a_sparse_product_v1",
+      "pre_registered_utc": "2026-07-05T17:00:00+00:00",
+      "question": "Does sparse PRIMARY (~9% coverage, ~58% hit) survive forward + PnL @5bps?",
+      "method": "extend outcome_tracker; paper_replay on lockbox tail; no new atoms",
+      "success": {
+        "forward_hit": 0.58,
+        "min_signals": 500,
+        "pnl_5bps": "positive"
+      },
+      "data_split": "forward_live + lockbox_v2_when_sealed"
+    },
+    {
+      "study_id": "phase2_b_vol_range_v1",
+      "pre_registered_utc": "2026-07-05T17:00:00+00:00",
+      "question": "Is next-bar range/volatility easier to predict than direction?",
+      "targets": [
+        "range_pct_quantile",
+        "abs_return_gt_median",
+        "atr_expansion"
+      ],
+      "success": {
+        "holdout_lift": 0.03,
+        "p_value": 0.05
+      },
+      "data_split": "holdout_70_30_exploratory"
+    },
+    {
+      "study_id": "phase2_c_cross_spread_v1",
+      "pre_registered_utc": "2026-07-05T17:00:00+00:00",
+      "question": "Does ETH/BTC (and alt/BTC) ratio mean-revert tradeably on 1h?",
+      "pairs": [
+        "eth/btc",
+        "sol/btc",
+        "rose/btc",
+        "pepe/btc"
+      ],
+      "success": {
+        "holdout_hit": 0.55,
+        "pnl_5bps": "positive",
+        "min_trades": 200
+      },
+      "data_split": "holdout_70_30_exploratory then forward"
+    },
+    {
+      "study_id": "phase2_d_regime_fsm_v1",
+      "pre_registered_utc": "2026-07-05T17:00:00+00:00",
+      "question": "Separate regime FSM (compress/breakout/reversal/trend) with different logic per state?",
+      "states": [
+        "LOW_VR_reversal",
+        "HIGH_VR_momentum",
+        "NORMAL_abstain"
+      ],
+      "success": {
+        "beats_sparse_primary_holdout": true,
+        "unified_btc_eth": false
+      },
+      "data_split": "holdout_70_30_exploratory"
+    },
+    {
+      "study_id": "phase2_e_decay_meter_v1",
+      "pre_registered_utc": "2026-07-05T17:00:00+00:00",
+      "question": "Rolling forward hit-rate \u2014 trade only when 90d edge alive?",
+      "method": "rolling 90d PRIMARY hit vs threshold; abstain when below",
+      "success": {
+        "forward_pnl_improves_vs_always_on": true
+      },
+      "data_split": "forward_live + paper_replay"
+    },
+    {
+      "study_id": "research_program_v1",
+      "pre_registered_utc": "2026-07-05T17:25:00+00:00",
+      "council_session": "RESEARCH_PLENARY",
+      "status": "active",
+      "note": "Council research backlog \u2014 pre-reg ONLY, no Builder until RESEARCH_APPROVE + user request",
+      "studies": [
+        "research_pbo_dsr_v1",
+        "research_funding_spread_v1",
+        "research_meta_label_v1"
+      ],
+      "charter": "docs/COUNCIL_RESEARCH.md"
+    },
+    {
+      "study_id": "research_pbo_dsr_v1",
+      "research_id": "R02",
+      "pre_registered_utc": "2026-07-05T17:25:00+00:00",
+      "council_verdict": "RESEARCH_APPROVE",
+      "historian_clearance": "PASS",
+      "status": "pre_registered_no_build",
+      "question": "After ~39 exploratory batches, is path_lean3 BTC ~54.6% holdout a false discovery?",
+      "method": "Meta-analysis: enumerate trials from SCOPE_GUARD batch log; compute DSR and PBO/CSCV-style estimate on path_lean3 bar returns. No new mining, no parameter search.",
+      "inputs_frozen": {
+        "strategy": "path_lean3 frozen rules",
+        "reference_hit_btc": 0.5464,
+        "lockbox_true_oos_btc": 0.5277,
+        "trial_count_rule": "count distinct batch hypotheses with holdout headline (conservative upper bound)"
+      },
+      "success_criteria": {
+        "deliverable": "JSON artifact with DSR, PBO estimate, N_trials_used, interpretation",
+        "decision_use": "governance only \u2014 does not auto-promote or demote core"
+      },
+      "failure_patterns_avoided": [
+        "FP02 diagnosed not repeated"
+      ],
+      "prior_art": [
+        "bailey_pbo_dsr",
+        "quantconnect_research_guide"
+      ],
+      "not_atoms": true,
+      "sandbox": true,
+      "max_effort_hours": 8
+    },
+    {
+      "study_id": "research_funding_spread_v1",
+      "research_id": "R05",
+      "pre_registered_utc": "2026-07-05T17:25:00+00:00",
+      "council_verdict": "RESEARCH_WATCH",
+      "historian_clearance": "WARN",
+      "status": "pre_registered_no_build",
+      "question": "Does extreme BTC minus ETH funding spread predict relative reversal (not price-ratio MR)?",
+      "hypotheses": {
+        "H1": "spread extreme (dev p10/p90) -> ETH outperforms BTC next 8h when BTC more crowded long",
+        "H2": "modulates streak>=3 contrarian hit on ETH vs BTC"
+      },
+      "method": "Align funding_btc.csv + funding_eth.csv; spread = btc_rate - eth_rate; dev-frozen extremes; holdout 70/30 once.",
+      "explicitly_not": "phase2_c price ratio mean-reversion (REJECT); single-asset funding (WEAK/REJECT)",
+      "success_criteria": {
+        "holdout_p_max": 0.05,
+        "pnl_5bps": "positive",
+        "min_trades": 100,
+        "must_beat": "single-asset funding null on same holdout"
+      },
+      "failure_patterns_avoided": [
+        "FP08",
+        "FP09",
+        "FP10",
+        "FP03"
+      ],
+      "prior_art": [
+        "equations_to_capital_governance"
+      ],
+      "not_atoms": "gate study only",
+      "sandbox": true,
+      "max_effort_hours": 12,
+      "skeptic_note": "graveyard-heavy domain \u2014 BUILD only if holdout passes all success criteria"
+    },
+    {
+      "study_id": "research_meta_label_v1",
+      "research_id": "R01",
+      "pre_registered_utc": "2026-07-05T17:25:00+00:00",
+      "council_verdict": "RESEARCH_BLOCK",
+      "historian_clearance": "WARN",
+      "status": "pre_registered_conditional",
+      "question": "Can a sandbox meta-model (trade/no-trade) improve PnL @5bps given frozen path_lean3 side?",
+      "blocked_until": "Council approves orthogonal feature allowlist (NOT close_pos, range_pct, streak_signed)",
+      "method": "Two-stage: stage-1 path_lean3 direction frozen; stage-2 logistic/single-tree on allowlisted gates only; purged CV.",
+      "feature_allowlist_draft": [
+        "vr_regime",
+        "conviction_tier",
+        "funding_bucket",
+        "hours_to_funding",
+        "conflict_flag",
+        "rolling_primary_hit_90d_causal"
+      ],
+      "forbidden_features": [
+        "close_pos",
+        "range_pct",
+        "streak_signed",
+        "any path_lean3 atom"
+      ],
+      "success_criteria": {
+        "metric": "PnL @5bps holdout vs sparse PRIMARY baseline",
+        "must_beat": "primary_policy in pnl_reality_check_v2",
+        "on_failure": "REJECT \u2014 do not revise features on holdout"
+      },
+      "failure_patterns_avoided": [
+        "FP07",
+        "FP01",
+        "FP03",
+        "FP02"
+      ],
+      "prior_art": [
+        "ml4t_backtest_correctly"
+      ],
+      "skeptic_dissent": "RESEARCH_BLOCK \u2014 ml_challenger rebrand risk; conditional pre-reg only",
+      "not_atoms": true,
+      "sandbox": true,
+      "max_effort_hours": 16,
+      "build_allowed": false
+    },
+    {
+      "study_id": "compression_reversal_v1",
+      "research_id": "R12",
+      "pre_registered_utc": "2026-07-05T18:00:00+00:00",
+      "council_verdict": "RESEARCH_APPROVE",
+      "status": "pre_registered",
+      "question": "Does data-native compression reversal beat flat streak2 on holdout PnL @10bps RT?",
+      "method": "Frozen dev tertiles: streak>=2 contrarian + range LOW + VR NORMAL. Holdout 30% only. Compare vs baseline streak2.",
+      "inputs_frozen": {
+        "assets": [
+          "btc_1h.csv",
+          "eth_1h.csv"
+        ],
+        "range_tertiles": "dev 33/66",
+        "vr_tertiles": "dev 33/66 NORMAL band",
+        "fee_bps_round_trip": 10
+      },
+      "success_criteria": {
+        "holdout_pnl_sum_bps": "compression > baseline_streak2 per asset",
+        "holdout_hit_rate": "informational",
+        "on_failure": "REJECT \u2014 do not tune tertiles on holdout"
+      },
+      "failure_patterns_avoided": [
+        "FP03",
+        "FP05",
+        "FP02"
+      ],
+      "not_atoms": true,
+      "sandbox": true,
+      "artifact": "fade/output/compression_reversal_holdout.json"
     }
   ]
 }

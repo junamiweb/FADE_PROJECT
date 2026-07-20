@@ -1,0 +1,9 @@
+{
+  "rule_id": "cross_elite_bigmove05_eth_s4",
+  "horizon": "1h",
+  "holdout_hit": 0.8571,
+  "holdout_n": 7,
+  "meets_90_holdout": false,
+  "updated_utc": "2026-07-16T07:42:36.315548+00:00",
+  "description": "cross_elite_bigmove05 & eth_slen>=4"
+}

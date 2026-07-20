@@ -6,6 +6,15 @@ fade/output/*
 !fade/output/*.jsonl
 !fade/output/eth_candidate_state.json
 !fade/output/pre_registration.json
+!fade/output/forward_validation_snapshot.json
+!fade/output/ultra_active_rule.json
+!fade/output/ultra_next_bar_holdout.json
+!fade/output/ultra_rule_search.json
+!fade/output/ultra_rule_search_1h.json
+!fade/output/ultra_rule_search_15m.json
+!fade/output/ultra_lockbox_eval.json
+!fade/output/ultra_historical_replay.json
+!fade/output/ultra_gap_window_score.json
 
 .venv/
 venv/
@@ -18,6 +27,9 @@ env/
 # Research-only CSVs (not in refresh/workflow; keep local backup if needed)
 btc_1s.csv
 btc_10m.csv
+fade/data/mcap/
+fade/data/derivatives/
+fade/data/netflow/
 
 # Secrets — never commit
 docs/git-token*.txt

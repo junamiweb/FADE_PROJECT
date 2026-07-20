@@ -1,0 +1,13 @@
+{
+  "study_id": "ultra_next_bar_90_target_v1",
+  "rule": "cross_elite_bigmove05",
+  "rule_description": "cross_elite & |btc_ret|>=0.5%",
+  "evaluated_at_utc": "2026-07-16T07:41:32.575652+00:00",
+  "holdout_bars": 23334,
+  "signals": 32,
+  "coverage_pct": 0.1371,
+  "hit_rate": 0.7188,
+  "target_hit_rate": 0.9,
+  "target_met_on_holdout": false,
+  "verdict": "REJECT holdout: 71.9% < 90% (n=32). Refinement cycle continues."
+}
