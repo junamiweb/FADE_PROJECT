@@ -1,6 +1,21 @@
 # FADE — מצב פרויקט (סיכום להמשך)
 
-עודכן: **2026-07-05** (Phase 0 + Phase 1 — batch 34)
+עודכן: **2026-07-23** (North star מחדד + Phase 0/1)
+
+---
+
+## ★ כוכב צפון (מחייב — 2026-07-23)
+
+| | |
+|--|--|
+| **יעד סופי** | חיזוי מראש של השוק → מסחר → **רווח כלכלי נטו** (אחרי עמלות/slippage) |
+| **גישה עכשיו** | מחקר קשוח — כי עדיין אין שיטה סחירה מוכחת |
+| **מחקר ≠ מטרה** | מחקר הוא האמצעי. hit-rate / corr יפים בלי אופק PnL נטו = לא התקדמות |
+| **מסחר בלי אמת** | רווח מדומה בלי lockbox / forward / pre-reg = סטייה |
+
+**שאלת מבחן לכל עבודה:** האם זה מקרב אותנו לחיזוי **סחיר** עם רווח נטו — לא רק לדיוק יפה על holdout?
+
+**מצב נוכחי מול היעד:** predictability דק, לרוב לא סחיר @5bps; ETH candidate + sparse PRIMARY באימות forward — עדיין לא validated.
 
 ---
 
@@ -53,6 +68,33 @@ Manifest: `fade/output/pre_registration.json` | `python -m fade.pipeline.pre_reg
 | PnL @5bps | חיובי one-shot | pre-register לפני seal |
 | outcome_tracker | ≥55% profitable על 100 hold-cycles | **forward live, v2 PnL** |
 | outcome_tracker (legacy) | next-bar hit | **משלים בלבד — לא קובע** |
+
+---
+
+## ★ Phase 2 — חמישה tracks אמיצים (pre-registered 2026-07-05)
+
+**עקרון:** לא עוד אטומים על path_lean3. שאלות חדשות + forward כאמת. Core production ללא שינוי עד validation.
+
+| Track | שאלה | מה בונים | סף הצלחה (exploratory) |
+|-------|------|---------|------------------------|
+| **A** | מוצר דליל | forward + paper replay על PRIMARY sparse | ~58% hit, כיסוי ~9%, PnL @5bps |
+| **B** | מנוע טווח/תנודה | חיזוי range/vol במקום כיוון | lift 3pp+ על holdout |
+| **C** | spread בין נכסים | ETH/BTC, SOL/BTC, ROSE/BTC mean-reversion | hit 55%+, PnL @5bps |
+| **D** | מכונת מצבים | FSM: reversal / momentum / abstain לפי VR | מנצח sparse PRIMARY ב-holdout |
+| **E** | מדד דעיכה חי | סחור רק כש-edge 90d חי | PnL forward טוב יותר מ-always-on |
+
+**סדר ביצוע:**
+
+1. **A** — הכי קרוב (Phase 1 כבר רץ); paper replay + המשך forward
+2. **B + C** — holdout exploratory במקביל (נתונים כבר ירדו)
+3. **D** — אחרי B/C (בונה על VR + conviction)
+4. **E** — רץ ברקע על ledger PRIMARY
+
+Manifest: `phase2_program_v1` + `phase2_a`…`phase2_e` ב-`pre_registration.json`
+
+**מועצת בקרה:** `docs/FADE_COUNCIL.md` (v2 standing) | `council_board.json` | digest שעתי `council_digest.json`  
+ועדות: Forward Watcher (שעתי) | **Research** (שבועי) | Study Review | Plenary | Red Team  
+מחקר: `docs/COUNCIL_RESEARCH.md` — RESEARCH_PLENARY 2026-07-05: R02/R05/R01 pre-registered (no build)
 
 ---
 
@@ -274,7 +316,72 @@ python -m fade.pipeline.outcome_tracker run-all   # יומי / GitHub Action (cr
 
 ---
 
-## ★ מצב נוכחי — production stack (batches 23–29)
+## ★ Batch 38 — ML suite + TikTok chart patterns (sandbox)
+
+**Holdout 70/30 exploratory — לא production, לא core ML.**
+
+### ML challenger suite (`ml_challenger_suite.py`)
+
+| model | BTC hit | vs FADE 54.64% | ETH hit | vs FADE 53.27% |
+|-------|---------|----------------|---------|----------------|
+| hist_gradient_boosting | 53.31% | −1.33pp | 52.77% | −0.50pp |
+| random_forest | 53.24% | −1.40pp | 52.58% | −0.69pp |
+| extra_trees | 53.14% | −1.50pp | 52.94% | −0.33pp |
+| gradient_boosting | 52.95% | −1.69pp | 52.66% | −0.61pp |
+| logistic_regression | 52.64% | −2.00pp | 52.68% | −0.59pp |
+| knn_k15 | 51.87% | −2.77pp | 51.56% | −1.71pp |
+
+**מסקנה:** **אף מודל לא מנצח rules** (כמו batch 28–29).
+
+### TikTok chart patterns (`tiktok_chart_holdout.py`)
+
+**לא scraping TikTok** — שמות דפוסים פופולריים → גיאומטריה causal על OHLC.
+
+| asset | path_lean3 | path_tiktok | Δ |
+|-------|------------|-------------|---|
+| BTC | 54.04% | 53.64% | **−0.40pp** REJECT |
+| ETH | 53.55% | 53.29% | **−0.26pp** REJECT |
+
+522/474 rules = **dilution** (כמו path_candles).
+
+```bash
+python -m fade.pipeline.ml_challenger_suite btc_1h.csv eth_1h.csv --save
+python -m fade.pipeline.tiktok_chart_holdout btc_1h.csv eth_1h.csv --save
+```
+
+---
+
+## ★ Batch 39 — ML suite extended (LightGBM, CatBoost, stacking, …)
+
+**Holdout 70/30 sandbox — 52 models × 4 feature sets × 2 assets. לא production.**
+
+### Feature sets
+
+| set | atoms / notes |
+|-----|----------------|
+| path_lean3 | close_pos, range_pct, streak_signed |
+| plus7 | lean3 + 4 extras |
+| full9 | 9 path atoms |
+| ml_rich | full9 + engineered lags/rolling |
+
+### Best per asset (vs FADE rules ref)
+
+| asset | FADE ref | best model | hit | Δ vs FADE | beats rules? |
+|-------|----------|------------|-----|-----------|--------------|
+| BTC | 54.64% | catboost (full9) | 53.65% | −0.99pp | **no** |
+| ETH | 53.27% | mlp_64_32 (plus7) | 53.19% | −0.08pp | **no** |
+
+גם stacking (RF+ET+HGB), LightGBM, CatBoost, SVM, AdaBoost, MLP, GaussianNB, baselines — **אף אחד לא עבר rules**.
+
+**מסקנה:** אישור batch 38 — **rules > ML** גם עם מודלים ופיצ'רים נוספים. ETH MLP קרוב (−0.08pp) אך לא מנצח; לא מספיק לשינוי production.
+
+```bash
+python -m fade.pipeline.ml_challenger_suite btc_1h.csv eth_1h.csv \
+  --features path_lean3 plus7 full9 ml_rich --save
+# → fade/output/ml_challenger_suite.json (study ml_challenger_suite_v2_batch39)
+```
+
+---
 
 **מנוע:** `path_lean3` (close_pos, range_pct, streak_signed) — ברירת מחדל production.  
 **תחזית:** `forecast_tiers` → שכבות CONVICTION / FREQUENT / BALANCED / QUALITY + **PRIMARY** מומלץ.  
@@ -977,4 +1084,4 @@ BTC + ETH, מוקדם/מאוחר/מלא, 30 דקות, 2 שנים.
 
 ## משפט אחד
 
-> **FADE v0.4:** predictability דק (~53% lockbox), דועך, לא סחיר ungated @5bps. Regime+min_hold: ETH +23% lockbox (אמיתי), BTC overfit. Rules > ML. מנוע מחקר — לא מכונת מסחר.
+> **יעד:** רווח ממסחר על חיזוי מראש. **עכשיו:** מחקר בלבד — predictability דק (~53% lockbox), לרוב לא סחיר @5bps; ETH regime+min_hold רמז lockbox (+23%) לא מאומת forward; Rules > ML. אין עדיין מכונת מסחר.

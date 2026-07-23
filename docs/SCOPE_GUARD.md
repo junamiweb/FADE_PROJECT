@@ -3,23 +3,37 @@
 Internal checklist. Every autonomous work batch (~every 30 min) must be verified
 against these invariants. If any item is violated, STOP and flag it.
 
+## North star (user-locked 2026-07-23)
+- **End goal:** predict the market in advance → trade → **net economic profit**.
+- **Current means:** rigorous research (no working tradeable method yet).
+- Research is the path, not the destination. Hit-rate / correlation without a
+  credible path to **net PnL after costs** is not progress.
+- Every batch answers: *does this move us toward a tradeable edge?* If only
+  prettier diagnostics — flag and prefer stop / reframe.
+
 ## Hard invariants (never break)
 1. **No look-ahead.** A prediction for bar T may only use data from bars < T.
    Rule mining, threshold fitting, and stable-rule selection use revealed/dev
    data only. The "future" is scored, never trained on.
 2. **No ML / no black boxes.** Rule-based only (discretised atoms -> events ->
    frequency rules + reliability-table calibration). No fitted models.
-3. **No live feeds / no external runtime APIs.** Historical CSV only.
+   (Sandbox ML challengers allowed for comparison only — never as production.)
+3. **No live feeds / no external runtime APIs.** Historical CSV only at runtime
+   of research pipelines. (GitHub Action may refresh CSVs + ledgers; that is
+   data ingest for forward truth, not a live trading API.)
 4. **Anti-self-deception first.** A rising/pretty result is a reason for
    suspicion, not celebration. Prefer honest negative findings over flattering
    ones. Report confounds explicitly.
 5. **Out-of-sample truth.** Any headline hit-rate must come from data the rules
    never touched. In-sample numbers are diagnostics only, labelled as such.
+6. **Net PnL is the economic judge.** Directional hit alone does not claim
+   tradeability. Report costs (fees/slippage). Forward / lockbox beat vanity
+   holdout headlines when they conflict.
 
 ## Task scope (current session)
-- Many training runs across different tables (resolutions) and different time
-  ranges, to widen evidence — NOT to cherry-pick the best-looking run.
-- Add ETH; train both assets; measure BTC-ETH correlation and joint behaviour.
+- Work that advances **tradeable net-profit prediction** (or honestly kills a
+  false path). Widen evidence — do NOT cherry-pick the best-looking run.
+- Forward ledgers + outcome tracker = live truth collection, not model training.
 - Every headline still passes the hard invariants above.
 
 ## Scope-check log (append one line per batch)
@@ -257,3 +271,15 @@ against these invariants. If any item is violated, STOP and flag it.
 - 2026-07-05 11:4x — GitHub Action outcome-tracker.yml: hourly refresh + run-all +
   commit CSVs/jsonl/eth_candidate_state.json. requests added to requirements.txt.
   Invariants intact.
+- 2026-07-05 12:5x — batch 38: ml_challenger_suite (6 sklearn + XGB sandbox) —
+  none beat FADE rules. tiktok_chart_holdout path_tiktok REJECT dilution
+  (OHLC geometry, no TikTok API). Core rule-based unchanged. Invariants intact.
+- 2026-07-05 13:0x — batch 39: ml_challenger_suite extended — LightGBM, CatBoost,
+  SVM, AdaBoost, MLP, GaussianNB, stacking, baselines; feature sets path_lean3,
+  plus7, full9, ml_rich (52 models × 2 assets). Best BTC catboost/full9 53.65%
+  (−0.99pp vs 54.64%); best ETH mlp/plus7 53.19% (−0.08pp vs 53.27%). None beat
+  FADE rules. Core unchanged. Invariants intact.
+- 2026-07-23 — North star locked by user: end goal = market prediction for net
+  trading profit; research is the current means (no proven tradeable method yet).
+  SCOPE_GUARD + PROJECT_STATE updated. Hit-rate without net-PnL path ≠ progress.
+  Invariants intact (+ economic judge #6).

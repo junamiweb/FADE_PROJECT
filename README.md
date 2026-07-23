@@ -1,13 +1,21 @@
 # FADE — Financial Atom Discovery Engine (v0.1)
 
-A minimal, research-grade Python system that tests a single hypothesis:
+A research-grade Python system aimed at one end goal:
 
-> *Do financial time series contain stable atomic event structures that generalise across time without overfitting?*
+> *Predict markets in advance well enough to trade for **net economic profit**.*
 
-No machine learning. No deep learning. No external APIs. Just vectorised
+Today that means rigorous research — there is not yet a proven tradeable method.
+Hit-rate without a path to net PnL after costs is not success.
+
+Core hypothesis under test:
+
+> *Do financial time series contain stable atomic event structures that generalise
+> across time without overfitting — and can any surviving edge clear trading costs?*
+
+No production ML. No deep learning in the core. No live trading API. Vectorised
 pandas/numpy, frequency-based rule mining, walk-forward validation, and a
 two-layer persistent memory (positive rules + negative anti-patterns).
-
+Sandbox ML challengers may exist for comparison only.
 ## Install & run
 
 ```bash

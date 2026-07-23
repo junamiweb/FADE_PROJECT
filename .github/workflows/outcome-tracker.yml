@@ -31,15 +31,19 @@ jobs:
       - name: Refresh historical data (BTC + ETH, incremental)
         run: python download_history.py refresh
 
+      # Fail loud if Binance returned nothing (green-but-frozen Actions).
+      - name: Assert CSV freshness (north star — no silent stall)
+        run: python -m fade.pipeline.assert_data_fresh --max-lag-hours 3
+
       # אם/כשקורסור מוסיף תמיכה במספר נכסים (SOL/BNB/XRP וכו') כפי שביקשנו,
       # יש להוסיף כאן שורת refresh נוספת לכל נכס, למשל:
       # run: python download_history.py asset sol 1h
       # לפני שמוסיפים - לוודא שה-asset מוגדר גם ב-pre_registration.json.
 
+      # Log + score only. Do NOT auto-refine ULTRA hourly (moves the goalposts).
       - name: Run outcome tracker — sparse PRIMARY + ETH candidate (log + score + report)
         run: |
           set -e
-          python -m fade.pipeline.ultra_next_bar refine
           python -m fade.pipeline.outcome_tracker run-all
         # run-all includes PRIMARY + ETH candidate + ULTRA. Re-run after fixes — schedule uses commit at trigger.
 
