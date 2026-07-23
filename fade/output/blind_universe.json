@@ -1,0 +1,39 @@
+{
+  "version": 1,
+  "study_track_id": "universe_mh48_path_lean3",
+  "method": {
+    "signal": "path_lean3",
+    "min_hold_bars": 48,
+    "side": "long_short",
+    "fee_bps": 5
+  },
+  "success_contract": [
+    "total_return > 0",
+    "total_return > buy_and_hold",
+    "n_trades >= 30",
+    "sharpe > 0"
+  ],
+  "autonomy": {
+    "auto_seal": true,
+    "auto_reveal_when_sealed": true,
+    "note_he": "ללא אישור ידני — seal/צבירה/reveal+burn רצים לבד ב-Action"
+  },
+  "assets": [
+    {"id": "btc", "csv": "btc_1h.csv", "source": "binance", "symbol": "BTCUSDT", "min_bars": 500},
+    {"id": "eth", "csv": "eth_1h.csv", "source": "binance", "symbol": "ETHUSDT", "min_bars": 500},
+    {"id": "sol", "csv": "sol_1h.csv", "source": "binance", "symbol": "SOLUSDT", "min_bars": 500},
+    {"id": "bnb", "csv": "bnb_1h.csv", "source": "binance", "symbol": "BNBUSDT", "min_bars": 500},
+    {"id": "xrp", "csv": "xrp_1h.csv", "source": "binance", "symbol": "XRPUSDT", "min_bars": 500},
+    {"id": "ada", "csv": "ada_1h.csv", "source": "binance", "symbol": "ADAUSDT", "min_bars": 500},
+    {"id": "avax", "csv": "avax_1h.csv", "source": "binance", "symbol": "AVAXUSDT", "min_bars": 500},
+    {"id": "link", "csv": "link_1h.csv", "source": "binance", "symbol": "LINKUSDT", "min_bars": 500},
+    {"id": "doge", "csv": "doge_1h.csv", "source": "binance", "symbol": "DOGEUSDT", "min_bars": 500},
+    {"id": "ltc", "csv": "ltc_1h.csv", "source": "binance", "symbol": "LTCUSDT", "min_bars": 500},
+    {"id": "dot", "csv": "dot_1h.csv", "source": "binance", "symbol": "DOTUSDT", "min_bars": 500},
+    {"id": "near", "csv": "near_1h.csv", "source": "binance", "symbol": "NEARUSDT", "min_bars": 500},
+    {"id": "arb", "csv": "arb_1h.csv", "source": "binance", "symbol": "ARBUSDT", "min_bars": 500},
+    {"id": "op", "csv": "op_1h.csv", "source": "binance", "symbol": "OPUSDT", "min_bars": 500},
+    {"id": "spy", "csv": "spy_1h.csv", "source": "yahoo", "symbol": "SPY", "min_bars": 300},
+    {"id": "aapl", "csv": "aapl_1h.csv", "source": "yahoo", "symbol": "AAPL", "min_bars": 300}
+  ]
+}

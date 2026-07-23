@@ -15,6 +15,14 @@ fade/output/*
 !fade/output/ultra_lockbox_eval.json
 !fade/output/ultra_historical_replay.json
 !fade/output/ultra_gap_window_score.json
+!fade/output/blind_universe.json
+!fade/output/blind_autonomy_board.json
+!fade/output/lockbox_v2_manifest.json
+!fade/output/lockbox_v2_reveal_*.json
+!fade/output/economic_oracle_holdout.json
+!fade/output/tradeable_edge_scan.json
+!fade/output/thesis_hold_holdout.json
+!fade/output/northstar_go_20260723.json
 
 .venv/
 venv/

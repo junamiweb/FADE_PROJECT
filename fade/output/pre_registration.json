@@ -9,8 +9,147 @@
       "manifest_file": "fade/output/lockbox_manifest.json"
     },
     "v2": {
-      "status": "RESERVED",
-      "note": "Next final-test lockbox must be NEWEST data sealed AFTER all candidates pre-registered; hash recorded before any eval."
+      "status": "WAITING",
+      "manifest_file": "fade\\output\\lockbox_v2_manifest.json",
+      "seals_summary": [
+        {
+          "track_id": "eth_path_lean3_minhold48",
+          "asset": "eth_1h",
+          "status": "WAITING",
+          "n_available": 0,
+          "n_lockbox": null,
+          "sha256_prefix": null
+        },
+        {
+          "track_id": "universe_mh48_path_lean3",
+          "asset": "btc_1h",
+          "status": "WAITING",
+          "n_available": 0,
+          "n_lockbox": null,
+          "sha256_prefix": null
+        },
+        {
+          "track_id": "universe_mh48_path_lean3",
+          "asset": "eth_1h",
+          "status": "WAITING",
+          "n_available": 0,
+          "n_lockbox": null,
+          "sha256_prefix": null
+        },
+        {
+          "track_id": "universe_mh48_path_lean3",
+          "asset": "sol_1h",
+          "status": "WAITING",
+          "n_available": 0,
+          "n_lockbox": null,
+          "sha256_prefix": null
+        },
+        {
+          "track_id": "universe_mh48_path_lean3",
+          "asset": "bnb_1h",
+          "status": "WAITING",
+          "n_available": 0,
+          "n_lockbox": null,
+          "sha256_prefix": null
+        },
+        {
+          "track_id": "universe_mh48_path_lean3",
+          "asset": "xrp_1h",
+          "status": "WAITING",
+          "n_available": 0,
+          "n_lockbox": null,
+          "sha256_prefix": null
+        },
+        {
+          "track_id": "universe_mh48_path_lean3",
+          "asset": "ada_1h",
+          "status": "WAITING",
+          "n_available": 0,
+          "n_lockbox": null,
+          "sha256_prefix": null
+        },
+        {
+          "track_id": "universe_mh48_path_lean3",
+          "asset": "avax_1h",
+          "status": "WAITING",
+          "n_available": 0,
+          "n_lockbox": null,
+          "sha256_prefix": null
+        },
+        {
+          "track_id": "universe_mh48_path_lean3",
+          "asset": "link_1h",
+          "status": "WAITING",
+          "n_available": 0,
+          "n_lockbox": null,
+          "sha256_prefix": null
+        },
+        {
+          "track_id": "universe_mh48_path_lean3",
+          "asset": "doge_1h",
+          "status": "WAITING",
+          "n_available": 0,
+          "n_lockbox": null,
+          "sha256_prefix": null
+        },
+        {
+          "track_id": "universe_mh48_path_lean3",
+          "asset": "ltc_1h",
+          "status": "WAITING",
+          "n_available": 0,
+          "n_lockbox": null,
+          "sha256_prefix": null
+        },
+        {
+          "track_id": "universe_mh48_path_lean3",
+          "asset": "dot_1h",
+          "status": "WAITING",
+          "n_available": 0,
+          "n_lockbox": null,
+          "sha256_prefix": null
+        },
+        {
+          "track_id": "universe_mh48_path_lean3",
+          "asset": "near_1h",
+          "status": "WAITING",
+          "n_available": 0,
+          "n_lockbox": null,
+          "sha256_prefix": null
+        },
+        {
+          "track_id": "universe_mh48_path_lean3",
+          "asset": "arb_1h",
+          "status": "WAITING",
+          "n_available": 0,
+          "n_lockbox": null,
+          "sha256_prefix": null
+        },
+        {
+          "track_id": "universe_mh48_path_lean3",
+          "asset": "op_1h",
+          "status": "WAITING",
+          "n_available": 0,
+          "n_lockbox": null,
+          "sha256_prefix": null
+        },
+        {
+          "track_id": "universe_mh48_path_lean3",
+          "asset": "spy_1h",
+          "status": "WAITING",
+          "n_available": 0,
+          "n_lockbox": null,
+          "sha256_prefix": null
+        },
+        {
+          "track_id": "universe_mh48_path_lean3",
+          "asset": "aapl_1h",
+          "status": "WAITING",
+          "n_available": 0,
+          "n_lockbox": null,
+          "sha256_prefix": null
+        }
+      ],
+      "updated_utc": "2026-07-23T12:01:00.911373+00:00"
     }
   },
   "candidates": [
@@ -85,6 +224,71 @@
         "start_collecting_utc": "2026-07-09T07:55:57.022214+00:00"
       },
       "pre_registered_utc": "2026-07-09T07:55:57.022781+00:00"
+    },
+    {
+      "track_id": "eth_path_lean3_minhold48",
+      "status": "candidate_not_validated",
+      "asset": "eth_1h",
+      "config": {
+        "signal": "path_lean3",
+        "vr_regime": null,
+        "min_hold_bars": 48,
+        "side": "long_short",
+        "fee_bps_reference": 5
+      },
+      "selection_history": {
+        "where_selected": "economic_oracle FAIL; tradeable_edge_scan + contract check 2026-07-23",
+        "holdout_evidence": {
+          "total_return_5bps": 0.7266,
+          "buy_hold": 0.1359,
+          "n_trades": 343,
+          "sharpe": 0.757,
+          "passed_success_contract": true
+        },
+        "contamination_note": "Holdout includes lockbox-tail overlap \u2014 FORBIDDEN to use lockbox v2 until new future seal or forward-only validation.",
+        "btc_same_config_failed_contract": true
+      },
+      "validation": {
+        "method": "forward_live_hold_cycle_pnl_only",
+        "forbid_lockbox_v2_until": "new_data_sealed_before_eval OR forward_validated",
+        "primary_metric": "hold_cycle_profitable_rate",
+        "min_signals": 50,
+        "min_profitable_rate": 0.55,
+        "also_require_avg_pnl_positive": true,
+        "fee_bps": 5,
+        "pre_registered_utc": "2026-07-23T11:45:22.226753+00:00"
+      },
+      "north_star": "real net profit only"
+    },
+    {
+      "track_id": "universe_mh48_path_lean3",
+      "status": "candidate_collecting_blind",
+      "asset": "multi",
+      "config": {
+        "signal": "path_lean3",
+        "min_hold_bars": 48,
+        "side": "long_short",
+        "fee_bps": 5,
+        "universe_file": "fade\\output\\blind_universe.json",
+        "autonomous": true
+      },
+      "selection_history": {
+        "where_selected": "blind_autonomy bootstrap",
+        "note": "Multi-asset blind forward lockbox; seals start at bootstrap time"
+      },
+      "validation": {
+        "method": "lockbox_v2_autonomous_reveal",
+        "primary_metric": "success_contract",
+        "success_contract": [
+          "total_return > 0",
+          "total_return > buy_and_hold",
+          "n_trades >= 30",
+          "sharpe > 0"
+        ],
+        "fee_bps": 5,
+        "auto_reveal": true
+      },
+      "pre_registered_utc": "2026-07-23T12:00:14.348065+00:00"
     }
   ],
   "pending_preregistrations": [],
@@ -599,5 +803,6 @@
       "sandbox": true,
       "artifact": "fade/output/compression_reversal_holdout.json"
     }
-  ]
+  ],
+  "updated_utc": "2026-07-23T11:45:22.226774+00:00"
 }
