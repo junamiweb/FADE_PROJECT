@@ -25,6 +25,8 @@ from fade.core import events as ev
 from fade.core.data_loader import generate_synthetic_ohlcv, load_ohlcv
 from fade.core.calibration import CalibrationStore
 from fade.core.predictor import collect_calibration_samples
+from fade.core import dl_model
+
 from fade.core.regimes import assign_regimes, save_regime_stats
 from fade.core.significant_changes import detect_significant_changes, summarize_changes
 from fade.memory import MemoryStore
@@ -134,10 +136,25 @@ def run(csv_path: str | None = None, config: Config | None = None) -> dict:
                 "n_rules": fc["n_rules"],
             }
 
+    # --- 6c. Train and evaluate DL model (v0.3 / Nexus) ---
+    dl_report = None
+    if csv_path and dl_model.dl_backend_available():
+        log.info("Training DL challenger/core (Nexus)...")
+        news_path = "news_btc.csv" if Path("news_btc.csv").exists() else None
+        dl_report = dl_model.train_and_evaluate(
+            csv_path=csv_path,
+            config=config,
+            news_csv=news_path,
+        )
+        dl_model.persist_record(dl_report, config.memory_dir)
+
     # --- 7. Report -----------------------------------------------------
-    report = _build_report(config, n_events, frequent, bt, stability, stable,
-                           rejected, memory, cal_metrics, calibration,
-                           latest_forecast, change_summary, asset, bt.regime_metrics)
+    report = _build_report(
+        config, n_events, frequent, bt, stability, stable,
+        rejected, memory, cal_metrics, calibration,
+        latest_forecast, change_summary, asset, bt.regime_metrics,
+    )
+    report["dl_report"] = dl_report
     _print_report(report, stability, bt)
     return report
 
@@ -260,6 +277,14 @@ def _print_report(report: dict, stability: pd.DataFrame, bt) -> None:
             for r in sc["recent"]:
                 print(f"    {r['timestamp']}  {r['type']:<14}  "
                       f"ret={r['return_1h_pct']:+.2f}%  vol_z={r['volume_z']:+.1f}")
+
+    if dl := report.get("dl_report"):
+        print("\n  --- Deep Learning (v0.3) ---")
+        if dl.get("status") == "ok":
+            print(f"  {'holdout hit-rate':<26}: {dl['holdout_hit_rate']:.4f}")
+            print(f"  {'last direction':<26}: {dl['last_direction']}")
+        else:
+            print(f"  {'status':<26}: {dl.get('status')}")
 
     verdict = _verdict(report)
     print("\n  --- Summary ---")
