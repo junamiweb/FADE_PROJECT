@@ -15,6 +15,7 @@ from numpy.lib.stride_tricks import sliding_window_view
 
 from fade.config import ATOM_COLUMNS, Config
 from fade.core.candle_patterns import compute_candle_patterns
+from fade.core.tiktok_chart_patterns import compute_tiktok_chart_patterns
 
 
 def _rolling_slope(series: pd.Series, window: int) -> pd.Series:
@@ -143,6 +144,7 @@ def compute_atom_pool(df: pd.DataFrame, config: Config | None = None) -> pd.Data
 
     # --- named candlestick patterns (0/1 flags, causal) -------------------
     candles = compute_candle_patterns(df)
+    tiktok = compute_tiktok_chart_patterns(df)
 
     pool = pd.DataFrame(
         {
@@ -160,9 +162,26 @@ def compute_atom_pool(df: pd.DataFrame, config: Config | None = None) -> pd.Data
             "doji": candles["doji"],
             "bullish_engulfing": candles["bullish_engulfing"],
             "bearish_engulfing": candles["bearish_engulfing"],
+            "breakout_up": tiktok["breakout_up"],
+            "breakout_down": tiktok["breakout_down"],
+            "bull_flag": tiktok["bull_flag"],
+            "bear_flag": tiktok["bear_flag"],
+            "double_top": tiktok["double_top"],
+            "double_bottom": tiktok["double_bottom"],
+            "trend_hh_hl": tiktok["trend_hh_hl"],
+            "trend_lh_ll": tiktok["trend_lh_ll"],
         },
         index=df.index,
     )
+
+    # Carry over news atoms if the caller pre-attached them onto df (e.g. via
+    # fade.core.news_features.attach_news_to_pool before loading). They are
+    # not derivable from OHLCV alone, so the "news_dl" atom set only resolves
+    # when the input frame already has them.
+    for col in ("news_tone", "news_tone_chg", "news_vol_z"):
+        if col in df.columns:
+            pool[col] = df[col].to_numpy()
+
     return pool
 
 
