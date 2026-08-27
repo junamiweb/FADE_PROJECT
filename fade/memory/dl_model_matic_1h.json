@@ -1,0 +1,34 @@
+{
+  "asset": "matic_1h",
+  "backend": "pytorch",
+  "direction": "UP",
+  "epochs": 25,
+  "feature_cols": [
+    "close_pos",
+    "range_pct",
+    "streak_signed",
+    "return_1h"
+  ],
+  "feature_cols_used": [
+    "close_pos",
+    "range_pct",
+    "streak_signed",
+    "return_1h"
+  ],
+  "holdout_hit_rate": 0.5212,
+  "holdout_lift_vs_random": 0.0212,
+  "last_direction": "UP",
+  "model": "lstm",
+  "n_dev": 32937,
+  "n_holdout": 14117,
+  "n_predictions": 14117,
+  "n_total": 47065,
+  "news_csv": null,
+  "null_mean": 0.5013,
+  "null_std": 0.0038,
+  "p_value": 0.0033,
+  "raw_prob_pct": 55.2,
+  "seed": 0,
+  "status": "ok",
+  "window": 12
+}

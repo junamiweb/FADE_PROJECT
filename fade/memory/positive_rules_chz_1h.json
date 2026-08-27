@@ -1,0 +1,122 @@
+{
+  "return_1h=HIGH|return_6h=HIGH|volatility=HIGH": {
+    "avg_confidence": 0.6263,
+    "avg_oos_hit": 0.5474,
+    "consistency": 1.0,
+    "direction": 0,
+    "folds_present": 3,
+    "stability": 0.6
+  },
+  "return_1h=HIGH|return_6h=MID": {
+    "avg_confidence": 0.5805,
+    "avg_oos_hit": 0.5344,
+    "consistency": 1.0,
+    "direction": 0,
+    "folds_present": 3,
+    "stability": 0.6
+  },
+  "return_1h=HIGH|volatility=LOW": {
+    "avg_confidence": 0.5603,
+    "avg_oos_hit": 0.5421,
+    "consistency": 1.0,
+    "direction": 0,
+    "folds_present": 3,
+    "stability": 0.6
+  },
+  "return_1h=HIGH|volatility=LOW|volume_zscore=MID": {
+    "avg_confidence": 0.6251,
+    "avg_oos_hit": 0.5429,
+    "consistency": 1.0,
+    "direction": 0,
+    "folds_present": 3,
+    "stability": 0.6
+  },
+  "return_1h=LOW|return_6h=MID|volume_zscore=MID": {
+    "avg_confidence": 0.5874,
+    "avg_oos_hit": 0.5088,
+    "consistency": 0.75,
+    "direction": 1,
+    "folds_present": 4,
+    "stability": 0.6
+  },
+  "return_1h=LOW|volatility=HIGH": {
+    "avg_confidence": 0.5754,
+    "avg_oos_hit": 0.5317,
+    "consistency": 1.0,
+    "direction": 1,
+    "folds_present": 3,
+    "stability": 0.6
+  },
+  "return_1h=LOW|volatility=HIGH|volume_zscore=MID": {
+    "avg_confidence": 0.5809,
+    "avg_oos_hit": 0.5266,
+    "consistency": 0.75,
+    "direction": 1,
+    "folds_present": 4,
+    "stability": 0.6
+  },
+  "return_1h=LOW|volatility=MID|volume_zscore=HIGH": {
+    "avg_confidence": 0.5741,
+    "avg_oos_hit": 0.5266,
+    "consistency": 1.0,
+    "direction": 1,
+    "folds_present": 3,
+    "stability": 0.6
+  },
+  "return_1h=MID|return_6h=LOW|volume_zscore=MID": {
+    "avg_confidence": 0.5782,
+    "avg_oos_hit": 0.5176,
+    "consistency": 1.0,
+    "direction": 0,
+    "folds_present": 3,
+    "stability": 0.6
+  },
+  "return_6h=HIGH|volatility=LOW|volume_zscore=LOW": {
+    "avg_confidence": 0.5978,
+    "avg_oos_hit": 0.5346,
+    "consistency": 1.0,
+    "direction": 0,
+    "folds_present": 3,
+    "stability": 0.6
+  },
+  "return_6h=HIGH|volume_zscore=MID": {
+    "avg_confidence": 0.5697,
+    "avg_oos_hit": 0.5675,
+    "consistency": 1.0,
+    "direction": 0,
+    "folds_present": 3,
+    "stability": 0.6
+  },
+  "return_6h=HIGH|volume_zscore=MID|trend_slope=MID": {
+    "avg_confidence": 0.5935,
+    "avg_oos_hit": 0.5614,
+    "consistency": 0.75,
+    "direction": 0,
+    "folds_present": 4,
+    "stability": 0.6
+  },
+  "return_6h=LOW|volatility=MID|volume_zscore=HIGH": {
+    "avg_confidence": 0.5672,
+    "avg_oos_hit": 0.5166,
+    "consistency": 0.75,
+    "direction": 1,
+    "folds_present": 4,
+    "stability": 0.6
+  },
+  "return_6h=LOW|volume_zscore=HIGH|trend_slope=HIGH": {
+    "avg_confidence": 0.6174,
+    "avg_oos_hit": 0.6175,
+    "consistency": 1.0,
+    "direction": 1,
+    "folds_present": 3,
+    "stability": 0.6
+  },
+  "return_6h=LOW|volume_zscore=MID|trend_slope=HIGH": {
+    "avg_confidence": 0.6432,
+    "avg_oos_hit": 0.5622,
+    "consistency": 1.0,
+    "direction": 1,
+    "folds_present": 4,
+    "stability": 0.8
+  }
+}

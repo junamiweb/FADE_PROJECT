@@ -1,0 +1,314 @@
+{
+  "return_1h=HIGH|return_6h=HIGH": {
+    "avg_confidence": 0.5678,
+    "avg_oos_hit": 0.5631,
+    "consistency": 1.0,
+    "direction": 0,
+    "folds_present": 3,
+    "stability": 0.6
+  },
+  "return_1h=HIGH|return_6h=HIGH|trend_slope=HIGH": {
+    "avg_confidence": 0.5689,
+    "avg_oos_hit": 0.5517,
+    "consistency": 1.0,
+    "direction": 0,
+    "folds_present": 3,
+    "stability": 0.6
+  },
+  "return_1h=HIGH|return_6h=HIGH|trend_slope=LOW": {
+    "avg_confidence": 0.5919,
+    "avg_oos_hit": 0.5394,
+    "consistency": 1.0,
+    "direction": 0,
+    "folds_present": 3,
+    "stability": 0.6
+  },
+  "return_1h=HIGH|return_6h=HIGH|volatility=LOW": {
+    "avg_confidence": 0.6039,
+    "avg_oos_hit": 0.5764,
+    "consistency": 1.0,
+    "direction": 0,
+    "folds_present": 3,
+    "stability": 0.6
+  },
+  "return_1h=HIGH|return_6h=LOW|volume_zscore=LOW": {
+    "avg_confidence": 0.5641,
+    "avg_oos_hit": 0.5906,
+    "consistency": 1.0,
+    "direction": 0,
+    "folds_present": 3,
+    "stability": 0.6
+  },
+  "return_1h=HIGH|volatility=MID|trend_slope=LOW": {
+    "avg_confidence": 0.5835,
+    "avg_oos_hit": 0.5143,
+    "consistency": 0.75,
+    "direction": 0,
+    "folds_present": 4,
+    "stability": 0.6
+  },
+  "return_1h=HIGH|volume_zscore=HIGH|trend_slope=HIGH": {
+    "avg_confidence": 0.5819,
+    "avg_oos_hit": 0.5578,
+    "consistency": 1.0,
+    "direction": 0,
+    "folds_present": 4,
+    "stability": 0.8
+  },
+  "return_1h=HIGH|volume_zscore=MID|trend_slope=MID": {
+    "avg_confidence": 0.6005,
+    "avg_oos_hit": 0.569,
+    "consistency": 1.0,
+    "direction": 0,
+    "folds_present": 4,
+    "stability": 0.8
+  },
+  "return_1h=LOW|return_6h=MID|volume_zscore=MID": {
+    "avg_confidence": 0.5642,
+    "avg_oos_hit": 0.5042,
+    "consistency": 0.75,
+    "direction": 1,
+    "folds_present": 4,
+    "stability": 0.6
+  },
+  "return_1h=LOW|volatility=HIGH|trend_slope=LOW": {
+    "avg_confidence": 0.6037,
+    "avg_oos_hit": 0.5368,
+    "consistency": 1.0,
+    "direction": 1,
+    "folds_present": 3,
+    "stability": 0.6
+  },
+  "return_1h=LOW|volatility=LOW|trend_slope=LOW": {
+    "avg_confidence": 0.5717,
+    "avg_oos_hit": 0.5335,
+    "consistency": 0.75,
+    "direction": 1,
+    "folds_present": 4,
+    "stability": 0.6
+  },
+  "return_1h=LOW|volatility=LOW|volume_zscore=MID": {
+    "avg_confidence": 0.597,
+    "avg_oos_hit": 0.5267,
+    "consistency": 1.0,
+    "direction": 1,
+    "folds_present": 3,
+    "stability": 0.6
+  },
+  "return_1h=MID|return_6h=HIGH": {
+    "avg_confidence": 0.5769,
+    "avg_oos_hit": 0.5508,
+    "consistency": 1.0,
+    "direction": 0,
+    "folds_present": 4,
+    "stability": 0.8
+  },
+  "return_1h=MID|return_6h=HIGH|trend_slope=MID": {
+    "avg_confidence": 0.5971,
+    "avg_oos_hit": 0.5602,
+    "consistency": 1.0,
+    "direction": 0,
+    "folds_present": 3,
+    "stability": 0.6
+  },
+  "return_1h=MID|return_6h=HIGH|volatility=LOW": {
+    "avg_confidence": 0.5895,
+    "avg_oos_hit": 0.5462,
+    "consistency": 0.75,
+    "direction": 0,
+    "folds_present": 4,
+    "stability": 0.6
+  },
+  "return_1h=MID|return_6h=MID|volume_zscore=MID": {
+    "avg_confidence": 0.5771,
+    "avg_oos_hit": 0.5311,
+    "consistency": 1.0,
+    "direction": 0,
+    "folds_present": 4,
+    "stability": 0.8
+  },
+  "return_1h=MID|volatility=LOW": {
+    "avg_confidence": 0.5569,
+    "avg_oos_hit": 0.5329,
+    "consistency": 1.0,
+    "direction": 0,
+    "folds_present": 3,
+    "stability": 0.6
+  },
+  "return_1h=MID|volatility=LOW|volume_zscore=HIGH": {
+    "avg_confidence": 0.5791,
+    "avg_oos_hit": 0.528,
+    "consistency": 1.0,
+    "direction": 0,
+    "folds_present": 3,
+    "stability": 0.6
+  },
+  "return_1h=MID|volatility=LOW|volume_zscore=MID": {
+    "avg_confidence": 0.5924,
+    "avg_oos_hit": 0.5398,
+    "consistency": 1.0,
+    "direction": 0,
+    "folds_present": 4,
+    "stability": 0.8
+  },
+  "return_1h=MID|volatility=MID|volume_zscore=MID": {
+    "avg_confidence": 0.5964,
+    "avg_oos_hit": 0.5305,
+    "consistency": 1.0,
+    "direction": 0,
+    "folds_present": 3,
+    "stability": 0.6
+  },
+  "return_1h=MID|volume_zscore=HIGH|trend_slope=MID": {
+    "avg_confidence": 0.6076,
+    "avg_oos_hit": 0.545,
+    "consistency": 0.75,
+    "direction": 0,
+    "folds_present": 4,
+    "stability": 0.6
+  },
+  "return_1h=MID|volume_zscore=MID": {
+    "avg_confidence": 0.576,
+    "avg_oos_hit": 0.5352,
+    "consistency": 1.0,
+    "direction": 0,
+    "folds_present": 3,
+    "stability": 0.6
+  },
+  "return_1h=MID|volume_zscore=MID|trend_slope=HIGH": {
+    "avg_confidence": 0.5806,
+    "avg_oos_hit": 0.5418,
+    "consistency": 1.0,
+    "direction": 0,
+    "folds_present": 3,
+    "stability": 0.6
+  },
+  "return_1h=MID|volume_zscore=MID|trend_slope=MID": {
+    "avg_confidence": 0.5757,
+    "avg_oos_hit": 0.5452,
+    "consistency": 1.0,
+    "direction": 0,
+    "folds_present": 4,
+    "stability": 0.8
+  },
+  "return_6h=HIGH|volatility=LOW": {
+    "avg_confidence": 0.5709,
+    "avg_oos_hit": 0.55,
+    "consistency": 1.0,
+    "direction": 0,
+    "folds_present": 3,
+    "stability": 0.6
+  },
+  "return_6h=HIGH|volatility=LOW|trend_slope=HIGH": {
+    "avg_confidence": 0.5685,
+    "avg_oos_hit": 0.541,
+    "consistency": 1.0,
+    "direction": 0,
+    "folds_present": 3,
+    "stability": 0.6
+  },
+  "return_6h=HIGH|volatility=LOW|volume_zscore=HIGH": {
+    "avg_confidence": 0.5904,
+    "avg_oos_hit": 0.5699,
+    "consistency": 1.0,
+    "direction": 0,
+    "folds_present": 3,
+    "stability": 0.6
+  },
+  "return_6h=HIGH|volatility=MID|trend_slope=HIGH": {
+    "avg_confidence": 0.5609,
+    "avg_oos_hit": 0.5367,
+    "consistency": 1.0,
+    "direction": 0,
+    "folds_present": 3,
+    "stability": 0.6
+  },
+  "return_6h=HIGH|volatility=MID|trend_slope=LOW": {
+    "avg_confidence": 0.6028,
+    "avg_oos_hit": 0.5336,
+    "consistency": 0.75,
+    "direction": 0,
+    "folds_present": 4,
+    "stability": 0.6
+  },
+  "return_6h=HIGH|volume_zscore=HIGH|trend_slope=HIGH": {
+    "avg_confidence": 0.5633,
+    "avg_oos_hit": 0.566,
+    "consistency": 1.0,
+    "direction": 0,
+    "folds_present": 3,
+    "stability": 0.6
+  },
+  "return_6h=HIGH|volume_zscore=LOW|trend_slope=LOW": {
+    "avg_confidence": 0.6199,
+    "avg_oos_hit": 0.5866,
+    "consistency": 1.0,
+    "direction": 0,
+    "folds_present": 3,
+    "stability": 0.6
+  },
+  "return_6h=HIGH|volume_zscore=MID": {
+    "avg_confidence": 0.5814,
+    "avg_oos_hit": 0.5388,
+    "consistency": 1.0,
+    "direction": 0,
+    "folds_present": 3,
+    "stability": 0.6
+  },
+  "return_6h=HIGH|volume_zscore=MID|trend_slope=MID": {
+    "avg_confidence": 0.6277,
+    "avg_oos_hit": 0.5581,
+    "consistency": 1.0,
+    "direction": 0,
+    "folds_present": 3,
+    "stability": 0.6
+  },
+  "return_6h=LOW|volatility=HIGH|trend_slope=HIGH": {
+    "avg_confidence": 0.682,
+    "avg_oos_hit": 0.575,
+    "consistency": 1.0,
+    "direction": 1,
+    "folds_present": 3,
+    "stability": 0.6
+  },
+  "return_6h=MID|volatility=MID|trend_slope=HIGH": {
+    "avg_confidence": 0.6193,
+    "avg_oos_hit": 0.5333,
+    "consistency": 1.0,
+    "direction": 0,
+    "folds_present": 3,
+    "stability": 0.6
+  },
+  "return_6h=MID|volume_zscore=LOW|trend_slope=LOW": {
+    "avg_confidence": 0.6006,
+    "avg_oos_hit": 0.5248,
+    "consistency": 1.0,
+    "direction": 0,
+    "folds_present": 3,
+    "stability": 0.6
+  },
+  "volatility=MID|volume_zscore=LOW": {
+    "avg_confidence": 0.5898,
+    "avg_oos_hit": 0.5185,
+    "consistency": 1.0,
+    "direction": 0,
+    "folds_present": 3,
+    "stability": 0.6
+  },
+  "volatility=MID|volume_zscore=MID|trend_slope=HIGH": {
+    "avg_confidence": 0.5956,
+    "avg_oos_hit": 0.5347,
+    "consistency": 1.0,
+    "direction": 0,
+    "folds_present": 3,
+    "stability": 0.6
+  },
+  "volume_zscore=HIGH|trend_slope=HIGH": {
+    "avg_confidence": 0.5656,
+    "avg_oos_hit": 0.5505,
+    "consistency": 1.0,
+    "direction": 0,
+    "folds_present": 3,
+    "stability": 0.6
+  }
+}

@@ -1,0 +1,1087 @@
+{
+  "return_1h=HIGH|return_6h=HIGH|trend_slope=HIGH": {
+    "blacklisted": false,
+    "failures": 1,
+    "reason": "unstable_direction"
+  },
+  "return_1h=HIGH|return_6h=HIGH|trend_slope=MID": {
+    "blacklisted": true,
+    "failures": 2,
+    "reason": "unstable_direction"
+  },
+  "return_1h=HIGH|return_6h=HIGH|volatility=MID": {
+    "blacklisted": true,
+    "failures": 2,
+    "reason": "unstable_direction"
+  },
+  "return_1h=HIGH|return_6h=HIGH|volume_zscore=LOW": {
+    "blacklisted": false,
+    "failures": 1,
+    "reason": "unstable_direction"
+  },
+  "return_1h=HIGH|return_6h=HIGH|volume_zscore=MID": {
+    "blacklisted": true,
+    "failures": 2,
+    "reason": "unstable_direction"
+  },
+  "return_1h=HIGH|return_6h=LOW|trend_slope=HIGH": {
+    "blacklisted": false,
+    "failures": 1,
+    "reason": "unstable_direction"
+  },
+  "return_1h=HIGH|return_6h=LOW|trend_slope=MID": {
+    "blacklisted": false,
+    "failures": 1,
+    "reason": "unstable_direction"
+  },
+  "return_1h=HIGH|return_6h=LOW|volatility=HIGH": {
+    "blacklisted": false,
+    "failures": 1,
+    "reason": "unstable_direction"
+  },
+  "return_1h=HIGH|return_6h=LOW|volatility=LOW": {
+    "blacklisted": false,
+    "failures": 1,
+    "reason": "unstable_direction"
+  },
+  "return_1h=HIGH|return_6h=LOW|volatility=MID": {
+    "blacklisted": false,
+    "failures": 1,
+    "reason": "unstable_direction"
+  },
+  "return_1h=HIGH|return_6h=LOW|volume_zscore=HIGH": {
+    "blacklisted": true,
+    "failures": 2,
+    "reason": "unstable_direction"
+  },
+  "return_1h=HIGH|return_6h=LOW|volume_zscore=LOW": {
+    "blacklisted": false,
+    "failures": 1,
+    "reason": "unstable_direction"
+  },
+  "return_1h=HIGH|return_6h=MID|trend_slope=HIGH": {
+    "blacklisted": true,
+    "failures": 2,
+    "reason": "unstable_direction"
+  },
+  "return_1h=HIGH|return_6h=MID|trend_slope=LOW": {
+    "blacklisted": false,
+    "failures": 1,
+    "reason": "unstable_direction"
+  },
+  "return_1h=HIGH|return_6h=MID|trend_slope=MID": {
+    "blacklisted": false,
+    "failures": 1,
+    "reason": "unstable_direction"
+  },
+  "return_1h=HIGH|return_6h=MID|volatility=HIGH": {
+    "blacklisted": true,
+    "failures": 2,
+    "reason": "unstable_direction"
+  },
+  "return_1h=HIGH|return_6h=MID|volatility=LOW": {
+    "blacklisted": true,
+    "failures": 2,
+    "reason": "unstable_direction"
+  },
+  "return_1h=HIGH|return_6h=MID|volatility=MID": {
+    "blacklisted": true,
+    "failures": 2,
+    "reason": "unstable_direction"
+  },
+  "return_1h=HIGH|return_6h=MID|volume_zscore=HIGH": {
+    "blacklisted": true,
+    "failures": 2,
+    "reason": "unstable_direction"
+  },
+  "return_1h=HIGH|return_6h=MID|volume_zscore=MID": {
+    "blacklisted": true,
+    "failures": 2,
+    "reason": "unstable_direction"
+  },
+  "return_1h=HIGH|volatility=HIGH|trend_slope=MID": {
+    "blacklisted": true,
+    "failures": 2,
+    "reason": "unstable_direction"
+  },
+  "return_1h=HIGH|volatility=HIGH|volume_zscore=HIGH": {
+    "blacklisted": true,
+    "failures": 2,
+    "reason": "unstable_direction"
+  },
+  "return_1h=HIGH|volatility=LOW|trend_slope=HIGH": {
+    "blacklisted": true,
+    "failures": 2,
+    "reason": "unstable_direction"
+  },
+  "return_1h=HIGH|volatility=LOW|trend_slope=MID": {
+    "blacklisted": true,
+    "failures": 2,
+    "reason": "unstable_direction"
+  },
+  "return_1h=HIGH|volatility=LOW|volume_zscore=HIGH": {
+    "blacklisted": true,
+    "failures": 2,
+    "reason": "unstable_direction"
+  },
+  "return_1h=HIGH|volatility=LOW|volume_zscore=LOW": {
+    "blacklisted": true,
+    "failures": 2,
+    "reason": "unstable_direction"
+  },
+  "return_1h=HIGH|volatility=MID|trend_slope=HIGH": {
+    "blacklisted": true,
+    "failures": 2,
+    "reason": "unstable_direction"
+  },
+  "return_1h=HIGH|volatility=MID|trend_slope=MID": {
+    "blacklisted": true,
+    "failures": 2,
+    "reason": "unstable_direction"
+  },
+  "return_1h=HIGH|volatility=MID|volume_zscore=HIGH": {
+    "blacklisted": true,
+    "failures": 2,
+    "reason": "unstable_direction"
+  },
+  "return_1h=HIGH|volatility=MID|volume_zscore=LOW": {
+    "blacklisted": true,
+    "failures": 2,
+    "reason": "unstable_direction"
+  },
+  "return_1h=HIGH|volatility=MID|volume_zscore=MID": {
+    "blacklisted": true,
+    "failures": 2,
+    "reason": "unstable_direction"
+  },
+  "return_1h=HIGH|volume_zscore=HIGH|trend_slope=LOW": {
+    "blacklisted": true,
+    "failures": 2,
+    "reason": "unstable_direction"
+  },
+  "return_1h=HIGH|volume_zscore=HIGH|trend_slope=MID": {
+    "blacklisted": true,
+    "failures": 2,
+    "reason": "unstable_direction"
+  },
+  "return_1h=HIGH|volume_zscore=LOW|trend_slope=HIGH": {
+    "blacklisted": true,
+    "failures": 2,
+    "reason": "unstable_direction"
+  },
+  "return_1h=HIGH|volume_zscore=LOW|trend_slope=MID": {
+    "blacklisted": true,
+    "failures": 2,
+    "reason": "unstable_direction"
+  },
+  "return_1h=HIGH|volume_zscore=MID": {
+    "blacklisted": true,
+    "failures": 2,
+    "reason": "unstable_direction"
+  },
+  "return_1h=HIGH|volume_zscore=MID|trend_slope=HIGH": {
+    "blacklisted": true,
+    "failures": 2,
+    "reason": "unstable_direction"
+  },
+  "return_1h=HIGH|volume_zscore=MID|trend_slope=MID": {
+    "blacklisted": false,
+    "failures": 1,
+    "reason": "unstable_direction"
+  },
+  "return_1h=LOW|return_6h=HIGH|trend_slope=HIGH": {
+    "blacklisted": true,
+    "failures": 2,
+    "reason": "unstable_direction"
+  },
+  "return_1h=LOW|return_6h=HIGH|trend_slope=MID": {
+    "blacklisted": false,
+    "failures": 1,
+    "reason": "unstable_direction"
+  },
+  "return_1h=LOW|return_6h=HIGH|volatility=HIGH": {
+    "blacklisted": true,
+    "failures": 2,
+    "reason": "unstable_direction"
+  },
+  "return_1h=LOW|return_6h=HIGH|volatility=LOW": {
+    "blacklisted": true,
+    "failures": 2,
+    "reason": "unstable_direction"
+  },
+  "return_1h=LOW|return_6h=HIGH|volatility=MID": {
+    "blacklisted": true,
+    "failures": 2,
+    "reason": "unstable_direction"
+  },
+  "return_1h=LOW|return_6h=HIGH|volume_zscore=HIGH": {
+    "blacklisted": true,
+    "failures": 2,
+    "reason": "unstable_direction"
+  },
+  "return_1h=LOW|return_6h=HIGH|volume_zscore=LOW": {
+    "blacklisted": true,
+    "failures": 2,
+    "reason": "unstable_direction"
+  },
+  "return_1h=LOW|return_6h=HIGH|volume_zscore=MID": {
+    "blacklisted": true,
+    "failures": 2,
+    "reason": "unstable_direction"
+  },
+  "return_1h=LOW|return_6h=LOW|trend_slope=LOW": {
+    "blacklisted": true,
+    "failures": 2,
+    "reason": "unstable_direction"
+  },
+  "return_1h=LOW|return_6h=LOW|trend_slope=MID": {
+    "blacklisted": true,
+    "failures": 2,
+    "reason": "unstable_direction"
+  },
+  "return_1h=LOW|return_6h=LOW|volatility=HIGH": {
+    "blacklisted": true,
+    "failures": 2,
+    "reason": "unstable_direction"
+  },
+  "return_1h=LOW|return_6h=LOW|volatility=MID": {
+    "blacklisted": true,
+    "failures": 2,
+    "reason": "unstable_direction"
+  },
+  "return_1h=LOW|return_6h=LOW|volume_zscore=MID": {
+    "blacklisted": true,
+    "failures": 2,
+    "reason": "unstable_direction"
+  },
+  "return_1h=LOW|return_6h=MID|trend_slope=HIGH": {
+    "blacklisted": false,
+    "failures": 1,
+    "reason": "unstable_direction"
+  },
+  "return_1h=LOW|return_6h=MID|trend_slope=LOW": {
+    "blacklisted": true,
+    "failures": 2,
+    "reason": "unstable_direction"
+  },
+  "return_1h=LOW|return_6h=MID|trend_slope=MID": {
+    "blacklisted": true,
+    "failures": 2,
+    "reason": "unstable_direction"
+  },
+  "return_1h=LOW|return_6h=MID|volatility=HIGH": {
+    "blacklisted": true,
+    "failures": 2,
+    "reason": "unstable_direction"
+  },
+  "return_1h=LOW|return_6h=MID|volatility=LOW": {
+    "blacklisted": true,
+    "failures": 2,
+    "reason": "unstable_direction"
+  },
+  "return_1h=LOW|return_6h=MID|volatility=MID": {
+    "blacklisted": true,
+    "failures": 2,
+    "reason": "unstable_direction"
+  },
+  "return_1h=LOW|return_6h=MID|volume_zscore=HIGH": {
+    "blacklisted": true,
+    "failures": 2,
+    "reason": "unstable_direction"
+  },
+  "return_1h=LOW|return_6h=MID|volume_zscore=LOW": {
+    "blacklisted": true,
+    "failures": 2,
+    "reason": "unstable_direction"
+  },
+  "return_1h=LOW|volatility=HIGH|trend_slope=HIGH": {
+    "blacklisted": true,
+    "failures": 2,
+    "reason": "unstable_direction"
+  },
+  "return_1h=LOW|volatility=HIGH|trend_slope=MID": {
+    "blacklisted": true,
+    "failures": 2,
+    "reason": "unstable_direction"
+  },
+  "return_1h=LOW|volatility=HIGH|volume_zscore=HIGH": {
+    "blacklisted": true,
+    "failures": 2,
+    "reason": "unstable_direction"
+  },
+  "return_1h=LOW|volatility=HIGH|volume_zscore=MID": {
+    "blacklisted": false,
+    "failures": 1,
+    "reason": "unstable_direction"
+  },
+  "return_1h=LOW|volatility=LOW": {
+    "blacklisted": true,
+    "failures": 2,
+    "reason": "unstable_direction"
+  },
+  "return_1h=LOW|volatility=LOW|trend_slope=HIGH": {
+    "blacklisted": true,
+    "failures": 2,
+    "reason": "unstable_direction"
+  },
+  "return_1h=LOW|volatility=LOW|volume_zscore=HIGH": {
+    "blacklisted": true,
+    "failures": 2,
+    "reason": "unstable_direction"
+  },
+  "return_1h=LOW|volatility=LOW|volume_zscore=LOW": {
+    "blacklisted": true,
+    "failures": 2,
+    "reason": "unstable_direction"
+  },
+  "return_1h=LOW|volatility=LOW|volume_zscore=MID": {
+    "blacklisted": false,
+    "failures": 1,
+    "reason": "unstable_direction"
+  },
+  "return_1h=LOW|volatility=MID|trend_slope=LOW": {
+    "blacklisted": true,
+    "failures": 2,
+    "reason": "unstable_direction"
+  },
+  "return_1h=LOW|volatility=MID|trend_slope=MID": {
+    "blacklisted": true,
+    "failures": 2,
+    "reason": "unstable_direction"
+  },
+  "return_1h=LOW|volatility=MID|volume_zscore=LOW": {
+    "blacklisted": true,
+    "failures": 2,
+    "reason": "unstable_direction"
+  },
+  "return_1h=LOW|volume_zscore=HIGH|trend_slope=HIGH": {
+    "blacklisted": true,
+    "failures": 2,
+    "reason": "unstable_direction"
+  },
+  "return_1h=LOW|volume_zscore=HIGH|trend_slope=LOW": {
+    "blacklisted": true,
+    "failures": 2,
+    "reason": "unstable_direction"
+  },
+  "return_1h=LOW|volume_zscore=HIGH|trend_slope=MID": {
+    "blacklisted": true,
+    "failures": 2,
+    "reason": "unstable_direction"
+  },
+  "return_1h=LOW|volume_zscore=LOW": {
+    "blacklisted": true,
+    "failures": 2,
+    "reason": "unstable_direction"
+  },
+  "return_1h=LOW|volume_zscore=LOW|trend_slope=HIGH": {
+    "blacklisted": true,
+    "failures": 2,
+    "reason": "unstable_direction"
+  },
+  "return_1h=LOW|volume_zscore=LOW|trend_slope=MID": {
+    "blacklisted": true,
+    "failures": 2,
+    "reason": "unstable_direction"
+  },
+  "return_1h=LOW|volume_zscore=MID|trend_slope=LOW": {
+    "blacklisted": true,
+    "failures": 2,
+    "reason": "unstable_direction"
+  },
+  "return_1h=LOW|volume_zscore=MID|trend_slope=MID": {
+    "blacklisted": true,
+    "failures": 2,
+    "reason": "unstable_direction"
+  },
+  "return_1h=MID|return_6h=HIGH|trend_slope=HIGH": {
+    "blacklisted": true,
+    "failures": 2,
+    "reason": "unstable_direction"
+  },
+  "return_1h=MID|return_6h=HIGH|trend_slope=LOW": {
+    "blacklisted": false,
+    "failures": 1,
+    "reason": "unstable_direction"
+  },
+  "return_1h=MID|return_6h=HIGH|volatility=HIGH": {
+    "blacklisted": true,
+    "failures": 2,
+    "reason": "unstable_direction"
+  },
+  "return_1h=MID|return_6h=HIGH|volatility=MID": {
+    "blacklisted": true,
+    "failures": 2,
+    "reason": "unstable_direction"
+  },
+  "return_1h=MID|return_6h=HIGH|volume_zscore=LOW": {
+    "blacklisted": true,
+    "failures": 2,
+    "reason": "unstable_direction"
+  },
+  "return_1h=MID|return_6h=HIGH|volume_zscore=MID": {
+    "blacklisted": true,
+    "failures": 2,
+    "reason": "unstable_direction"
+  },
+  "return_1h=MID|return_6h=LOW|trend_slope=HIGH": {
+    "blacklisted": false,
+    "failures": 1,
+    "reason": "unstable_direction"
+  },
+  "return_1h=MID|return_6h=LOW|trend_slope=MID": {
+    "blacklisted": true,
+    "failures": 2,
+    "reason": "unstable_direction"
+  },
+  "return_1h=MID|return_6h=LOW|volatility=HIGH": {
+    "blacklisted": true,
+    "failures": 2,
+    "reason": "unstable_direction"
+  },
+  "return_1h=MID|return_6h=LOW|volatility=LOW": {
+    "blacklisted": true,
+    "failures": 2,
+    "reason": "unstable_direction"
+  },
+  "return_1h=MID|return_6h=LOW|volatility=MID": {
+    "blacklisted": true,
+    "failures": 2,
+    "reason": "unstable_direction"
+  },
+  "return_1h=MID|return_6h=MID": {
+    "blacklisted": false,
+    "failures": 1,
+    "reason": "unstable_direction"
+  },
+  "return_1h=MID|return_6h=MID|trend_slope=HIGH": {
+    "blacklisted": true,
+    "failures": 2,
+    "reason": "unstable_direction"
+  },
+  "return_1h=MID|return_6h=MID|trend_slope=LOW": {
+    "blacklisted": false,
+    "failures": 1,
+    "reason": "unstable_direction"
+  },
+  "return_1h=MID|return_6h=MID|trend_slope=MID": {
+    "blacklisted": true,
+    "failures": 2,
+    "reason": "unstable_direction"
+  },
+  "return_1h=MID|return_6h=MID|volatility=HIGH": {
+    "blacklisted": true,
+    "failures": 2,
+    "reason": "unstable_direction"
+  },
+  "return_1h=MID|return_6h=MID|volatility=LOW": {
+    "blacklisted": true,
+    "failures": 2,
+    "reason": "unstable_direction"
+  },
+  "return_1h=MID|return_6h=MID|volatility=MID": {
+    "blacklisted": true,
+    "failures": 2,
+    "reason": "unstable_direction"
+  },
+  "return_1h=MID|return_6h=MID|volume_zscore=HIGH": {
+    "blacklisted": false,
+    "failures": 1,
+    "reason": "unstable_direction"
+  },
+  "return_1h=MID|return_6h=MID|volume_zscore=LOW": {
+    "blacklisted": true,
+    "failures": 2,
+    "reason": "unstable_direction"
+  },
+  "return_1h=MID|return_6h=MID|volume_zscore=MID": {
+    "blacklisted": false,
+    "failures": 1,
+    "reason": "unstable_direction"
+  },
+  "return_1h=MID|trend_slope=HIGH": {
+    "blacklisted": true,
+    "failures": 2,
+    "reason": "unstable_direction"
+  },
+  "return_1h=MID|volatility=HIGH": {
+    "blacklisted": true,
+    "failures": 2,
+    "reason": "unstable_direction"
+  },
+  "return_1h=MID|volatility=HIGH|trend_slope=HIGH": {
+    "blacklisted": true,
+    "failures": 2,
+    "reason": "unstable_direction"
+  },
+  "return_1h=MID|volatility=HIGH|trend_slope=LOW": {
+    "blacklisted": true,
+    "failures": 2,
+    "reason": "unstable_direction"
+  },
+  "return_1h=MID|volatility=HIGH|trend_slope=MID": {
+    "blacklisted": true,
+    "failures": 2,
+    "reason": "unstable_direction"
+  },
+  "return_1h=MID|volatility=HIGH|volume_zscore=HIGH": {
+    "blacklisted": false,
+    "failures": 1,
+    "reason": "unstable_direction"
+  },
+  "return_1h=MID|volatility=HIGH|volume_zscore=LOW": {
+    "blacklisted": false,
+    "failures": 1,
+    "reason": "unstable_direction"
+  },
+  "return_1h=MID|volatility=LOW|trend_slope=HIGH": {
+    "blacklisted": true,
+    "failures": 2,
+    "reason": "unstable_direction"
+  },
+  "return_1h=MID|volatility=LOW|trend_slope=LOW": {
+    "blacklisted": true,
+    "failures": 2,
+    "reason": "unstable_direction"
+  },
+  "return_1h=MID|volatility=LOW|trend_slope=MID": {
+    "blacklisted": true,
+    "failures": 2,
+    "reason": "unstable_direction"
+  },
+  "return_1h=MID|volatility=LOW|volume_zscore=LOW": {
+    "blacklisted": true,
+    "failures": 2,
+    "reason": "unstable_direction"
+  },
+  "return_1h=MID|volatility=MID": {
+    "blacklisted": true,
+    "failures": 2,
+    "reason": "unstable_direction"
+  },
+  "return_1h=MID|volatility=MID|trend_slope=HIGH": {
+    "blacklisted": true,
+    "failures": 2,
+    "reason": "unstable_direction"
+  },
+  "return_1h=MID|volatility=MID|trend_slope=LOW": {
+    "blacklisted": true,
+    "failures": 2,
+    "reason": "unstable_direction"
+  },
+  "return_1h=MID|volatility=MID|trend_slope=MID": {
+    "blacklisted": true,
+    "failures": 2,
+    "reason": "unstable_direction"
+  },
+  "return_1h=MID|volatility=MID|volume_zscore=HIGH": {
+    "blacklisted": true,
+    "failures": 2,
+    "reason": "unstable_direction"
+  },
+  "return_1h=MID|volatility=MID|volume_zscore=LOW": {
+    "blacklisted": true,
+    "failures": 2,
+    "reason": "unstable_direction"
+  },
+  "return_1h=MID|volume_zscore=LOW|trend_slope=HIGH": {
+    "blacklisted": true,
+    "failures": 2,
+    "reason": "unstable_direction"
+  },
+  "return_1h=MID|volume_zscore=LOW|trend_slope=LOW": {
+    "blacklisted": false,
+    "failures": 1,
+    "reason": "unstable_direction"
+  },
+  "return_1h=MID|volume_zscore=MID|trend_slope=MID": {
+    "blacklisted": false,
+    "failures": 1,
+    "reason": "unstable_direction"
+  },
+  "return_6h=HIGH|trend_slope=LOW": {
+    "blacklisted": true,
+    "failures": 2,
+    "reason": "unstable_direction"
+  },
+  "return_6h=HIGH|volatility=HIGH|trend_slope=HIGH": {
+    "blacklisted": true,
+    "failures": 2,
+    "reason": "unstable_direction"
+  },
+  "return_6h=HIGH|volatility=HIGH|trend_slope=MID": {
+    "blacklisted": true,
+    "failures": 2,
+    "reason": "unstable_direction"
+  },
+  "return_6h=HIGH|volatility=HIGH|volume_zscore=HIGH": {
+    "blacklisted": true,
+    "failures": 2,
+    "reason": "unstable_direction"
+  },
+  "return_6h=HIGH|volatility=HIGH|volume_zscore=LOW": {
+    "blacklisted": true,
+    "failures": 2,
+    "reason": "unstable_direction"
+  },
+  "return_6h=HIGH|volatility=HIGH|volume_zscore=MID": {
+    "blacklisted": true,
+    "failures": 2,
+    "reason": "unstable_direction"
+  },
+  "return_6h=HIGH|volatility=LOW|volume_zscore=MID": {
+    "blacklisted": true,
+    "failures": 2,
+    "reason": "unstable_direction"
+  },
+  "return_6h=HIGH|volatility=MID|trend_slope=LOW": {
+    "blacklisted": false,
+    "failures": 1,
+    "reason": "unstable_direction"
+  },
+  "return_6h=HIGH|volatility=MID|trend_slope=MID": {
+    "blacklisted": true,
+    "failures": 2,
+    "reason": "unstable_direction"
+  },
+  "return_6h=HIGH|volatility=MID|volume_zscore=HIGH": {
+    "blacklisted": true,
+    "failures": 2,
+    "reason": "unstable_direction"
+  },
+  "return_6h=HIGH|volatility=MID|volume_zscore=LOW": {
+    "blacklisted": true,
+    "failures": 2,
+    "reason": "unstable_direction"
+  },
+  "return_6h=HIGH|volatility=MID|volume_zscore=MID": {
+    "blacklisted": true,
+    "failures": 2,
+    "reason": "unstable_direction"
+  },
+  "return_6h=HIGH|volume_zscore=HIGH|trend_slope=LOW": {
+    "blacklisted": false,
+    "failures": 1,
+    "reason": "unstable_direction"
+  },
+  "return_6h=HIGH|volume_zscore=LOW": {
+    "blacklisted": true,
+    "failures": 2,
+    "reason": "unstable_direction"
+  },
+  "return_6h=HIGH|volume_zscore=LOW|trend_slope=HIGH": {
+    "blacklisted": true,
+    "failures": 2,
+    "reason": "unstable_direction"
+  },
+  "return_6h=HIGH|volume_zscore=LOW|trend_slope=MID": {
+    "blacklisted": true,
+    "failures": 2,
+    "reason": "unstable_direction"
+  },
+  "return_6h=HIGH|volume_zscore=MID|trend_slope=HIGH": {
+    "blacklisted": true,
+    "failures": 2,
+    "reason": "unstable_direction"
+  },
+  "return_6h=HIGH|volume_zscore=MID|trend_slope=LOW": {
+    "blacklisted": false,
+    "failures": 1,
+    "reason": "unstable_direction"
+  },
+  "return_6h=HIGH|volume_zscore=MID|trend_slope=MID": {
+    "blacklisted": false,
+    "failures": 1,
+    "reason": "unstable_direction"
+  },
+  "return_6h=LOW|trend_slope=HIGH": {
+    "blacklisted": true,
+    "failures": 2,
+    "reason": "unstable_direction"
+  },
+  "return_6h=LOW|trend_slope=MID": {
+    "blacklisted": true,
+    "failures": 2,
+    "reason": "unstable_direction"
+  },
+  "return_6h=LOW|volatility=HIGH|trend_slope=LOW": {
+    "blacklisted": true,
+    "failures": 2,
+    "reason": "unstable_direction"
+  },
+  "return_6h=LOW|volatility=HIGH|trend_slope=MID": {
+    "blacklisted": true,
+    "failures": 2,
+    "reason": "unstable_direction"
+  },
+  "return_6h=LOW|volatility=HIGH|volume_zscore=HIGH": {
+    "blacklisted": true,
+    "failures": 2,
+    "reason": "unstable_direction"
+  },
+  "return_6h=LOW|volatility=HIGH|volume_zscore=MID": {
+    "blacklisted": false,
+    "failures": 1,
+    "reason": "unstable_direction"
+  },
+  "return_6h=LOW|volatility=LOW|trend_slope=MID": {
+    "blacklisted": true,
+    "failures": 2,
+    "reason": "unstable_direction"
+  },
+  "return_6h=LOW|volatility=LOW|volume_zscore=HIGH": {
+    "blacklisted": true,
+    "failures": 2,
+    "reason": "unstable_direction"
+  },
+  "return_6h=LOW|volatility=MID": {
+    "blacklisted": true,
+    "failures": 2,
+    "reason": "unstable_direction"
+  },
+  "return_6h=LOW|volatility=MID|trend_slope=HIGH": {
+    "blacklisted": false,
+    "failures": 1,
+    "reason": "unstable_direction"
+  },
+  "return_6h=LOW|volatility=MID|trend_slope=LOW": {
+    "blacklisted": true,
+    "failures": 2,
+    "reason": "unstable_direction"
+  },
+  "return_6h=LOW|volatility=MID|volume_zscore=LOW": {
+    "blacklisted": true,
+    "failures": 2,
+    "reason": "unstable_direction"
+  },
+  "return_6h=LOW|volatility=MID|volume_zscore=MID": {
+    "blacklisted": true,
+    "failures": 2,
+    "reason": "unstable_direction"
+  },
+  "return_6h=LOW|volume_zscore=HIGH|trend_slope=HIGH": {
+    "blacklisted": false,
+    "failures": 1,
+    "reason": "unstable_direction"
+  },
+  "return_6h=LOW|volume_zscore=HIGH|trend_slope=LOW": {
+    "blacklisted": true,
+    "failures": 2,
+    "reason": "unstable_direction"
+  },
+  "return_6h=LOW|volume_zscore=HIGH|trend_slope=MID": {
+    "blacklisted": false,
+    "failures": 1,
+    "reason": "unstable_direction"
+  },
+  "return_6h=LOW|volume_zscore=LOW|trend_slope=HIGH": {
+    "blacklisted": true,
+    "failures": 2,
+    "reason": "unstable_direction"
+  },
+  "return_6h=LOW|volume_zscore=LOW|trend_slope=MID": {
+    "blacklisted": true,
+    "failures": 2,
+    "reason": "unstable_direction"
+  },
+  "return_6h=LOW|volume_zscore=MID": {
+    "blacklisted": true,
+    "failures": 2,
+    "reason": "unstable_direction"
+  },
+  "return_6h=LOW|volume_zscore=MID|trend_slope=HIGH": {
+    "blacklisted": false,
+    "failures": 1,
+    "reason": "unstable_direction"
+  },
+  "return_6h=LOW|volume_zscore=MID|trend_slope=LOW": {
+    "blacklisted": true,
+    "failures": 2,
+    "reason": "unstable_direction"
+  },
+  "return_6h=MID|trend_slope=HIGH": {
+    "blacklisted": false,
+    "failures": 1,
+    "reason": "unstable_direction"
+  },
+  "return_6h=MID|trend_slope=LOW": {
+    "blacklisted": true,
+    "failures": 2,
+    "reason": "unstable_direction"
+  },
+  "return_6h=MID|volatility=HIGH|trend_slope=HIGH": {
+    "blacklisted": true,
+    "failures": 2,
+    "reason": "unstable_direction"
+  },
+  "return_6h=MID|volatility=HIGH|trend_slope=LOW": {
+    "blacklisted": true,
+    "failures": 2,
+    "reason": "unstable_direction"
+  },
+  "return_6h=MID|volatility=HIGH|trend_slope=MID": {
+    "blacklisted": true,
+    "failures": 2,
+    "reason": "unstable_direction"
+  },
+  "return_6h=MID|volatility=HIGH|volume_zscore=LOW": {
+    "blacklisted": false,
+    "failures": 1,
+    "reason": "unstable_direction"
+  },
+  "return_6h=MID|volatility=HIGH|volume_zscore=MID": {
+    "blacklisted": false,
+    "failures": 1,
+    "reason": "unstable_direction"
+  },
+  "return_6h=MID|volatility=LOW|trend_slope=LOW": {
+    "blacklisted": true,
+    "failures": 2,
+    "reason": "unstable_direction"
+  },
+  "return_6h=MID|volatility=LOW|volume_zscore=LOW": {
+    "blacklisted": true,
+    "failures": 2,
+    "reason": "unstable_direction"
+  },
+  "return_6h=MID|volatility=MID|trend_slope=HIGH": {
+    "blacklisted": false,
+    "failures": 1,
+    "reason": "unstable_direction"
+  },
+  "return_6h=MID|volatility=MID|trend_slope=LOW": {
+    "blacklisted": true,
+    "failures": 2,
+    "reason": "unstable_direction"
+  },
+  "return_6h=MID|volatility=MID|trend_slope=MID": {
+    "blacklisted": true,
+    "failures": 2,
+    "reason": "unstable_direction"
+  },
+  "return_6h=MID|volatility=MID|volume_zscore=HIGH": {
+    "blacklisted": true,
+    "failures": 2,
+    "reason": "unstable_direction"
+  },
+  "return_6h=MID|volatility=MID|volume_zscore=LOW": {
+    "blacklisted": true,
+    "failures": 2,
+    "reason": "unstable_direction"
+  },
+  "return_6h=MID|volatility=MID|volume_zscore=MID": {
+    "blacklisted": true,
+    "failures": 2,
+    "reason": "unstable_direction"
+  },
+  "return_6h=MID|volume_zscore=HIGH|trend_slope=HIGH": {
+    "blacklisted": true,
+    "failures": 2,
+    "reason": "unstable_direction"
+  },
+  "return_6h=MID|volume_zscore=HIGH|trend_slope=LOW": {
+    "blacklisted": false,
+    "failures": 1,
+    "reason": "unstable_direction"
+  },
+  "return_6h=MID|volume_zscore=HIGH|trend_slope=MID": {
+    "blacklisted": true,
+    "failures": 2,
+    "reason": "unstable_direction"
+  },
+  "return_6h=MID|volume_zscore=LOW|trend_slope=HIGH": {
+    "blacklisted": true,
+    "failures": 2,
+    "reason": "unstable_direction"
+  },
+  "return_6h=MID|volume_zscore=LOW|trend_slope=MID": {
+    "blacklisted": true,
+    "failures": 2,
+    "reason": "unstable_direction"
+  },
+  "return_6h=MID|volume_zscore=MID|trend_slope=HIGH": {
+    "blacklisted": true,
+    "failures": 2,
+    "reason": "unstable_direction"
+  },
+  "return_6h=MID|volume_zscore=MID|trend_slope=LOW": {
+    "blacklisted": true,
+    "failures": 2,
+    "reason": "unstable_direction"
+  },
+  "return_6h=MID|volume_zscore=MID|trend_slope=MID": {
+    "blacklisted": true,
+    "failures": 2,
+    "reason": "unstable_direction"
+  },
+  "volatility=HIGH|trend_slope=HIGH": {
+    "blacklisted": true,
+    "failures": 2,
+    "reason": "unstable_direction"
+  },
+  "volatility=HIGH|trend_slope=LOW": {
+    "blacklisted": true,
+    "failures": 2,
+    "reason": "unstable_direction"
+  },
+  "volatility=HIGH|trend_slope=MID": {
+    "blacklisted": false,
+    "failures": 1,
+    "reason": "unstable_direction"
+  },
+  "volatility=HIGH|volume_zscore=HIGH|trend_slope=HIGH": {
+    "blacklisted": true,
+    "failures": 2,
+    "reason": "unstable_direction"
+  },
+  "volatility=HIGH|volume_zscore=HIGH|trend_slope=LOW": {
+    "blacklisted": true,
+    "failures": 2,
+    "reason": "unstable_direction"
+  },
+  "volatility=HIGH|volume_zscore=LOW": {
+    "blacklisted": true,
+    "failures": 2,
+    "reason": "unstable_direction"
+  },
+  "volatility=HIGH|volume_zscore=LOW|trend_slope=HIGH": {
+    "blacklisted": true,
+    "failures": 2,
+    "reason": "unstable_direction"
+  },
+  "volatility=HIGH|volume_zscore=LOW|trend_slope=MID": {
+    "blacklisted": false,
+    "failures": 1,
+    "reason": "unstable_direction"
+  },
+  "volatility=HIGH|volume_zscore=MID|trend_slope=HIGH": {
+    "blacklisted": true,
+    "failures": 2,
+    "reason": "unstable_direction"
+  },
+  "volatility=HIGH|volume_zscore=MID|trend_slope=LOW": {
+    "blacklisted": true,
+    "failures": 2,
+    "reason": "unstable_direction"
+  },
+  "volatility=HIGH|volume_zscore=MID|trend_slope=MID": {
+    "blacklisted": true,
+    "failures": 2,
+    "reason": "unstable_direction"
+  },
+  "volatility=LOW|volume_zscore=HIGH|trend_slope=HIGH": {
+    "blacklisted": true,
+    "failures": 2,
+    "reason": "unstable_direction"
+  },
+  "volatility=LOW|volume_zscore=HIGH|trend_slope=LOW": {
+    "blacklisted": true,
+    "failures": 2,
+    "reason": "unstable_direction"
+  },
+  "volatility=LOW|volume_zscore=HIGH|trend_slope=MID": {
+    "blacklisted": true,
+    "failures": 2,
+    "reason": "unstable_direction"
+  },
+  "volatility=LOW|volume_zscore=LOW": {
+    "blacklisted": true,
+    "failures": 2,
+    "reason": "unstable_direction"
+  },
+  "volatility=LOW|volume_zscore=LOW|trend_slope=HIGH": {
+    "blacklisted": true,
+    "failures": 2,
+    "reason": "unstable_direction"
+  },
+  "volatility=LOW|volume_zscore=LOW|trend_slope=LOW": {
+    "blacklisted": true,
+    "failures": 2,
+    "reason": "unstable_direction"
+  },
+  "volatility=LOW|volume_zscore=LOW|trend_slope=MID": {
+    "blacklisted": true,
+    "failures": 2,
+    "reason": "unstable_direction"
+  },
+  "volatility=LOW|volume_zscore=MID": {
+    "blacklisted": true,
+    "failures": 2,
+    "reason": "unstable_direction"
+  },
+  "volatility=LOW|volume_zscore=MID|trend_slope=HIGH": {
+    "blacklisted": true,
+    "failures": 2,
+    "reason": "unstable_direction"
+  },
+  "volatility=LOW|volume_zscore=MID|trend_slope=LOW": {
+    "blacklisted": true,
+    "failures": 2,
+    "reason": "unstable_direction"
+  },
+  "volatility=MID|trend_slope=LOW": {
+    "blacklisted": true,
+    "failures": 2,
+    "reason": "unstable_direction"
+  },
+  "volatility=MID|trend_slope=MID": {
+    "blacklisted": true,
+    "failures": 2,
+    "reason": "unstable_direction"
+  },
+  "volatility=MID|volume_zscore=HIGH": {
+    "blacklisted": true,
+    "failures": 2,
+    "reason": "unstable_direction"
+  },
+  "volatility=MID|volume_zscore=HIGH|trend_slope=HIGH": {
+    "blacklisted": true,
+    "failures": 2,
+    "reason": "unstable_direction"
+  },
+  "volatility=MID|volume_zscore=HIGH|trend_slope=LOW": {
+    "blacklisted": true,
+    "failures": 2,
+    "reason": "unstable_direction"
+  },
+  "volatility=MID|volume_zscore=HIGH|trend_slope=MID": {
+    "blacklisted": true,
+    "failures": 2,
+    "reason": "unstable_direction"
+  },
+  "volatility=MID|volume_zscore=LOW|trend_slope=HIGH": {
+    "blacklisted": true,
+    "failures": 2,
+    "reason": "unstable_direction"
+  },
+  "volatility=MID|volume_zscore=LOW|trend_slope=LOW": {
+    "blacklisted": true,
+    "failures": 2,
+    "reason": "unstable_direction"
+  },
+  "volatility=MID|volume_zscore=LOW|trend_slope=MID": {
+    "blacklisted": true,
+    "failures": 2,
+    "reason": "unstable_direction"
+  },
+  "volatility=MID|volume_zscore=MID|trend_slope=LOW": {
+    "blacklisted": true,
+    "failures": 2,
+    "reason": "unstable_direction"
+  },
+  "volatility=MID|volume_zscore=MID|trend_slope=MID": {
+    "blacklisted": true,
+    "failures": 2,
+    "reason": "unstable_direction"
+  },
+  "volume_zscore=HIGH|trend_slope=LOW": {
+    "blacklisted": true,
+    "failures": 2,
+    "reason": "unstable_direction"
+  },
+  "volume_zscore=HIGH|trend_slope=MID": {
+    "blacklisted": true,
+    "failures": 2,
+    "reason": "unstable_direction"
+  }
+}

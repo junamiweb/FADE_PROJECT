@@ -1,0 +1,34 @@
+{
+  "asset": "xlm_1h",
+  "backend": "pytorch",
+  "direction": "DOWN",
+  "epochs": 25,
+  "feature_cols": [
+    "close_pos",
+    "range_pct",
+    "streak_signed",
+    "return_1h"
+  ],
+  "feature_cols_used": [
+    "close_pos",
+    "range_pct",
+    "streak_signed",
+    "return_1h"
+  ],
+  "holdout_hit_rate": 0.5361,
+  "holdout_lift_vs_random": 0.0361,
+  "last_direction": "DOWN",
+  "model": "lstm",
+  "n_dev": 49607,
+  "n_holdout": 21261,
+  "n_predictions": 21261,
+  "n_total": 70879,
+  "news_csv": null,
+  "null_mean": 0.5068,
+  "null_std": 0.0031,
+  "p_value": 0.0033,
+  "raw_prob_pct": 46.67,
+  "seed": 0,
+  "status": "ok",
+  "window": 12
+}

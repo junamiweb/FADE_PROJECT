@@ -1,0 +1,34 @@
+{
+  "asset": "avax_1h",
+  "backend": "pytorch",
+  "direction": "DOWN",
+  "epochs": 25,
+  "feature_cols": [
+    "close_pos",
+    "range_pct",
+    "streak_signed",
+    "return_1h"
+  ],
+  "feature_cols_used": [
+    "close_pos",
+    "range_pct",
+    "streak_signed",
+    "return_1h"
+  ],
+  "holdout_hit_rate": 0.527,
+  "holdout_lift_vs_random": 0.027,
+  "last_direction": "DOWN",
+  "model": "lstm",
+  "n_dev": 35764,
+  "n_holdout": 15328,
+  "n_predictions": 15328,
+  "n_total": 51103,
+  "news_csv": null,
+  "null_mean": 0.5141,
+  "null_std": 0.0033,
+  "p_value": 0.0033,
+  "raw_prob_pct": 48.26,
+  "seed": 0,
+  "status": "ok",
+  "window": 12
+}

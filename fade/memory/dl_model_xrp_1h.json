@@ -1,0 +1,34 @@
+{
+  "asset": "xrp_1h",
+  "backend": "pytorch",
+  "direction": "UP",
+  "epochs": 25,
+  "feature_cols": [
+    "close_pos",
+    "range_pct",
+    "streak_signed",
+    "return_1h"
+  ],
+  "feature_cols_used": [
+    "close_pos",
+    "range_pct",
+    "streak_signed",
+    "return_1h"
+  ],
+  "holdout_hit_rate": 0.5251,
+  "holdout_lift_vs_random": 0.0251,
+  "last_direction": "UP",
+  "model": "lstm",
+  "n_dev": 50364,
+  "n_holdout": 21585,
+  "n_predictions": 21585,
+  "n_total": 71960,
+  "news_csv": null,
+  "null_mean": 0.5002,
+  "null_std": 0.0036,
+  "p_value": 0.0033,
+  "raw_prob_pct": 51.34,
+  "seed": 0,
+  "status": "ok",
+  "window": 12
+}

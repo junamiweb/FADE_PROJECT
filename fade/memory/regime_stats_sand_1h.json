@@ -1,0 +1,20 @@
+{
+  "overall_hit_rate": 0.5237,
+  "regimes": {
+    "NORMAL": {
+      "hit_rate": 0.5222,
+      "lift_vs_random": 0.0222,
+      "n_predictions": 19636
+    },
+    "SHOCK_ACTIVE": {
+      "hit_rate": 0.5248,
+      "lift_vs_random": 0.0248,
+      "n_predictions": 2098
+    },
+    "POST_SHOCK": {
+      "hit_rate": 0.5286,
+      "lift_vs_random": 0.0286,
+      "n_predictions": 5628
+    }
+  }
+}
