@@ -40,6 +40,9 @@ import pandas as pd
 import requests
 
 BINANCE = "https://data-api.binance.vision/api/v3/klines"
+# Polite pacing: data-api is generous but bulk alt downloads can 429 without gaps.
+BINANCE_PAGE_SLEEP_S = 0.35
+BINANCE_429_BASE_SLEEP_S = 5.0
 SYMBOL = "BTCUSDT"
 ASSETS = {"btc": "BTCUSDT", "eth": "ETHUSDT"}
 _COLS = ["timestamp", "open", "high", "low", "close", "volume"]
@@ -52,24 +55,55 @@ _INTERVAL_START = {
 }
 
 
-def _get_with_retry(params: dict, max_retries: int = 5) -> requests.Response:
-    """GET with exponential backoff on transient network errors."""
+def _get_with_retry(params: dict, max_retries: int = 8) -> requests.Response:
+    """GET with backoff on 429/418, transient network errors, and 5xx."""
+    backoff = BINANCE_429_BASE_SLEEP_S
+    last_status: int | None = None
     for attempt in range(max_retries):
         try:
             resp = requests.get(BINANCE, params=params, timeout=60)
+            if resp.status_code == 429:
+                last_status = 429
+                wait = int(resp.headers.get("Retry-After", min(120, backoff)))
+                print(f"  Binance 429 rate limit, sleep {wait}s...")
+                time.sleep(wait)
+                backoff = min(backoff * 2, 120)
+                continue
+            if resp.status_code == 418:
+                last_status = 418
+                wait = min(180, backoff * 2)
+                print(f"  Binance 418 (ban/throttle), sleep {wait}s...")
+                time.sleep(wait)
+                backoff = min(backoff * 2, 180)
+                continue
             resp.raise_for_status()
             return resp
+        except requests.HTTPError:
+            # 5xx is the server's problem and usually transient - retry it
+            # like any other transient error. 4xx (other than 429/418, which
+            # are handled above) means the request itself is bad - fail fast.
+            if 500 <= resp.status_code < 600 and attempt < max_retries - 1:
+                wait = min(2 ** attempt, 60)
+                print(f"  retry {attempt + 1}/{max_retries} after {wait}s "
+                      f"(HTTP {resp.status_code})")
+                time.sleep(wait)
+                continue
+            raise
         except (requests.RequestException, ConnectionError) as exc:
             if attempt == max_retries - 1:
                 raise
             wait = min(2 ** attempt, 60)
             print(f"  retry {attempt + 1}/{max_retries} after {wait}s ({exc})")
             time.sleep(wait)
-    raise RuntimeError("unreachable")
+    raise RuntimeError(
+        f"Binance rate limit (HTTP {last_status}) persisted for {max_retries} "
+        "consecutive attempts - giving up."
+    )
 
 
 def fetch_binance(interval: str, start: str, end: str | None = None,
-                  symbol: str = SYMBOL, limit: int = 1000) -> pd.DataFrame:
+                  symbol: str = SYMBOL, limit: int = 1000,
+                  page_sleep: float = BINANCE_PAGE_SLEEP_S) -> pd.DataFrame:
     """Paginated Binance klines download into a clean OHLCV frame."""
     start_ms = int(pd.Timestamp(start, tz="UTC").timestamp() * 1000)
     end_ms = int((pd.Timestamp(end, tz="UTC") if end
@@ -90,7 +124,7 @@ def fetch_binance(interval: str, start: str, end: str | None = None,
             break
         if len(rows) % 50000 == 0:
             print(f"  ... {len(rows):,} rows fetched")
-        time.sleep(0.2)
+        time.sleep(page_sleep)
 
     df = pd.DataFrame(rows, columns=[
         "openTime", "open", "high", "low", "close", "volume", "closeTime",
