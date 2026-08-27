@@ -1,20 +1,20 @@
 {
-  "overall_hit_rate": 0.5374,
+  "overall_hit_rate": 0.5294,
   "regimes": {
     "NORMAL": {
-      "hit_rate": 0.5387,
-      "lift_vs_random": 0.0387,
-      "n_predictions": 22776
+      "hit_rate": 0.5284,
+      "lift_vs_random": 0.0284,
+      "n_predictions": 29894
     },
     "SHOCK_ACTIVE": {
-      "hit_rate": 0.547,
-      "lift_vs_random": 0.047,
-      "n_predictions": 2726
+      "hit_rate": 0.5454,
+      "lift_vs_random": 0.0454,
+      "n_predictions": 3196
     },
     "POST_SHOCK": {
-      "hit_rate": 0.5281,
-      "lift_vs_random": 0.0281,
-      "n_predictions": 6052
+      "hit_rate": 0.5267,
+      "lift_vs_random": 0.0267,
+      "n_predictions": 8200
     }
   }
 }

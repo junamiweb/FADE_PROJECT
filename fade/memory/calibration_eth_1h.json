@@ -9,32 +9,32 @@
     {
       "lo": 0.55,
       "hi": 0.6,
-      "hits": 14805,
-      "total": 27676
+      "hits": 33794,
+      "total": 63691
     },
     {
       "lo": 0.6,
       "hi": 0.65,
-      "hits": 2042,
-      "total": 3651
+      "hits": 4731,
+      "total": 8586
     },
     {
       "lo": 0.65,
       "hi": 0.7,
-      "hits": 51,
-      "total": 117
+      "hits": 218,
+      "total": 428
     },
     {
       "lo": 0.7,
       "hi": 0.75,
-      "hits": 15,
-      "total": 32
+      "hits": 25,
+      "total": 53
     },
     {
       "lo": 0.75,
       "hi": 0.8,
-      "hits": 26,
-      "total": 53
+      "hits": 30,
+      "total": 60
     },
     {
       "lo": 0.8,
@@ -61,13 +61,19 @@
       "total": 0
     }
   ],
-  "runs": 1,
+  "runs": 2,
   "history": [
     {
       "run": 1,
       "samples": 31554,
       "ece": 0.0409,
       "brier": 0.2483
+    },
+    {
+      "run": 2,
+      "samples": 41289,
+      "ece": 0.0419,
+      "brier": 0.2491
     }
   ]
 }
