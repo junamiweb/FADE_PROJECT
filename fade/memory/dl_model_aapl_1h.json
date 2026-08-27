@@ -1,0 +1,34 @@
+{
+  "asset": "aapl_1h",
+  "backend": "pytorch",
+  "direction": "DOWN",
+  "epochs": 25,
+  "feature_cols": [
+    "close_pos",
+    "range_pct",
+    "streak_signed",
+    "return_1h"
+  ],
+  "feature_cols_used": [
+    "close_pos",
+    "range_pct",
+    "streak_signed",
+    "return_1h"
+  ],
+  "holdout_hit_rate": 0.4893,
+  "holdout_lift_vs_random": -0.0107,
+  "last_direction": "DOWN",
+  "model": "lstm",
+  "n_dev": 3611,
+  "n_holdout": 1549,
+  "n_predictions": 1549,
+  "n_total": 5171,
+  "news_csv": null,
+  "null_mean": 0.4997,
+  "null_std": 0.012,
+  "p_value": 0.8106,
+  "raw_prob_pct": 49.85,
+  "seed": 0,
+  "status": "ok",
+  "window": 12
+}
