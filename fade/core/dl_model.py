@@ -63,6 +63,10 @@ def _model_path(memory_dir: Path, asset: str) -> Path:
     return Path(memory_dir) / f"dl_model_{asset}.json"
 
 
+def _weights_path(memory_dir: Path, asset: str) -> Path:
+    return Path(memory_dir) / f"dl_model_{asset}_weights.pt"
+
+
 
 if _nn is not None:
 
@@ -177,25 +181,70 @@ def build_sequential_dataset(
         )
 
     windows = sliding_window_view(arr, (window, arr.shape[1]))[:, 0, :, :]
-    # Label of window ending at i is the forward return *after* bar i.
+    # Label of window ending at i is the forward return *after* bar i. `valid`
+    # above already dropped every row whose forward return needed a future
+    # bar, so every window here already has a real, known label - no
+    # additional trailing drop is needed (or correct: it would just discard
+    # the most recent legitimate training sample).
     y_win = y[window - 1:]
     fwd_win = fwd_arr[window - 1:]
-    # Drop the last window — its forward return would require a future bar.
-    if len(windows) > 1:
-        windows, y_win, fwd_win = windows[:-1], y_win[:-1], fwd_win[:-1]
     return windows.copy(), y_win, fwd_win, meta
-def _train_predict_pytorch(
+
+
+def build_latest_window(
+    csv_path: str | Path,
+    config: Config,
+    feature_cols: tuple[str, ...] = DEFAULT_FEATURE_COLS,
+    window: int = DEFAULT_WINDOW_K,
+    news_csv: str | Path | None = None,
+) -> tuple[np.ndarray | None, dict]:
+    """Build a single inference window ending at the most recent bar.
+
+    Unlike ``build_sequential_dataset``, this does not require a known
+    forward return for the final bar - it targets live inference on the
+    newest data, not training pairs.
+    """
+    df = load_ohlcv(csv_path)
+    pool = atoms_mod.compute_atom_pool(df, config)
+
+    news_cols = ("news_tone", "news_tone_chg", "news_vol_z")
+    for col in news_cols:
+        if col in df.columns and col not in pool.columns:
+            pool[col] = df[col].to_numpy()
+    if news_csv:
+        pool = attach_news_to_pool(pool, str(news_csv))
+
+    asset = Path(csv_path).stem.lower()
+    available = [c for c in feature_cols if c in pool.columns]
+    if not available:
+        return None, {"asset": asset}
+
+    feats = pool[available].dropna()
+    if len(feats) < window:
+        return None, {"asset": asset}
+
+    arr = feats.to_numpy(dtype=np.float32)
+    last_window = arr[-window:][np.newaxis, :, :]
+    meta = {
+        "asset": asset,
+        "timestamp": str(feats.index[-1]),
+        "feature_cols_used": available,
+    }
+    return last_window, meta
+
+
+def _train_pytorch(
     X_dev: np.ndarray,
     y_dev: np.ndarray,
-    X_score: np.ndarray,
     seed: int,
     epochs: int = 25,
-) -> np.ndarray:
-    """Train LSTM on (X_dev, y_dev) and return binary predictions for X_score."""
+):
+    """Train an LSTM on (X_dev, y_dev) and return the trained model, or
+    ``None`` if there is nothing to train on."""
     if _torch is None:
         raise RuntimeError("PyTorch is not installed")
-    if len(X_dev) == 0 or len(X_score) == 0:
-        return np.zeros(len(X_score), dtype=int)
+    if len(X_dev) == 0:
+        return None
 
     torch = _torch
     torch.manual_seed(seed)
@@ -219,10 +268,49 @@ def _train_predict_pytorch(
             optimizer.step()
 
     model.eval()
+    return model
+
+
+def _predict_proba_pytorch(model, X_score: np.ndarray) -> np.ndarray:
+    """Return P(up) for each window in X_score using a trained model."""
+    if model is None or len(X_score) == 0:
+        return np.full(len(X_score), 0.5, dtype=np.float64)
+    torch = _torch
     with torch.no_grad():
         xs = torch.from_numpy(np.ascontiguousarray(X_score))
         probs = torch.sigmoid(model(xs)).cpu().numpy()
-    return (probs >= 0.5).astype(int)
+    return probs.astype(np.float64)
+
+
+def save_model(model, memory_dir: Path, asset: str, n_features: int) -> Path | None:
+    """Persist trained LSTM weights so later calls can skip retraining."""
+    if model is None:
+        return None
+    path = _weights_path(memory_dir, asset)
+    path.parent.mkdir(parents=True, exist_ok=True)
+    _torch.save({"state_dict": model.state_dict(), "n_features": n_features}, path)
+    return path
+
+
+def load_model(memory_dir: Path, asset: str):
+    """Load previously persisted LSTM weights, or None if unavailable."""
+    if _torch is None:
+        return None
+    path = _weights_path(memory_dir, asset)
+    if not path.exists():
+        return None
+    try:
+        try:
+            ckpt = _torch.load(path, map_location="cpu", weights_only=True)
+        except TypeError:
+            ckpt = _torch.load(path, map_location="cpu")
+        model = LSTMClassifier(ckpt["n_features"])
+        model.load_state_dict(ckpt["state_dict"])
+        model.eval()
+        return model
+    except Exception:
+        log.exception("Failed to load persisted DL model for %s - will retrain", asset)
+        return None
 
 
 def train_and_evaluate(
@@ -236,6 +324,12 @@ def train_and_evaluate(
     news_csv: str | Path | None = None,
     epochs: int = 25,
 ) -> dict[str, Any]:
+    """Train on a chronological split and score the holdout out-of-sample.
+
+    Also trains a second model on the full dataset (for the reported
+    "last_direction"/"raw_prob_pct") and persists its weights so
+    ``forecast_latest`` can reuse them instead of retraining.
+    """
     if not dl_backend_available():
         return {"status": "no_backend", "verdict": "SKIP - PyTorch not installed."}
     config = config or lean_config()
@@ -246,9 +340,13 @@ def train_and_evaluate(
         return {**meta, "status": "too_short", "verdict": "INCONCLUSIVE"}
 
     n = len(X)
+    asset = meta.get("asset", "synthetic")
+
     if holdout_frac <= 0:
-        pred_last = _train_predict_pytorch(X, y, X[-1:], seed, epochs)
-        direction = "UP" if int(pred_last[0]) == 1 else "DOWN"
+        model = _train_pytorch(X, y, seed, epochs)
+        save_model(model, config.memory_dir, asset, X.shape[2])
+        prob_up = float(_predict_proba_pytorch(model, X[-1:])[0])
+        direction = "UP" if prob_up >= 0.5 else "DOWN"
         return {
             **meta,
             "status": "ok",
@@ -263,17 +361,21 @@ def train_and_evaluate(
             "epochs": epochs,
             "last_direction": direction,
             "direction": direction,
-            "raw_prob_pct": 50.0,
+            "raw_prob_pct": round(prob_up * 100, 2),
         }
 
     split = int(n * (1.0 - holdout_frac))
     if split < 50 or (n - split) < 20:
         return {**meta, "status": "too_short", "verdict": "INCONCLUSIVE"}
 
-    pred_hold = _train_predict_pytorch(X[:split], y[:split], X[split:], seed, epochs)
+    holdout_model = _train_pytorch(X[:split], y[:split], seed, epochs)
+    pred_hold = (_predict_proba_pytorch(holdout_model, X[split:]) >= 0.5).astype(int)
     scored = _score_holdout(pred_hold, fwd[split:], config, seed, n_shuffles)
-    pred_all = _train_predict_pytorch(X, y, X[-1:], seed, epochs)
-    last_dir = "UP" if int(pred_all[0]) == 1 else "DOWN"
+
+    full_model = _train_pytorch(X, y, seed, epochs)
+    save_model(full_model, config.memory_dir, asset, X.shape[2])
+    prob_up = float(_predict_proba_pytorch(full_model, X[-1:])[0])
+    last_dir = "UP" if prob_up >= 0.5 else "DOWN"
     return {
         **meta,
         **scored,
@@ -288,6 +390,7 @@ def train_and_evaluate(
         "epochs": epochs,
         "last_direction": last_dir,
         "direction": last_dir,
+        "raw_prob_pct": round(prob_up * 100, 2),
     }
 
 
@@ -317,15 +420,43 @@ def forecast_latest(
     seed: int = 0,
     epochs: int = 25,
 ) -> dict[str, Any]:
+    """Predict the direction of the NEXT bar after the most recent one.
+
+    Reuses a persisted model for this asset if one exists (e.g. trained by
+    ``train_and_evaluate`` in the main pipeline); otherwise trains once on
+    full history and persists it for subsequent calls, so this stays fast
+    on repeat invocations as the module docstring promises.
+    """
     if not dl_backend_available():
         return {"status": "no_backend", "verdict": "SKIP - PyTorch not installed."}
-    return train_and_evaluate(
-        csv_path,
-        config,
-        holdout_frac=0.0,
-        seed=seed,
-        feature_cols=feature_cols,
-        window=window,
-        news_csv=news_csv,
-        epochs=epochs,
-    )
+    config = config or lean_config()
+
+    X_last, meta = build_latest_window(csv_path, config, feature_cols, window, news_csv)
+    if X_last is None:
+        return {**meta, "status": "too_short", "verdict": "INCONCLUSIVE"}
+
+    asset = meta["asset"]
+    model = load_model(config.memory_dir, asset)
+    if model is None:
+        X, y, _, train_meta = build_sequential_dataset(
+            csv_path, config, feature_cols, window, news_csv
+        )
+        if X.shape[0] == 0:
+            return {**train_meta, "status": "too_short", "verdict": "INCONCLUSIVE"}
+        model = _train_pytorch(X, y, seed, epochs)
+        save_model(model, config.memory_dir, asset, X.shape[2])
+
+    prob_up = float(_predict_proba_pytorch(model, X_last)[0])
+    direction = "UP" if prob_up >= 0.5 else "DOWN"
+    return {
+        **meta,
+        "status": "ok",
+        "backend": _DL_BACKEND,
+        "model": "lstm",
+        "feature_cols": list(feature_cols),
+        "window": window,
+        "news_csv": str(news_csv) if news_csv else None,
+        "last_direction": direction,
+        "direction": direction,
+        "raw_prob_pct": round(prob_up * 100, 2),
+    }

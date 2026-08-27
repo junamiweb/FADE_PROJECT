@@ -6,6 +6,9 @@ and merges them onto the hourly index via forward-fill.
 
 from __future__ import annotations
 
+import re
+from pathlib import Path
+
 import numpy as np
 import pandas as pd
 
@@ -14,6 +17,27 @@ from fade.utils.logging import get_logger
 log = get_logger("news_features")
 
 VOL_Z_WINDOW = 30
+
+# News coverage is currently BTC-only (see download_news.py), keyed by asset
+# symbol rather than the OHLCV filename's timeframe suffix.
+_NEWS_FILES_BY_SYMBOL = {"btc": "news_btc.csv"}
+_TIMEFRAME_SUFFIX = re.compile(r"_(1s|1m|5m|15m|30m|1h|4h|1d)$")
+
+
+def resolve_news_csv(asset: str, repo_root: str | Path) -> Path | None:
+    """Resolve the news CSV for an asset (e.g. ``"eth_1h"``), anchored to
+    ``repo_root`` rather than the process's current working directory.
+
+    Returns ``None`` when no news file is available for this asset's symbol
+    (news coverage is currently BTC-only, so a non-BTC asset never gets
+    another asset's news attached to it).
+    """
+    symbol = _TIMEFRAME_SUFFIX.sub("", asset.lower())
+    name = _NEWS_FILES_BY_SYMBOL.get(symbol)
+    if name is None:
+        return None
+    path = Path(repo_root) / name
+    return path if path.exists() else None
 
 
 def load_news(news_csv: str) -> pd.DataFrame:

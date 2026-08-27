@@ -55,6 +55,18 @@ _INTERVAL_START = {
 }
 
 
+def _parse_retry_after(value: str | None, default: float) -> float:
+    """Parse a Retry-After header (delay-seconds only; RFC 9110 also allows an
+    HTTP-date, which we don't need to support here) - fall back safely on
+    anything else instead of crashing the download."""
+    if value is None:
+        return default
+    try:
+        return max(0.0, float(value))
+    except ValueError:
+        return default
+
+
 def _get_with_retry(params: dict, max_retries: int = 8) -> requests.Response:
     """GET with backoff on 429/418, transient network errors, and 5xx."""
     backoff = BINANCE_429_BASE_SLEEP_S
@@ -64,7 +76,7 @@ def _get_with_retry(params: dict, max_retries: int = 8) -> requests.Response:
             resp = requests.get(BINANCE, params=params, timeout=60)
             if resp.status_code == 429:
                 last_status = 429
-                wait = int(resp.headers.get("Retry-After", min(120, backoff)))
+                wait = _parse_retry_after(resp.headers.get("Retry-After"), min(120, backoff))
                 print(f"  Binance 429 rate limit, sleep {wait}s...")
                 time.sleep(wait)
                 backoff = min(backoff * 2, 120)

@@ -26,6 +26,7 @@ from fade.core.data_loader import generate_synthetic_ohlcv, load_ohlcv
 from fade.core.calibration import CalibrationStore
 from fade.core.predictor import collect_calibration_samples
 from fade.core import dl_model
+from fade.core import news_features
 
 from fade.core.regimes import assign_regimes, save_regime_stats
 from fade.core.significant_changes import detect_significant_changes, summarize_changes
@@ -124,7 +125,25 @@ def run(csv_path: str | None = None, config: Config | None = None) -> dict:
             rejected += 1
     memory.save()
 
-    # --- 6b. Latest forecast -------------------------------------------
+    # --- 6b. Train and evaluate DL model (v0.3 / Nexus) -----------------
+    # Runs before the forecast step so run_forecast's own DL call (below)
+    # can reuse the model persisted here instead of training it again.
+    dl_report = None
+    if csv_path and dl_model.dl_backend_available():
+        log.info("Training DL challenger/core (Nexus)...")
+        news_path = news_features.resolve_news_csv(asset, config.root.parent)
+        try:
+            dl_report = dl_model.train_and_evaluate(
+                csv_path=csv_path,
+                config=config,
+                news_csv=news_path,
+            )
+            dl_model.persist_record(dl_report, config.memory_dir)
+        except Exception:
+            log.exception("DL challenger training failed - continuing without it")
+            dl_report = None
+
+    # --- 6c. Latest forecast ---------------------------------------------
     latest_forecast = None
     if csv_path:
         fc = run_forecast(csv_path, config)
@@ -136,18 +155,6 @@ def run(csv_path: str | None = None, config: Config | None = None) -> dict:
                 "calibrated_prob_pct": fc["calibrated_prob_pct"],
                 "n_rules": fc["n_rules"],
             }
-
-    # --- 6c. Train and evaluate DL model (v0.3 / Nexus) ---
-    dl_report = None
-    if csv_path and dl_model.dl_backend_available():
-        log.info("Training DL challenger/core (Nexus)...")
-        news_path = "news_btc.csv" if Path("news_btc.csv").exists() else None
-        dl_report = dl_model.train_and_evaluate(
-            csv_path=csv_path,
-            config=config,
-            news_csv=news_path,
-        )
-        dl_model.persist_record(dl_report, config.memory_dir)
 
     # --- 7. Report -----------------------------------------------------
     report = _build_report(

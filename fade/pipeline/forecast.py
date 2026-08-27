@@ -29,6 +29,8 @@ from fade.core.regimes import (
     load_regime_stats,
     regime_confidence_scale,
 )
+from fade.core import dl_model
+from fade.core import news_features
 from fade.core.significant_changes import detect_significant_changes
 from fade.core.predictor import _rule_weight, predict_calibrated
 from fade.memory import MemoryStore
@@ -107,6 +109,19 @@ def run_forecast(csv_path: str, config: Config | None = None) -> dict:
 
     row = preds.iloc[-1]
 
+    # --- DL model forecast (if available) ---
+    dl_result = None
+    if dl_model.dl_backend_available():
+        try:
+            dl_result = dl_model.forecast_latest(
+                csv_path=csv_path,
+                config=config,
+                news_csv=news_features.resolve_news_csv(asset, config.root.parent),
+            )
+        except Exception:
+            log.exception("DL forecast failed - continuing without it")
+            dl_result = None
+
     # Regime-weighted confidence: rescale distance from 0.5 by how reliable the
     # current regime was out-of-sample. Direction is untouched (no fake edge).
     # DISABLED by default — failed the chronological split test (regime reliability
@@ -149,6 +164,8 @@ def run_forecast(csv_path: str, config: Config | None = None) -> dict:
         "n_rules": int(row["n_rules"]),
         "atom_states": atom_states,
         "rules_used": rules_used,
+        "dl_forecast": dl_result,
+
     }
 
 
@@ -176,6 +193,12 @@ def _print_forecast(result: dict) -> None:
     scale = result.get("regime_scale")
     if scale is not None and abs(scale - 1.0) > 1e-6:
         print(f"  Regime weight : x{scale}  (raw -> {result['regime_adjusted_prob_pct']}%)")
+    if dl := result.get("dl_forecast"):
+        if dl.get("status") == "ok":
+            print(f"  DL Prediction : {dl['direction']} ({dl['raw_prob_pct']}%)")
+        else:
+            print(f"  DL Prediction : {dl.get('status')} ({dl.get('verdict')})")
+
     print(f"  Calibrated    : {result['calibrated_prob_pct']}%")
     print(f"  Rules matched : {result['n_rules']}")
 
