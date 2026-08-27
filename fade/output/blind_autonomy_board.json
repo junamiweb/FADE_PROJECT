@@ -1,212 +1,326 @@
 {
-  "generated_utc": "2026-07-23T12:01:00.926560+00:00",
+  "generated_utc": "2026-08-27T18:23:27.611078+00:00",
   "track_id": "universe_mh48_path_lean3",
   "autonomous": true,
   "universe_n": 16,
   "refresh_ok": 16,
   "refresh_fail": 0,
-  "seals_waiting": 16,
+  "seals_waiting": 2,
   "seals_sealed": 0,
-  "seals_burned": 0,
+  "seals_burned": 14,
   "contract_passes": 0,
   "pass_assets": [],
   "waiting": [
     {
-      "asset": "btc_1h",
-      "n_available": 0,
-      "bars_still_needed": 500,
-      "blind_after_utc": "2026-07-23 12:00:58.551487+00:00"
-    },
-    {
-      "asset": "eth_1h",
-      "n_available": 0,
-      "bars_still_needed": 500,
-      "blind_after_utc": "2026-07-23 12:00:58.750407+00:00"
-    },
-    {
-      "asset": "sol_1h",
-      "n_available": 0,
-      "bars_still_needed": 500,
-      "blind_after_utc": "2026-07-23 12:00:58.892663+00:00"
-    },
-    {
-      "asset": "bnb_1h",
-      "n_available": 0,
-      "bars_still_needed": 500,
-      "blind_after_utc": "2026-07-23 12:00:59.083085+00:00"
-    },
-    {
-      "asset": "xrp_1h",
-      "n_available": 0,
-      "bars_still_needed": 500,
-      "blind_after_utc": "2026-07-23 12:00:59.267535+00:00"
-    },
-    {
-      "asset": "ada_1h",
-      "n_available": 0,
-      "bars_still_needed": 500,
-      "blind_after_utc": "2026-07-23 12:00:59.450324+00:00"
-    },
-    {
-      "asset": "avax_1h",
-      "n_available": 0,
-      "bars_still_needed": 500,
-      "blind_after_utc": "2026-07-23 12:00:59.599525+00:00"
-    },
-    {
-      "asset": "link_1h",
-      "n_available": 0,
-      "bars_still_needed": 500,
-      "blind_after_utc": "2026-07-23 12:00:59.855595+00:00"
-    },
-    {
-      "asset": "doge_1h",
-      "n_available": 0,
-      "bars_still_needed": 500,
-      "blind_after_utc": "2026-07-23 12:01:00.056011+00:00"
-    },
-    {
-      "asset": "ltc_1h",
-      "n_available": 0,
-      "bars_still_needed": 500,
-      "blind_after_utc": "2026-07-23 12:01:00.244170+00:00"
-    },
-    {
-      "asset": "dot_1h",
-      "n_available": 0,
-      "bars_still_needed": 500,
-      "blind_after_utc": "2026-07-23 12:01:00.402594+00:00"
-    },
-    {
-      "asset": "near_1h",
-      "n_available": 0,
-      "bars_still_needed": 500,
-      "blind_after_utc": "2026-07-23 12:01:00.557271+00:00"
-    },
-    {
-      "asset": "arb_1h",
-      "n_available": 0,
-      "bars_still_needed": 500,
-      "blind_after_utc": "2026-07-23 12:01:00.662604+00:00"
-    },
-    {
-      "asset": "op_1h",
-      "n_available": 0,
-      "bars_still_needed": 500,
-      "blind_after_utc": "2026-07-23 12:01:00.782812+00:00"
-    },
-    {
       "asset": "spy_1h",
-      "n_available": 0,
-      "bars_still_needed": 300,
+      "n_available": 180,
+      "bars_still_needed": 120,
       "blind_after_utc": "2026-07-23 12:01:00.847616+00:00"
     },
     {
       "asset": "aapl_1h",
-      "n_available": 0,
-      "bars_still_needed": 300,
+      "n_available": 180,
+      "bars_still_needed": 120,
       "blind_after_utc": "2026-07-23 12:01:00.909337+00:00"
     }
   ],
-  "burned_summary": [],
+  "burned_summary": [
+    {
+      "asset": "btc_1h",
+      "success_contract_pass": false,
+      "strategy_total_return": -0.0209,
+      "buy_hold_total_return": 0.1316,
+      "n_changes": 12
+    },
+    {
+      "asset": "eth_1h",
+      "success_contract_pass": false,
+      "strategy_total_return": 0.0889,
+      "buy_hold_total_return": 0.0882,
+      "n_changes": 9
+    },
+    {
+      "asset": "sol_1h",
+      "success_contract_pass": false,
+      "strategy_total_return": -0.093,
+      "buy_hold_total_return": 0.2028,
+      "n_changes": 10
+    },
+    {
+      "asset": "bnb_1h",
+      "success_contract_pass": false,
+      "strategy_total_return": -0.0425,
+      "buy_hold_total_return": 0.0546,
+      "n_changes": 5
+    },
+    {
+      "asset": "xrp_1h",
+      "success_contract_pass": false,
+      "strategy_total_return": -0.0989,
+      "buy_hold_total_return": 0.1629,
+      "n_changes": 6
+    },
+    {
+      "asset": "ada_1h",
+      "success_contract_pass": false,
+      "strategy_total_return": -0.1238,
+      "buy_hold_total_return": 0.1751,
+      "n_changes": 10
+    },
+    {
+      "asset": "avax_1h",
+      "success_contract_pass": false,
+      "strategy_total_return": 0.1244,
+      "buy_hold_total_return": 0.0935,
+      "n_changes": 8
+    },
+    {
+      "asset": "link_1h",
+      "success_contract_pass": false,
+      "strategy_total_return": -0.086,
+      "buy_hold_total_return": 0.1246,
+      "n_changes": 9
+    },
+    {
+      "asset": "doge_1h",
+      "success_contract_pass": false,
+      "strategy_total_return": -0.1583,
+      "buy_hold_total_return": -0.0733,
+      "n_changes": 10
+    },
+    {
+      "asset": "ltc_1h",
+      "success_contract_pass": false,
+      "strategy_total_return": 0.1473,
+      "buy_hold_total_return": 0.0985,
+      "n_changes": 11
+    },
+    {
+      "asset": "dot_1h",
+      "success_contract_pass": false,
+      "strategy_total_return": 0.1013,
+      "buy_hold_total_return": -0.0092,
+      "n_changes": 7
+    },
+    {
+      "asset": "near_1h",
+      "success_contract_pass": false,
+      "strategy_total_return": 0.0156,
+      "buy_hold_total_return": 0.0171,
+      "n_changes": 10
+    },
+    {
+      "asset": "arb_1h",
+      "success_contract_pass": false,
+      "strategy_total_return": 0.0747,
+      "buy_hold_total_return": -0.1075,
+      "n_changes": 9
+    },
+    {
+      "asset": "op_1h",
+      "success_contract_pass": false,
+      "strategy_total_return": -0.0874,
+      "buy_hold_total_return": 0.1461,
+      "n_changes": 4
+    }
+  ],
   "last_events": [
     {
       "asset": "btc",
-      "status": "WAITING",
-      "blind_after_utc": "2026-07-23 12:00:58.551487+00:00",
-      "bars_still_needed": 500
+      "seal_status": "SEALED",
+      "n_available": null,
+      "bars_still_needed": null,
+      "n_lockbox": 846,
+      "reveal": {
+        "status": "BURNED",
+        "pass": false,
+        "ret": -0.0209,
+        "bh": 0.1316
+      }
     },
     {
       "asset": "eth",
-      "status": "WAITING",
-      "blind_after_utc": "2026-07-23 12:00:58.750407+00:00",
-      "bars_still_needed": 500
+      "seal_status": "SEALED",
+      "n_available": null,
+      "bars_still_needed": null,
+      "n_lockbox": 846,
+      "reveal": {
+        "status": "BURNED",
+        "pass": false,
+        "ret": 0.0889,
+        "bh": 0.0882
+      }
     },
     {
       "asset": "sol",
-      "status": "WAITING",
-      "blind_after_utc": "2026-07-23 12:00:58.892663+00:00",
-      "bars_still_needed": 500
+      "seal_status": "SEALED",
+      "n_available": null,
+      "bars_still_needed": null,
+      "n_lockbox": 846,
+      "reveal": {
+        "status": "BURNED",
+        "pass": false,
+        "ret": -0.093,
+        "bh": 0.2028
+      }
     },
     {
       "asset": "bnb",
-      "status": "WAITING",
-      "blind_after_utc": "2026-07-23 12:00:59.083085+00:00",
-      "bars_still_needed": 500
+      "seal_status": "SEALED",
+      "n_available": null,
+      "bars_still_needed": null,
+      "n_lockbox": 846,
+      "reveal": {
+        "status": "BURNED",
+        "pass": false,
+        "ret": -0.0425,
+        "bh": 0.0546
+      }
     },
     {
       "asset": "xrp",
-      "status": "WAITING",
-      "blind_after_utc": "2026-07-23 12:00:59.267535+00:00",
-      "bars_still_needed": 500
+      "seal_status": "SEALED",
+      "n_available": null,
+      "bars_still_needed": null,
+      "n_lockbox": 846,
+      "reveal": {
+        "status": "BURNED",
+        "pass": false,
+        "ret": -0.0989,
+        "bh": 0.1629
+      }
     },
     {
       "asset": "ada",
-      "status": "WAITING",
-      "blind_after_utc": "2026-07-23 12:00:59.450324+00:00",
-      "bars_still_needed": 500
+      "seal_status": "SEALED",
+      "n_available": null,
+      "bars_still_needed": null,
+      "n_lockbox": 846,
+      "reveal": {
+        "status": "BURNED",
+        "pass": false,
+        "ret": -0.1238,
+        "bh": 0.1751
+      }
     },
     {
       "asset": "avax",
-      "status": "WAITING",
-      "blind_after_utc": "2026-07-23 12:00:59.599525+00:00",
-      "bars_still_needed": 500
+      "seal_status": "SEALED",
+      "n_available": null,
+      "bars_still_needed": null,
+      "n_lockbox": 846,
+      "reveal": {
+        "status": "BURNED",
+        "pass": false,
+        "ret": 0.1244,
+        "bh": 0.0935
+      }
     },
     {
       "asset": "link",
-      "status": "WAITING",
-      "blind_after_utc": "2026-07-23 12:00:59.855595+00:00",
-      "bars_still_needed": 500
+      "seal_status": "SEALED",
+      "n_available": null,
+      "bars_still_needed": null,
+      "n_lockbox": 846,
+      "reveal": {
+        "status": "BURNED",
+        "pass": false,
+        "ret": -0.086,
+        "bh": 0.1246
+      }
     },
     {
       "asset": "doge",
-      "status": "WAITING",
-      "blind_after_utc": "2026-07-23 12:01:00.056011+00:00",
-      "bars_still_needed": 500
+      "seal_status": "SEALED",
+      "n_available": null,
+      "bars_still_needed": null,
+      "n_lockbox": 846,
+      "reveal": {
+        "status": "BURNED",
+        "pass": false,
+        "ret": -0.1583,
+        "bh": -0.0733
+      }
     },
     {
       "asset": "ltc",
-      "status": "WAITING",
-      "blind_after_utc": "2026-07-23 12:01:00.244170+00:00",
-      "bars_still_needed": 500
+      "seal_status": "SEALED",
+      "n_available": null,
+      "bars_still_needed": null,
+      "n_lockbox": 846,
+      "reveal": {
+        "status": "BURNED",
+        "pass": false,
+        "ret": 0.1473,
+        "bh": 0.0985
+      }
     },
     {
       "asset": "dot",
-      "status": "WAITING",
-      "blind_after_utc": "2026-07-23 12:01:00.402594+00:00",
-      "bars_still_needed": 500
+      "seal_status": "SEALED",
+      "n_available": null,
+      "bars_still_needed": null,
+      "n_lockbox": 846,
+      "reveal": {
+        "status": "BURNED",
+        "pass": false,
+        "ret": 0.1013,
+        "bh": -0.0092
+      }
     },
     {
       "asset": "near",
-      "status": "WAITING",
-      "blind_after_utc": "2026-07-23 12:01:00.557271+00:00",
-      "bars_still_needed": 500
+      "seal_status": "SEALED",
+      "n_available": null,
+      "bars_still_needed": null,
+      "n_lockbox": 846,
+      "reveal": {
+        "status": "BURNED",
+        "pass": false,
+        "ret": 0.0156,
+        "bh": 0.0171
+      }
     },
     {
       "asset": "arb",
-      "status": "WAITING",
-      "blind_after_utc": "2026-07-23 12:01:00.662604+00:00",
-      "bars_still_needed": 500
+      "seal_status": "SEALED",
+      "n_available": null,
+      "bars_still_needed": null,
+      "n_lockbox": 846,
+      "reveal": {
+        "status": "BURNED",
+        "pass": false,
+        "ret": 0.0747,
+        "bh": -0.1075
+      }
     },
     {
       "asset": "op",
-      "status": "WAITING",
-      "blind_after_utc": "2026-07-23 12:01:00.782812+00:00",
-      "bars_still_needed": 500
+      "seal_status": "SEALED",
+      "n_available": null,
+      "bars_still_needed": null,
+      "n_lockbox": 846,
+      "reveal": {
+        "status": "BURNED",
+        "pass": false,
+        "ret": -0.0874,
+        "bh": 0.1461
+      }
     },
     {
       "asset": "spy",
-      "status": "WAITING",
-      "blind_after_utc": "2026-07-23 12:01:00.847616+00:00",
-      "bars_still_needed": 300
+      "seal_status": "WAITING",
+      "n_available": 180,
+      "bars_still_needed": 120,
+      "n_lockbox": null
     },
     {
       "asset": "aapl",
-      "status": "WAITING",
-      "blind_after_utc": "2026-07-23 12:01:00.909337+00:00",
-      "bars_still_needed": 300
+      "seal_status": "WAITING",
+      "n_available": 180,
+      "bars_still_needed": 120,
+      "n_lockbox": null
     }
   ],
-  "north_star_he": "\u05d0\u05d5\u05d8\u05d5\u05e0\u05d5\u05de\u05d9 \u05de\u05dc\u05d0: \u05d9\u05d9\u05d1\u05d5\u05d0 \u2192 \u05d7\u05dc\u05d5\u05df \u05e2\u05d9\u05d5\u05d5\u05e8 \u2192 \u05d7\u05ea\u05d9\u05de\u05d4 \u2192 \u05d1\u05d3\u05d9\u05e7\u05d4 \u05d7\u05d3-\u05e4\u05e2\u05de\u05d9\u05ea \u05e2\u05dc \u05e7\u05e8\u05d9\u05e4\u05d8\u05d5+\u05de\u05e0\u05d9\u05d5\u05ea. \u05d4\u05e6\u05dc\u05d7\u05d4 \u05e8\u05e7 \u05dc\u05e4\u05d9 \u05d7\u05d5\u05d6\u05d4 PnL \u05e0\u05d8\u05d5.",
-  "bootstrap": true
+  "north_star_he": "\u05d0\u05d5\u05d8\u05d5\u05e0\u05d5\u05de\u05d9 \u05de\u05dc\u05d0: \u05d9\u05d9\u05d1\u05d5\u05d0 \u2192 \u05d7\u05dc\u05d5\u05df \u05e2\u05d9\u05d5\u05d5\u05e8 \u2192 \u05d7\u05ea\u05d9\u05de\u05d4 \u2192 \u05d1\u05d3\u05d9\u05e7\u05d4 \u05d7\u05d3-\u05e4\u05e2\u05de\u05d9\u05ea \u05e2\u05dc \u05e7\u05e8\u05d9\u05e4\u05d8\u05d5+\u05de\u05e0\u05d9\u05d5\u05ea. \u05d4\u05e6\u05dc\u05d7\u05d4 \u05e8\u05e7 \u05dc\u05e4\u05d9 \u05d7\u05d5\u05d6\u05d4 PnL \u05e0\u05d8\u05d5."
 }
