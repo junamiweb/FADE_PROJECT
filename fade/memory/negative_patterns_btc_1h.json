@@ -64,6 +64,11 @@
     "failures": 2,
     "reason": "unstable_direction"
   },
+  "return_1h=HIGH|return_6h=LOW|trend_slope=HIGH": {
+    "blacklisted": false,
+    "failures": 1,
+    "reason": "unstable_direction"
+  },
   "return_1h=HIGH|return_6h=LOW|trend_slope=MID": {
     "blacklisted": true,
     "failures": 2,
@@ -149,9 +154,19 @@
     "failures": 2,
     "reason": "unstable_direction"
   },
+  "return_1h=HIGH|volatility=HIGH|volume_zscore=MID": {
+    "blacklisted": false,
+    "failures": 1,
+    "reason": "unstable_direction"
+  },
   "return_1h=HIGH|volatility=LOW|trend_slope=HIGH": {
     "blacklisted": true,
     "failures": 2,
+    "reason": "unstable_direction"
+  },
+  "return_1h=HIGH|volatility=LOW|trend_slope=LOW": {
+    "blacklisted": false,
+    "failures": 1,
     "reason": "unstable_direction"
   },
   "return_1h=HIGH|volatility=LOW|trend_slope=MID": {
@@ -234,9 +249,24 @@
     "failures": 2,
     "reason": "unstable_direction"
   },
+  "return_1h=HIGH|volume_zscore=MID|trend_slope=LOW": {
+    "blacklisted": false,
+    "failures": 1,
+    "reason": "unstable_direction"
+  },
   "return_1h=LOW|return_6h=HIGH|trend_slope=HIGH": {
     "blacklisted": true,
     "failures": 2,
+    "reason": "unstable_direction"
+  },
+  "return_1h=LOW|return_6h=HIGH|trend_slope=LOW": {
+    "blacklisted": false,
+    "failures": 1,
+    "reason": "unstable_direction"
+  },
+  "return_1h=LOW|return_6h=HIGH|trend_slope=MID": {
+    "blacklisted": false,
+    "failures": 1,
     "reason": "unstable_direction"
   },
   "return_1h=LOW|return_6h=HIGH|volatility=HIGH": {
@@ -299,6 +329,11 @@
     "failures": 2,
     "reason": "unstable_direction"
   },
+  "return_1h=LOW|return_6h=MID|trend_slope=HIGH": {
+    "blacklisted": false,
+    "failures": 1,
+    "reason": "unstable_direction"
+  },
   "return_1h=LOW|return_6h=MID|trend_slope=LOW": {
     "blacklisted": true,
     "failures": 2,
@@ -352,6 +387,11 @@
   "return_1h=LOW|volatility=HIGH|volume_zscore=LOW": {
     "blacklisted": true,
     "failures": 2,
+    "reason": "unstable_direction"
+  },
+  "return_1h=LOW|volatility=HIGH|volume_zscore=MID": {
+    "blacklisted": false,
+    "failures": 1,
     "reason": "unstable_direction"
   },
   "return_1h=LOW|volatility=LOW": {
@@ -424,6 +464,11 @@
     "failures": 2,
     "reason": "unstable_direction"
   },
+  "return_1h=LOW|volume_zscore=MID|trend_slope=HIGH": {
+    "blacklisted": false,
+    "failures": 1,
+    "reason": "unstable_direction"
+  },
   "return_1h=LOW|volume_zscore=MID|trend_slope=LOW": {
     "blacklisted": true,
     "failures": 2,
@@ -452,6 +497,11 @@
   "return_1h=MID|return_6h=HIGH|volatility=MID": {
     "blacklisted": true,
     "failures": 2,
+    "reason": "unstable_direction"
+  },
+  "return_1h=MID|return_6h=HIGH|volume_zscore=HIGH": {
+    "blacklisted": false,
+    "failures": 1,
     "reason": "unstable_direction"
   },
   "return_1h=MID|return_6h=HIGH|volume_zscore=LOW": {
@@ -614,6 +664,16 @@
     "failures": 2,
     "reason": "unstable_direction"
   },
+  "return_1h=MID|volume_zscore=HIGH|trend_slope=HIGH": {
+    "blacklisted": false,
+    "failures": 1,
+    "reason": "unstable_direction"
+  },
+  "return_1h=MID|volume_zscore=HIGH|trend_slope=LOW": {
+    "blacklisted": false,
+    "failures": 1,
+    "reason": "unstable_direction"
+  },
   "return_1h=MID|volume_zscore=HIGH|trend_slope=MID": {
     "blacklisted": true,
     "failures": 2,
@@ -624,9 +684,19 @@
     "failures": 2,
     "reason": "unstable_direction"
   },
+  "return_1h=MID|volume_zscore=LOW|trend_slope=MID": {
+    "blacklisted": false,
+    "failures": 1,
+    "reason": "unstable_direction"
+  },
   "return_1h=MID|volume_zscore=MID": {
     "blacklisted": true,
     "failures": 2,
+    "reason": "unstable_direction"
+  },
+  "return_1h=MID|volume_zscore=MID|trend_slope=HIGH": {
+    "blacklisted": false,
+    "failures": 1,
     "reason": "unstable_direction"
   },
   "return_1h=MID|volume_zscore=MID|trend_slope=LOW": {
@@ -647,6 +717,11 @@
   "return_6h=HIGH|volatility=HIGH|trend_slope=HIGH": {
     "blacklisted": true,
     "failures": 2,
+    "reason": "unstable_direction"
+  },
+  "return_6h=HIGH|volatility=HIGH|trend_slope=LOW": {
+    "blacklisted": false,
+    "failures": 1,
     "reason": "unstable_direction"
   },
   "return_6h=HIGH|volatility=HIGH|trend_slope=MID": {
@@ -829,6 +904,11 @@
     "failures": 2,
     "reason": "unstable_direction"
   },
+  "return_6h=LOW|volume_zscore=MID|trend_slope=HIGH": {
+    "blacklisted": false,
+    "failures": 1,
+    "reason": "unstable_direction"
+  },
   "return_6h=LOW|volume_zscore=MID|trend_slope=LOW": {
     "blacklisted": true,
     "failures": 2,
@@ -872,6 +952,11 @@
   "return_6h=MID|volatility=LOW|trend_slope=LOW": {
     "blacklisted": true,
     "failures": 2,
+    "reason": "unstable_direction"
+  },
+  "return_6h=MID|volatility=LOW|volume_zscore=HIGH": {
+    "blacklisted": false,
+    "failures": 1,
     "reason": "unstable_direction"
   },
   "return_6h=MID|volatility=LOW|volume_zscore=LOW": {

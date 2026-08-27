@@ -1,0 +1,34 @@
+{
+  "asset": "btc_1h",
+  "backend": "pytorch",
+  "direction": "UP",
+  "epochs": 25,
+  "feature_cols": [
+    "close_pos",
+    "range_pct",
+    "streak_signed",
+    "return_1h"
+  ],
+  "feature_cols_used": [
+    "close_pos",
+    "range_pct",
+    "streak_signed",
+    "return_1h"
+  ],
+  "holdout_hit_rate": 0.5347,
+  "holdout_lift_vs_random": 0.0347,
+  "last_direction": "UP",
+  "model": "lstm",
+  "n_dev": 54706,
+  "n_holdout": 23446,
+  "n_predictions": 23446,
+  "n_total": 78163,
+  "news_csv": "C:\\Users\\Yonat\\Projects\\FADE_PROJECT\\news_btc.csv",
+  "null_mean": 0.5001,
+  "null_std": 0.0034,
+  "p_value": 0.0033,
+  "raw_prob_pct": 51.96,
+  "seed": 0,
+  "status": "ok",
+  "window": 12
+}

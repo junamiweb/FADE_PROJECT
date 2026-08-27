@@ -1,121 +1,321 @@
 {
-  "close_pos=HIGH|range_pct=LOW": {
-    "avg_confidence": 0.5703,
-    "avg_oos_hit": 0.5463,
-    "consistency": 1.0,
-    "direction": 0,
-    "folds_present": 4,
-    "stability": 0.8
-  },
-  "close_pos=HIGH|range_pct=LOW|streak_signed=HIGH": {
-    "avg_confidence": 0.5977,
-    "avg_oos_hit": 0.5785,
-    "consistency": 1.0,
-    "direction": 0,
-    "folds_present": 4,
-    "stability": 0.8
-  },
-  "close_pos=HIGH|range_pct=MID|streak_signed=HIGH": {
-    "avg_confidence": 0.5811,
-    "avg_oos_hit": 0.5853,
-    "consistency": 1.0,
-    "direction": 0,
-    "folds_present": 4,
-    "stability": 0.8
-  },
-  "close_pos=HIGH|streak_signed=HIGH": {
-    "avg_confidence": 0.5649,
-    "avg_oos_hit": 0.5713,
+  "return_1h=HIGH|return_6h=HIGH": {
+    "avg_confidence": 0.5807,
+    "avg_oos_hit": 0.5644,
     "consistency": 1.0,
     "direction": 0,
     "folds_present": 3,
     "stability": 0.6
   },
-  "close_pos=LOW|range_pct=HIGH|streak_signed=LOW": {
-    "avg_confidence": 0.6316,
-    "avg_oos_hit": 0.5904,
+  "return_1h=HIGH|return_6h=HIGH|volatility=LOW": {
+    "avg_confidence": 0.616,
+    "avg_oos_hit": 0.592,
+    "consistency": 1.0,
+    "direction": 0,
+    "folds_present": 3,
+    "stability": 0.6
+  },
+  "return_1h=HIGH|return_6h=HIGH|volume_zscore=LOW": {
+    "avg_confidence": 0.5915,
+    "avg_oos_hit": 0.5739,
+    "consistency": 1.0,
+    "direction": 0,
+    "folds_present": 3,
+    "stability": 0.6
+  },
+  "return_1h=HIGH|trend_slope=MID": {
+    "avg_confidence": 0.5671,
+    "avg_oos_hit": 0.5368,
+    "consistency": 1.0,
+    "direction": 0,
+    "folds_present": 3,
+    "stability": 0.6
+  },
+  "return_1h=HIGH|volatility=MID|trend_slope=LOW": {
+    "avg_confidence": 0.5687,
+    "avg_oos_hit": 0.5352,
+    "consistency": 1.0,
+    "direction": 0,
+    "folds_present": 4,
+    "stability": 0.8
+  },
+  "return_1h=HIGH|volume_zscore=LOW": {
+    "avg_confidence": 0.5747,
+    "avg_oos_hit": 0.5293,
+    "consistency": 1.0,
+    "direction": 0,
+    "folds_present": 3,
+    "stability": 0.6
+  },
+  "return_1h=LOW|return_6h=LOW": {
+    "avg_confidence": 0.5809,
+    "avg_oos_hit": 0.5706,
     "consistency": 1.0,
     "direction": 1,
     "folds_present": 5,
     "stability": 1.0
   },
-  "close_pos=LOW|range_pct=LOW": {
-    "avg_confidence": 0.5917,
-    "avg_oos_hit": 0.5465,
+  "return_1h=LOW|return_6h=LOW|volatility=LOW": {
+    "avg_confidence": 0.598,
+    "avg_oos_hit": 0.5737,
+    "consistency": 1.0,
+    "direction": 1,
+    "folds_present": 4,
+    "stability": 0.8
+  },
+  "return_1h=LOW|return_6h=LOW|volume_zscore=HIGH": {
+    "avg_confidence": 0.5854,
+    "avg_oos_hit": 0.5734,
+    "consistency": 1.0,
+    "direction": 1,
+    "folds_present": 4,
+    "stability": 0.8
+  },
+  "return_1h=LOW|return_6h=LOW|volume_zscore=LOW": {
+    "avg_confidence": 0.6334,
+    "avg_oos_hit": 0.6162,
     "consistency": 1.0,
     "direction": 1,
     "folds_present": 3,
     "stability": 0.6
   },
-  "close_pos=LOW|range_pct=LOW|streak_signed=HIGH": {
-    "avg_confidence": 0.6463,
-    "avg_oos_hit": 0.5204,
+  "return_1h=LOW|trend_slope=LOW": {
+    "avg_confidence": 0.584,
+    "avg_oos_hit": 0.5665,
+    "consistency": 1.0,
+    "direction": 1,
+    "folds_present": 4,
+    "stability": 0.8
+  },
+  "return_1h=LOW|trend_slope=MID": {
+    "avg_confidence": 0.5695,
+    "avg_oos_hit": 0.545,
+    "consistency": 1.0,
+    "direction": 1,
+    "folds_present": 3,
+    "stability": 0.6
+  },
+  "return_1h=LOW|volatility=HIGH": {
+    "avg_confidence": 0.6056,
+    "avg_oos_hit": 0.556,
+    "consistency": 1.0,
+    "direction": 1,
+    "folds_present": 4,
+    "stability": 0.8
+  },
+  "return_1h=LOW|volatility=HIGH|trend_slope=LOW": {
+    "avg_confidence": 0.6389,
+    "avg_oos_hit": 0.5482,
+    "consistency": 1.0,
+    "direction": 1,
+    "folds_present": 5,
+    "stability": 1.0
+  },
+  "return_1h=LOW|volatility=LOW|trend_slope=LOW": {
+    "avg_confidence": 0.6147,
+    "avg_oos_hit": 0.5574,
+    "consistency": 1.0,
+    "direction": 1,
+    "folds_present": 3,
+    "stability": 0.6
+  },
+  "return_1h=LOW|volatility=LOW|volume_zscore=MID": {
+    "avg_confidence": 0.6343,
+    "avg_oos_hit": 0.5612,
+    "consistency": 1.0,
+    "direction": 1,
+    "folds_present": 3,
+    "stability": 0.6
+  },
+  "return_1h=LOW|volatility=MID|volume_zscore=MID": {
+    "avg_confidence": 0.5738,
+    "avg_oos_hit": 0.5514,
+    "consistency": 1.0,
+    "direction": 1,
+    "folds_present": 3,
+    "stability": 0.6
+  },
+  "return_1h=LOW|volume_zscore=LOW|trend_slope=LOW": {
+    "avg_confidence": 0.5963,
+    "avg_oos_hit": 0.5735,
+    "consistency": 1.0,
+    "direction": 1,
+    "folds_present": 3,
+    "stability": 0.6
+  },
+  "return_1h=LOW|volume_zscore=MID": {
+    "avg_confidence": 0.5637,
+    "avg_oos_hit": 0.5473,
+    "consistency": 1.0,
+    "direction": 1,
+    "folds_present": 3,
+    "stability": 0.6
+  },
+  "return_1h=MID|return_6h=HIGH|volatility=LOW": {
+    "avg_confidence": 0.5814,
+    "avg_oos_hit": 0.5588,
+    "consistency": 1.0,
+    "direction": 0,
+    "folds_present": 3,
+    "stability": 0.6
+  },
+  "return_1h=MID|return_6h=LOW|volume_zscore=LOW": {
+    "avg_confidence": 0.6188,
+    "avg_oos_hit": 0.5626,
+    "consistency": 1.0,
+    "direction": 1,
+    "folds_present": 3,
+    "stability": 0.6
+  },
+  "return_1h=MID|return_6h=MID|volume_zscore=HIGH": {
+    "avg_confidence": 0.5919,
+    "avg_oos_hit": 0.5356,
+    "consistency": 1.0,
+    "direction": 0,
+    "folds_present": 4,
+    "stability": 0.8
+  },
+  "return_1h=MID|volume_zscore=LOW|trend_slope=LOW": {
+    "avg_confidence": 0.5737,
+    "avg_oos_hit": 0.5153,
+    "consistency": 1.0,
+    "direction": 1,
+    "folds_present": 3,
+    "stability": 0.6
+  },
+  "return_6h=HIGH|volatility=LOW|trend_slope=MID": {
+    "avg_confidence": 0.5813,
+    "avg_oos_hit": 0.5734,
+    "consistency": 1.0,
+    "direction": 0,
+    "folds_present": 4,
+    "stability": 0.8
+  },
+  "return_6h=HIGH|volatility=LOW|volume_zscore=LOW": {
+    "avg_confidence": 0.616,
+    "avg_oos_hit": 0.5813,
+    "consistency": 1.0,
+    "direction": 0,
+    "folds_present": 3,
+    "stability": 0.6
+  },
+  "return_6h=HIGH|volatility=MID|trend_slope=LOW": {
+    "avg_confidence": 0.6676,
+    "avg_oos_hit": 0.5221,
     "consistency": 0.75,
-    "direction": 1,
+    "direction": 0,
     "folds_present": 4,
     "stability": 0.6
   },
-  "close_pos=LOW|range_pct=LOW|streak_signed=LOW": {
-    "avg_confidence": 0.6347,
-    "avg_oos_hit": 0.5952,
-    "consistency": 1.0,
-    "direction": 1,
-    "folds_present": 3,
+  "return_6h=HIGH|volume_zscore=MID|trend_slope=MID": {
+    "avg_confidence": 0.5817,
+    "avg_oos_hit": 0.5169,
+    "consistency": 0.75,
+    "direction": 0,
+    "folds_present": 4,
     "stability": 0.6
   },
-  "close_pos=LOW|range_pct=MID": {
-    "avg_confidence": 0.5643,
-    "avg_oos_hit": 0.5434,
+  "return_6h=LOW|trend_slope=LOW": {
+    "avg_confidence": 0.5667,
+    "avg_oos_hit": 0.5503,
     "consistency": 1.0,
     "direction": 1,
-    "folds_present": 3,
-    "stability": 0.6
+    "folds_present": 4,
+    "stability": 0.8
   },
-  "close_pos=LOW|range_pct=MID|streak_signed=LOW": {
-    "avg_confidence": 0.6039,
-    "avg_oos_hit": 0.5642,
-    "consistency": 1.0,
-    "direction": 1,
-    "folds_present": 3,
-    "stability": 0.6
-  },
-  "close_pos=LOW|streak_signed=LOW": {
-    "avg_confidence": 0.5972,
-    "avg_oos_hit": 0.5824,
+  "return_6h=LOW|volatility=HIGH": {
+    "avg_confidence": 0.5767,
+    "avg_oos_hit": 0.5378,
     "consistency": 1.0,
     "direction": 1,
     "folds_present": 5,
     "stability": 1.0
   },
-  "close_pos=MID|range_pct=MID|streak_signed=LOW": {
-    "avg_confidence": 0.5853,
-    "avg_oos_hit": 0.5439,
+  "return_6h=LOW|volatility=HIGH|trend_slope=HIGH": {
+    "avg_confidence": 0.6211,
+    "avg_oos_hit": 0.5637,
     "consistency": 1.0,
     "direction": 1,
     "folds_present": 4,
     "stability": 0.8
   },
-  "range_pct=HIGH|streak_signed=LOW": {
-    "avg_confidence": 0.6134,
-    "avg_oos_hit": 0.5715,
+  "return_6h=LOW|volatility=HIGH|volume_zscore=LOW": {
+    "avg_confidence": 0.6077,
+    "avg_oos_hit": 0.5621,
     "consistency": 1.0,
     "direction": 1,
     "folds_present": 4,
     "stability": 0.8
   },
-  "range_pct=MID|streak_signed=HIGH": {
-    "avg_confidence": 0.5808,
-    "avg_oos_hit": 0.5733,
+  "return_6h=LOW|volatility=LOW": {
+    "avg_confidence": 0.578,
+    "avg_oos_hit": 0.5549,
     "consistency": 1.0,
-    "direction": 0,
+    "direction": 1,
     "folds_present": 3,
     "stability": 0.6
   },
-  "range_pct=MID|streak_signed=LOW": {
-    "avg_confidence": 0.5895,
-    "avg_oos_hit": 0.5524,
+  "return_6h=LOW|volatility=LOW|trend_slope=LOW": {
+    "avg_confidence": 0.5931,
+    "avg_oos_hit": 0.5546,
     "consistency": 1.0,
     "direction": 1,
+    "folds_present": 3,
+    "stability": 0.6
+  },
+  "return_6h=LOW|volatility=LOW|volume_zscore=LOW": {
+    "avg_confidence": 0.6094,
+    "avg_oos_hit": 0.6076,
+    "consistency": 1.0,
+    "direction": 1,
+    "folds_present": 3,
+    "stability": 0.6
+  },
+  "return_6h=LOW|volume_zscore=HIGH": {
+    "avg_confidence": 0.5652,
+    "avg_oos_hit": 0.5522,
+    "consistency": 1.0,
+    "direction": 1,
+    "folds_present": 3,
+    "stability": 0.6
+  },
+  "return_6h=LOW|volume_zscore=LOW": {
+    "avg_confidence": 0.6058,
+    "avg_oos_hit": 0.5823,
+    "consistency": 1.0,
+    "direction": 1,
+    "folds_present": 3,
+    "stability": 0.6
+  },
+  "return_6h=LOW|volume_zscore=LOW|trend_slope=LOW": {
+    "avg_confidence": 0.5878,
+    "avg_oos_hit": 0.5716,
+    "consistency": 1.0,
+    "direction": 1,
+    "folds_present": 4,
+    "stability": 0.8
+  },
+  "return_6h=LOW|volume_zscore=MID|trend_slope=MID": {
+    "avg_confidence": 0.61,
+    "avg_oos_hit": 0.5534,
+    "consistency": 1.0,
+    "direction": 1,
+    "folds_present": 3,
+    "stability": 0.6
+  },
+  "volatility=HIGH|volume_zscore=LOW|trend_slope=LOW": {
+    "avg_confidence": 0.5768,
+    "avg_oos_hit": 0.5212,
+    "consistency": 1.0,
+    "direction": 1,
+    "folds_present": 3,
+    "stability": 0.6
+  },
+  "volatility=LOW|trend_slope=HIGH": {
+    "avg_confidence": 0.5597,
+    "avg_oos_hit": 0.5214,
+    "consistency": 1.0,
+    "direction": 0,
     "folds_present": 3,
     "stability": 0.6
   }
