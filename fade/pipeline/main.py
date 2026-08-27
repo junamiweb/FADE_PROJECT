@@ -57,7 +57,8 @@ def run(csv_path: str | None = None, config: Config | None = None) -> dict:
     log.info("Asset '%s' — memory + calibration per-asset", asset)
 
     # --- 2. Compute atoms (cached; deterministic given data + config) --
-    key = hash_key("pool", df, config.return_6h_window, config.volatility_window,
+    key = hash_key("pool", atoms_mod.POOL_SCHEMA_VERSION, df,
+                   config.return_6h_window, config.volatility_window,
                    config.volume_window, config.trend_window)
     pool = cache.memoize(key, lambda: atoms_mod.compute_atom_pool(df, config))
     atoms = pool[list(config.atom_columns)].dropna()

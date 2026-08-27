@@ -17,6 +17,11 @@ from fade.config import ATOM_COLUMNS, Config
 from fade.core.candle_patterns import compute_candle_patterns
 from fade.core.tiktok_chart_patterns import compute_tiktok_chart_patterns
 
+# Bump whenever compute_atom_pool's set of output columns changes, so callers
+# that cache the pool by content hash (e.g. fade.pipeline.main) invalidate
+# stale entries instead of silently returning a pool with missing columns.
+POOL_SCHEMA_VERSION = 2
+
 
 def _rolling_slope(series: pd.Series, window: int) -> pd.Series:
     """Vectorised rolling OLS slope, normalised by window mean price.
