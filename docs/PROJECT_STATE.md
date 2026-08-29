@@ -312,8 +312,6 @@ python -m fade.pipeline.outcome_tracker run-all   # יומי / GitHub Action (cr
 - `eth_candidate_outcomes.jsonl`: pre-fix 05:00 (next-bar) + bar 09:00 `min_hold_no_trade`; **0 v2 hold-cycles** עדיין (לא היה `traded=true` מאז v2)  
 - **cron:** מופעל (`5 * * * *`) — רק אחרי אימות זה; לעקוב אחרי 2–3 runs
 
-**אבטחה:** PAT ב-`docs/git-token-junamiweb.txt` — **לבטל מיד** ב-GitHub (חשוף בצ'אט); הקובץ ב-`.gitignore`.
-
 ---
 
 ## ★ Batch 38 — ML suite + TikTok chart patterns (sandbox)

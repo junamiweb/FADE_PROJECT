@@ -137,7 +137,7 @@ python -m fade.pipeline.council_session review-next
 ## פרומpt — Forward Watcher (שעתי)
 
 ```
-Full Repository Path: C:\Users\Yonat\Projects\FADE_PROJECT
+Full Repository Path: ./
 Readonly: true
 Read fade/output/forward_validation_snapshot.json and fade/output/council_board.json.
 Check milestones M25/M100/M500/M90. Flag hit-rate drift vs target 0.58.
@@ -150,7 +150,7 @@ If milestone crossed, add MILESTONE entry to milestones_log in council_board.jso
 ## פרומpt — PLENARY (שבועי)
 
 ```
-Full Repository Path: C:\Users\Yonat\Projects\FADE_PROJECT
+Full Repository Path: ./
 Readonly: true
 Review: council_board.json, council_digest.json, forward_validation_snapshot.json, decisions_log (last 10).
 Produce: open_questions (max 5), track status summary, recommend next builder tasks.
@@ -162,7 +162,7 @@ Update council_board.json plenary section only.
 ## פרומpt — Red Team (לפני ADVANCE)
 
 ```
-Full Repository Path: C:\Users\Yonat\Projects\FADE_PROJECT
+Full Repository Path: ./
 Readonly: true
 Adversarial review of artifact + pipeline source. Try to find look-ahead, label leak, duplicate counting, fee optimism.
 Output: red_team_report in council_board.json — pass/fail. Fail = BLOCKED.
