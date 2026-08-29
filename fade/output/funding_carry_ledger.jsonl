@@ -1,0 +1,2 @@
+{"recorded_utc": "2026-08-29T21:39:04.988565+00:00", "asset": "btc", "period_ts": "2026-08-29 16:00:00.002000+00:00", "funding_rate": 0.0001, "gate_on": true, "regime_trailing_30d_annualized": 0.0718, "regime_hot": false}
+{"recorded_utc": "2026-08-29T21:39:05.588853+00:00", "asset": "eth", "period_ts": "2026-08-29 16:00:00.002000+00:00", "funding_rate": 6.071e-05, "gate_on": true, "regime_trailing_30d_annualized": 0.056, "regime_hot": false}

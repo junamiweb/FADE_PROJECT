@@ -27,6 +27,7 @@ fade/output/*
 !fade/output/rank_portfolio_holdout.json
 !fade/output/pepe_followup_holdout.json
 !fade/output/research_pbo_dsr.json
+!fade/output/funding_carry_ledger.jsonl
 
 .venv/
 venv/

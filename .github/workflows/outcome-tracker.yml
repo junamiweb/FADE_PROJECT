@@ -67,6 +67,11 @@ jobs:
       - name: Blind autonomy tick (crypto + stocks)
         run: python -m fade.pipeline.blind_autonomy tick
 
+      # Funding-carry forward ledger + regime meter (funding_carry_v1 follow-up).
+      - name: Funding carry tracker tick
+        continue-on-error: true
+        run: python -m fade.pipeline.funding_carry_tracker tick
+
       - name: Commit and push updated data/ledgers
         run: |
           git config user.name "fade-bot"
@@ -83,6 +88,7 @@ jobs:
             fade/output/ultra_lockbox_eval.json fade/output/ultra_refinement_log.jsonl \
             fade/output/council_digest.json fade/output/council_board.json \
             fade/output/blind_universe.json fade/output/blind_autonomy_board.json \
+            fade/output/funding_carry_ledger.jsonl \
             fade/output/lockbox_v2_manifest.json fade/output/lockbox_v2_reveal_*.json \
             fade/output/pre_registration.json \
             fade/pipeline/blind_autonomy.py fade/pipeline/lockbox_v2.py \
