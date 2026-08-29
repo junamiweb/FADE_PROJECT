@@ -44,6 +44,20 @@ TAKER_RT = 20 / 1e4               # 2 legs x 5 bps x entry+exit... see note belo
 MAKER_RT = 8 / 1e4
 OUTPUT_PATH = Path("fade/output/funding_carry_holdout.json")
 
+# --- realism_v2 sensitivity (same data, stricter costs — NOT a fresh test) ---
+# Capital models: funding accrues on 1x notional, but the position ties up
+# more capital than the notional. Reported per model:
+#   efficient    1.0x — portfolio margin, spot serves as perp collateral
+#   conservative 1.5x — spot + 50% margin buffer on the short perp
+#   naive        2.0x — spot + full 1x collateral held aside
+CAPITAL_MODELS = {"efficient_1x": 1.0, "conservative_1_5x": 1.5, "naive_2x": 2.0}
+# Extra cost of crossing the spot-perp basis on entry/exit (assumption).
+BASIS_SLIPPAGE_RT = 5 / 1e4
+# Risk-free benchmark (assumption, documented — approx short T-bill yield).
+RF_ANNUAL = 0.04
+# Worst-window stress length: 90 days of 8h periods.
+STRESS_WINDOW_PERIODS = 270
+
 ASSETS = {"btc": "funding_btc.csv", "eth": "funding_eth.csv"}
 
 
@@ -148,7 +162,42 @@ def run_asset(sym: str, funding_csv: str) -> dict:
         and abs(g["max_drawdown"]) < g["annual_return"]
     )
 
+    # --- realism_v2 sensitivity: stricter costs on the gated taker variant ---
+    pos = hold["in"].to_numpy()
+    prev = np.concatenate([[0.0], pos[:-1]])
+    transitions = np.abs(pos - prev)
+    stressed = (pos * hold["carry"].to_numpy()
+                - transitions * ((TAKER_RT + BASIS_SLIPPAGE_RT) / 2))
+    stressed_ann = _carry_stats(stressed, PERIODS_PER_YEAR)["annual_return"]
+
+    capital_view = {}
+    for name, mult in CAPITAL_MODELS.items():
+        on_capital = stressed_ann / mult
+        capital_view[name] = {
+            "annual_return_on_capital": round(on_capital, 4),
+            "excess_over_rf": round(on_capital - RF_ANNUAL, 4),
+        }
+
+    carry_arr = hold["carry"].to_numpy()
+    worst_ann = None
+    if len(carry_arr) >= STRESS_WINDOW_PERIODS:
+        roll = pd.Series(carry_arr).rolling(STRESS_WINDOW_PERIODS).sum().dropna()
+        worst_ann = round(float(roll.min()) * (PERIODS_PER_YEAR / STRESS_WINDOW_PERIODS), 4)
+
+    realism = {
+        "note": "sensitivity on same data — stricter costs only, not a fresh hypothesis test",
+        "assumptions": {"basis_slippage_rt_bps": BASIS_SLIPPAGE_RT * 1e4,
+                        "rf_annual": RF_ANNUAL},
+        "gated_taker_plus_basis_annual_on_notional": round(stressed_ann, 4),
+        "return_on_capital": capital_view,
+        "worst_rolling_90d_funding_annualized": worst_ann,
+        "beats_rf_at_conservative_capital": (
+            capital_view["conservative_1_5x"]["excess_over_rf"] > 0
+        ),
+    }
+
     return {
+        "realism_v2": realism,
         "asset": sym,
         "status": "evaluated",
         "n_periods_total": len(frame),
@@ -199,6 +248,16 @@ def _print(r: dict) -> None:
             print(f"    [{fee_name}] gated  : ann={g['annual_return']*100:+.2f}%  "
                   f"sharpe={g['sharpe']}  DD={g['max_drawdown']*100:.1f}%  "
                   f"cov={g['coverage_pct']}%  switches={g['n_switches']}")
+        rv = item.get("realism_v2")
+        if rv:
+            print(f"    realism_v2 (gated taker + {rv['assumptions']['basis_slippage_rt_bps']:.0f}bps basis): "
+                  f"ann on notional {rv['gated_taker_plus_basis_annual_on_notional']*100:+.2f}%")
+            for name, c in rv["return_on_capital"].items():
+                print(f"      {name:<18} on-capital {c['annual_return_on_capital']*100:+.2f}%  "
+                      f"excess vs rf({rv['assumptions']['rf_annual']*100:.0f}%): "
+                      f"{c['excess_over_rf']*100:+.2f}%")
+            print(f"      worst rolling 90d funding annualized: "
+                  f"{(rv['worst_rolling_90d_funding_annualized'] or 0)*100:+.2f}%")
         print(f"    -> {'PASS' if item['passes'] else 'FAIL'}")
     print(f"\n  {r['overall_verdict']}")
     print(f"  -> {OUTPUT_PATH}")

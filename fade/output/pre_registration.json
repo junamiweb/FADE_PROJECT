@@ -152,7 +152,7 @@
           "track_id": "universe_mh48_path_lean3",
           "asset": "btc_1h",
           "status": "WAITING",
-          "n_available": 0,
+          "n_available": 2,
           "n_lockbox": null,
           "sha256_prefix": null
         },
@@ -160,7 +160,7 @@
           "track_id": "universe_mh48_path_lean3",
           "asset": "eth_1h",
           "status": "WAITING",
-          "n_available": 0,
+          "n_available": 2,
           "n_lockbox": null,
           "sha256_prefix": null
         },
@@ -168,7 +168,7 @@
           "track_id": "universe_mh48_path_lean3",
           "asset": "sol_1h",
           "status": "WAITING",
-          "n_available": 0,
+          "n_available": 2,
           "n_lockbox": null,
           "sha256_prefix": null
         },
@@ -176,7 +176,7 @@
           "track_id": "universe_mh48_path_lean3",
           "asset": "bnb_1h",
           "status": "WAITING",
-          "n_available": 0,
+          "n_available": 2,
           "n_lockbox": null,
           "sha256_prefix": null
         },
@@ -184,7 +184,7 @@
           "track_id": "universe_mh48_path_lean3",
           "asset": "xrp_1h",
           "status": "WAITING",
-          "n_available": 0,
+          "n_available": 2,
           "n_lockbox": null,
           "sha256_prefix": null
         },
@@ -192,7 +192,7 @@
           "track_id": "universe_mh48_path_lean3",
           "asset": "ada_1h",
           "status": "WAITING",
-          "n_available": 0,
+          "n_available": 2,
           "n_lockbox": null,
           "sha256_prefix": null
         },
@@ -200,7 +200,7 @@
           "track_id": "universe_mh48_path_lean3",
           "asset": "avax_1h",
           "status": "WAITING",
-          "n_available": 0,
+          "n_available": 2,
           "n_lockbox": null,
           "sha256_prefix": null
         },
@@ -208,7 +208,7 @@
           "track_id": "universe_mh48_path_lean3",
           "asset": "link_1h",
           "status": "WAITING",
-          "n_available": 0,
+          "n_available": 2,
           "n_lockbox": null,
           "sha256_prefix": null
         },
@@ -216,7 +216,7 @@
           "track_id": "universe_mh48_path_lean3",
           "asset": "doge_1h",
           "status": "WAITING",
-          "n_available": 0,
+          "n_available": 2,
           "n_lockbox": null,
           "sha256_prefix": null
         },
@@ -224,7 +224,7 @@
           "track_id": "universe_mh48_path_lean3",
           "asset": "ltc_1h",
           "status": "WAITING",
-          "n_available": 0,
+          "n_available": 2,
           "n_lockbox": null,
           "sha256_prefix": null
         },
@@ -232,7 +232,7 @@
           "track_id": "universe_mh48_path_lean3",
           "asset": "dot_1h",
           "status": "WAITING",
-          "n_available": 0,
+          "n_available": 2,
           "n_lockbox": null,
           "sha256_prefix": null
         },
@@ -240,7 +240,7 @@
           "track_id": "universe_mh48_path_lean3",
           "asset": "near_1h",
           "status": "WAITING",
-          "n_available": 0,
+          "n_available": 2,
           "n_lockbox": null,
           "sha256_prefix": null
         },
@@ -248,7 +248,7 @@
           "track_id": "universe_mh48_path_lean3",
           "asset": "arb_1h",
           "status": "WAITING",
-          "n_available": 0,
+          "n_available": 2,
           "n_lockbox": null,
           "sha256_prefix": null
         },
@@ -256,12 +256,20 @@
           "track_id": "universe_mh48_path_lean3",
           "asset": "op_1h",
           "status": "WAITING",
+          "n_available": 2,
+          "n_lockbox": null,
+          "sha256_prefix": null
+        },
+        {
+          "track_id": "universe_mh48_path_lean3",
+          "asset": "pepe_1h",
+          "status": "WAITING",
           "n_available": 0,
           "n_lockbox": null,
           "sha256_prefix": null
         }
       ],
-      "updated_utc": "2026-08-29T19:38:59.599645+00:00"
+      "updated_utc": "2026-08-29T21:32:10.449529+00:00"
     }
   },
   "candidates": [
@@ -1088,6 +1096,13 @@
         "btc_maker_ann": 0.0473,
         "eth_maker_ann": 0.0462,
         "note": "Income from market structure, zero prediction. Passive beats gated on this holdout (gate cost > savings) -- both reported, gated was the pre-registered primary and passes anyway."
+      },
+      "realism_v2_utc": "2026-08-29T21:36:15.404802+00:00",
+      "realism_v2": {
+        "type": "sensitivity on same data \u2014 stricter costs only, not a fresh test",
+        "finding": "Under every capital model, gated taker carry underperforms an assumed 4% risk-free rate: efficient 1x excess -0.41% (BTC) / -0.64% (ETH); conservative 1.5x -1.6/-1.8%. Worst rolling 90d funding annualized: -1.6% (BTC) / -2.2% (ETH).",
+        "nuance": "Maker execution + portfolio margin (spot as collateral) is the only configuration that marginally clears rf (~+4.6-4.7% on notional at 1x). The trade is economically thin, not free money.",
+        "verdict_amendment": "PASS stands on the pre-registered criteria (3% net on notional), but the economic conclusion is: carry does NOT beat T-bills except with best-case execution and capital efficiency. Statistical pass, economic marginal."
       }
     },
     {
@@ -1161,5 +1176,5 @@
       }
     }
   ],
-  "updated_utc": "2026-08-29T21:26:49.360777+00:00"
+  "updated_utc": "2026-08-29T21:36:15.404815+00:00"
 }

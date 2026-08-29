@@ -1,9 +1,33 @@
 {
   "study_id": "funding_carry_v1",
-  "evaluated_at_utc": "2026-08-29T21:24:57.483127+00:00",
+  "evaluated_at_utc": "2026-08-29T21:35:45.785931+00:00",
   "overall_verdict": "PASS \u2014 gated carry clears 3% net annualized with contained DD on both assets",
   "results": {
     "btc": {
+      "realism_v2": {
+        "note": "sensitivity on same data \u2014 stricter costs only, not a fresh hypothesis test",
+        "assumptions": {
+          "basis_slippage_rt_bps": 5.0,
+          "rf_annual": 0.04
+        },
+        "gated_taker_plus_basis_annual_on_notional": 0.0359,
+        "return_on_capital": {
+          "efficient_1x": {
+            "annual_return_on_capital": 0.0359,
+            "excess_over_rf": -0.0041
+          },
+          "conservative_1_5x": {
+            "annual_return_on_capital": 0.0239,
+            "excess_over_rf": -0.0161
+          },
+          "naive_2x": {
+            "annual_return_on_capital": 0.018,
+            "excess_over_rf": -0.0221
+          }
+        },
+        "worst_rolling_90d_funding_annualized": -0.0158,
+        "beats_rf_at_conservative_capital": false
+      },
       "asset": "btc",
       "status": "evaluated",
       "n_periods_total": 7637,
@@ -49,6 +73,30 @@
       "passes": true
     },
     "eth": {
+      "realism_v2": {
+        "note": "sensitivity on same data \u2014 stricter costs only, not a fresh hypothesis test",
+        "assumptions": {
+          "basis_slippage_rt_bps": 5.0,
+          "rf_annual": 0.04
+        },
+        "gated_taker_plus_basis_annual_on_notional": 0.0336,
+        "return_on_capital": {
+          "efficient_1x": {
+            "annual_return_on_capital": 0.0336,
+            "excess_over_rf": -0.0064
+          },
+          "conservative_1_5x": {
+            "annual_return_on_capital": 0.0224,
+            "excess_over_rf": -0.0176
+          },
+          "naive_2x": {
+            "annual_return_on_capital": 0.0168,
+            "excess_over_rf": -0.0232
+          }
+        },
+        "worst_rolling_90d_funding_annualized": -0.0223,
+        "beats_rf_at_conservative_capital": false
+      },
       "asset": "eth",
       "status": "evaluated",
       "n_periods_total": 7403,
