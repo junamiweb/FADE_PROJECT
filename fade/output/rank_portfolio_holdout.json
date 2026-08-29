@@ -1,0 +1,88 @@
+{
+  "study_id": "rank_portfolio_weekly_v1",
+  "evaluated_at_utc": "2026-08-29T21:25:13.989205+00:00",
+  "panel_assets": 37,
+  "n_weeks_total": 395,
+  "n_weeks_holdout": 119,
+  "holdout_span": "2024-05-13 -> 2026-08-17",
+  "results": {
+    "dev": {
+      "H1_reversal_taker": {
+        "total_return": -0.9777,
+        "annual_return": -0.5114,
+        "sharpe": -1.1,
+        "max_drawdown": -0.9788,
+        "n_weeks": 276,
+        "n_weeks_traded": 276,
+        "avg_weekly_pnl_bps": -104.31
+      },
+      "H1_reversal_maker": {
+        "total_return": -0.9745,
+        "annual_return": -0.4992,
+        "sharpe": -1.051,
+        "max_drawdown": -0.9759,
+        "n_weeks": 276,
+        "n_weeks_traded": 276,
+        "avg_weekly_pnl_bps": -99.63
+      },
+      "H2_momentum_taker": {
+        "total_return": 5.566,
+        "annual_return": 0.4256,
+        "sharpe": 0.936,
+        "max_drawdown": -0.3977,
+        "n_weeks": 276,
+        "n_weeks_traded": 276,
+        "avg_weekly_pnl_bps": 88.72
+      },
+      "H2_momentum_maker": {
+        "total_return": 6.4657,
+        "annual_return": 0.4605,
+        "sharpe": 0.985,
+        "max_drawdown": -0.388,
+        "n_weeks": 276,
+        "n_weeks_traded": 276,
+        "avg_weekly_pnl_bps": 93.4
+      }
+    },
+    "holdout": {
+      "H1_reversal_taker": {
+        "total_return": -0.0612,
+        "annual_return": -0.0272,
+        "sharpe": -0.024,
+        "max_drawdown": -0.3454,
+        "n_weeks": 119,
+        "n_weeks_traded": 119,
+        "avg_weekly_pnl_bps": -0.97
+      },
+      "H1_reversal_maker": {
+        "total_return": -0.0087,
+        "annual_return": -0.0038,
+        "sharpe": 0.088,
+        "max_drawdown": -0.3306,
+        "n_weeks": 119,
+        "n_weeks_traded": 119,
+        "avg_weekly_pnl_bps": 3.61
+      },
+      "H2_momentum_taker": {
+        "total_return": -0.1996,
+        "annual_return": -0.0927,
+        "sharpe": -0.349,
+        "max_drawdown": -0.3473,
+        "n_weeks": 119,
+        "n_weeks_traded": 119,
+        "avg_weekly_pnl_bps": -14.28
+      },
+      "H2_momentum_maker": {
+        "total_return": -0.1547,
+        "annual_return": -0.0708,
+        "sharpe": -0.237,
+        "max_drawdown": -0.3304,
+        "n_weeks": 119,
+        "n_weeks_traded": 119,
+        "avg_weekly_pnl_bps": -9.71
+      }
+    }
+  },
+  "passes": false,
+  "overall_verdict": "REJECT \u2014 H1 reversal holdout Sharpe -0.024 (need >0.5), return -6.1%"
+}

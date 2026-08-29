@@ -1,0 +1,80 @@
+{
+  "status": "ok",
+  "study_id": "pepe_followup_v1",
+  "evaluated_at_utc": "2026-08-29T21:25:27.401355+00:00",
+  "cutoff_utc": "2026-07-05T13:10:00+00:00",
+  "n_dev_bars": 27764,
+  "n_oos_bars": 1328,
+  "n_oos_covered": 601,
+  "oos_span": "2026-07-05 14:00:00+00:00 -> 2026-08-29 20:00:00+00:00",
+  "n_frozen_rules": 14,
+  "oos_hit": 0.6572,
+  "oos_hit_se": 0.0194,
+  "original_screen_hit": 0.6082,
+  "buy_hold_oos": -0.1858,
+  "pnl_variants": {
+    "taker_min_hold_1": {
+      "variant": "min_hold_1",
+      "active_bars": 601,
+      "total_return": 0.3299,
+      "annual_return": 62.7618,
+      "sharpe": 5.071,
+      "max_drawdown": -0.2036,
+      "n_changes": 219,
+      "cost_drag": 0.2185
+    },
+    "taker_min_hold_24": {
+      "variant": "min_hold_24",
+      "active_bars": 601,
+      "total_return": -0.1096,
+      "annual_return": -0.8158,
+      "sharpe": -1.434,
+      "max_drawdown": -0.2666,
+      "n_changes": 25,
+      "cost_drag": 0.0245
+    },
+    "taker_min_hold_48": {
+      "variant": "min_hold_48",
+      "active_bars": 601,
+      "total_return": 0.6826,
+      "annual_return": 1966.1213,
+      "sharpe": 8.924,
+      "max_drawdown": -0.1181,
+      "n_changes": 12,
+      "cost_drag": 0.0115
+    },
+    "maker_min_hold_1": {
+      "variant": "min_hold_1",
+      "active_bars": 601,
+      "total_return": 0.5163,
+      "annual_return": 430.6561,
+      "sharpe": 7.217,
+      "max_drawdown": -0.1896,
+      "n_changes": 219,
+      "cost_drag": 0.0874
+    },
+    "maker_min_hold_24": {
+      "variant": "min_hold_24",
+      "active_bars": 601,
+      "total_return": -0.0964,
+      "annual_return": -0.7719,
+      "sharpe": -1.195,
+      "max_drawdown": -0.2653,
+      "n_changes": 25,
+      "cost_drag": 0.0098
+    },
+    "maker_min_hold_48": {
+      "variant": "min_hold_48",
+      "active_bars": 601,
+      "total_return": 0.6942,
+      "annual_return": 2173.3742,
+      "sharpe": 9.033,
+      "max_drawdown": -0.1165,
+      "n_changes": 12,
+      "cost_drag": 0.0046
+    }
+  },
+  "any_min_hold_positive_taker": true,
+  "passes": true,
+  "overall_verdict": "PASS \u2014 OOS hit 0.6572 >= 0.56 with a net-positive min_hold variant"
+}

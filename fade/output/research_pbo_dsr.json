@@ -1,0 +1,871 @@
+{
+  "study_id": "research_pbo_dsr_v1",
+  "run_utc": "2026-08-29T21:29:01.787681+00:00",
+  "agent": "builder-research-pbo-dsr",
+  "method": "analysis_only \u2014 no new parameter search",
+  "trial_inventory": {
+    "conservative": {
+      "n_trials": 39,
+      "note": "Upper bound: batch log lines with holdout headline decisions (~39 batches)"
+    },
+    "liberal": {
+      "n_trials": 18,
+      "note": "Distinct hypothesis families: atom sets(7)+VR grid(1)+horizon(1)+funding(4)+ML(1)+phase2(4)"
+    },
+    "holm_atom_sets": 7
+  },
+  "reference_hit_batch17": 0.546,
+  "lockbox_frac_reference": 0.18,
+  "results": [
+    {
+      "asset": "btc",
+      "csv": "btc_1h.csv",
+      "status": "ok",
+      "holdout_test": {
+        "hit_rate": 0.5328,
+        "lift": 0.0328,
+        "p_value": 0.0033,
+        "p_holm_atom_sets": 0.0231,
+        "coverage": 19252,
+        "verdict": "PASS - base edge survives strict out-of-sample holdout."
+      },
+      "signal_sharpe": {
+        "fee_bps_round_trip": 10.0,
+        "sharpe_annualized": -16.7541,
+        "skew": -0.5542,
+        "kurtosis_excess": 10.4054,
+        "n_signals": 18079
+      },
+      "dsr_conservative_n39": {
+        "sr_hat": -16.7541,
+        "sr0_expected_max": 2.1795,
+        "dsr_statistic": -94.7467,
+        "p_approx": 1.0,
+        "dsr_pass": false,
+        "n_obs": 18079,
+        "n_trials_used": 39
+      },
+      "dsr_liberal_n18": {
+        "sr_hat": -16.7541,
+        "sr0_expected_max": 1.8539,
+        "dsr_statistic": -93.1174,
+        "p_approx": 1.0,
+        "dsr_pass": false,
+        "n_obs": 18079,
+        "n_trials_used": 18
+      },
+      "fold_instability": {
+        "n_folds": 8,
+        "overall_positive_rate": 0.396,
+        "fold_hits": [
+          0.4257,
+          0.4102,
+          0.4451,
+          0.4115,
+          0.354,
+          0.3735,
+          0.3907,
+          0.3572
+        ],
+        "folds_underperforming_hit": 3,
+        "folds_non_positive_mean": 8,
+        "pbo_proxy_fold": 0.375,
+        "interpretation": "high if many folds weak \u2014 single-strategy CSCV-lite, not full Bailey PBO"
+      },
+      "lockbox_overfit_proxy": {
+        "holdout_hit": 0.5328,
+        "lockbox_v1_hit": 0.5277,
+        "headline_holdout_ref": 0.5464,
+        "delta_holdout_vs_lockbox_pp": 0.51,
+        "reference_delta_pp": 1.87,
+        "pbo_proxy_lockbox": 0.0136,
+        "note": "lockbox v1 BURNED \u2014 descriptive overfit gap only"
+      }
+    },
+    {
+      "asset": "eth",
+      "csv": "eth_1h.csv",
+      "status": "ok",
+      "holdout_test": {
+        "hit_rate": 0.5328,
+        "lift": 0.0328,
+        "p_value": 0.0033,
+        "p_holm_atom_sets": 0.0231,
+        "coverage": 19049,
+        "verdict": "PASS - base edge survives strict out-of-sample holdout."
+      },
+      "signal_sharpe": {
+        "fee_bps_round_trip": 10.0,
+        "sharpe_annualized": -11.9871,
+        "skew": -1.3088,
+        "kurtosis_excess": 19.1987,
+        "n_signals": 13562
+      },
+      "dsr_conservative_n39": {
+        "sr_hat": -11.9871,
+        "sr0_expected_max": 2.1795,
+        "dsr_statistic": -63.4988,
+        "p_approx": 1.0,
+        "dsr_pass": false,
+        "n_obs": 13562,
+        "n_trials_used": 39
+      },
+      "dsr_liberal_n18": {
+        "sr_hat": -11.9871,
+        "sr0_expected_max": 1.8539,
+        "dsr_statistic": -62.0394,
+        "p_approx": 1.0,
+        "dsr_pass": false,
+        "n_obs": 13562,
+        "n_trials_used": 18
+      },
+      "fold_instability": {
+        "n_folds": 8,
+        "overall_positive_rate": 0.4487,
+        "fold_hits": [
+          0.4705,
+          0.4481,
+          0.472,
+          0.4602,
+          0.4625,
+          0.4437,
+          0.4354,
+          0.3971
+        ],
+        "folds_underperforming_hit": 1,
+        "folds_non_positive_mean": 8,
+        "pbo_proxy_fold": 0.125,
+        "interpretation": "high if many folds weak \u2014 single-strategy CSCV-lite, not full Bailey PBO"
+      },
+      "lockbox_overfit_proxy": {
+        "holdout_hit": 0.5328,
+        "lockbox_v1_hit": 0.5275,
+        "headline_holdout_ref": 0.5327,
+        "delta_holdout_vs_lockbox_pp": 0.53,
+        "reference_delta_pp": 0.52,
+        "pbo_proxy_lockbox": 0.0,
+        "note": "lockbox v1 BURNED \u2014 descriptive overfit gap only"
+      }
+    },
+    {
+      "asset": "sol",
+      "csv": "sol_1h.csv",
+      "status": "ok",
+      "holdout_test": {
+        "hit_rate": 0.5142,
+        "lift": 0.0142,
+        "p_value": 0.0033,
+        "p_holm_atom_sets": 0.0231,
+        "coverage": 11226,
+        "verdict": "PASS - base edge survives strict out-of-sample holdout."
+      },
+      "signal_sharpe": {
+        "fee_bps_round_trip": 10.0,
+        "sharpe_annualized": -6.3759,
+        "skew": -0.0895,
+        "kurtosis_excess": 10.1853,
+        "n_signals": 6627
+      },
+      "dsr_conservative_n39": {
+        "sr_hat": -6.3759,
+        "sr0_expected_max": 2.1795,
+        "dsr_statistic": -68.3072,
+        "p_approx": 1.0,
+        "dsr_pass": false,
+        "n_obs": 6627,
+        "n_trials_used": 39
+      },
+      "dsr_liberal_n18": {
+        "sr_hat": -6.3759,
+        "sr0_expected_max": 1.8539,
+        "dsr_statistic": -65.7077,
+        "p_approx": 1.0,
+        "dsr_pass": false,
+        "n_obs": 6627,
+        "n_trials_used": 18
+      },
+      "fold_instability": {
+        "n_folds": 8,
+        "overall_positive_rate": 0.4614,
+        "fold_hits": [
+          0.5018,
+          0.5054,
+          0.4668,
+          0.4614,
+          0.4432,
+          0.4444,
+          0.4227,
+          0.4457
+        ],
+        "folds_underperforming_hit": 1,
+        "folds_non_positive_mean": 7,
+        "pbo_proxy_fold": 0.125,
+        "interpretation": "high if many folds weak \u2014 single-strategy CSCV-lite, not full Bailey PBO"
+      },
+      "lockbox_overfit_proxy": {
+        "status": "no_reference"
+      }
+    },
+    {
+      "asset": "bnb",
+      "csv": "bnb_1h.csv",
+      "status": "ok",
+      "holdout_test": {
+        "hit_rate": 0.5197,
+        "lift": 0.0197,
+        "p_value": 0.0033,
+        "p_holm_atom_sets": 0.0231,
+        "coverage": 19367,
+        "verdict": "PASS - base edge survives strict out-of-sample holdout."
+      },
+      "signal_sharpe": {
+        "fee_bps_round_trip": 10.0,
+        "sharpe_annualized": -10.9201,
+        "skew": -0.7752,
+        "kurtosis_excess": 15.1184,
+        "n_signals": 6985
+      },
+      "dsr_conservative_n39": {
+        "sr_hat": -10.9201,
+        "sr0_expected_max": 2.1795,
+        "dsr_statistic": -51.9978,
+        "p_approx": 1.0,
+        "dsr_pass": false,
+        "n_obs": 6985,
+        "n_trials_used": 39
+      },
+      "dsr_liberal_n18": {
+        "sr_hat": -10.9201,
+        "sr0_expected_max": 1.8539,
+        "dsr_statistic": -50.7054,
+        "p_approx": 1.0,
+        "dsr_pass": false,
+        "n_obs": 6985,
+        "n_trials_used": 18
+      },
+      "fold_instability": {
+        "n_folds": 8,
+        "overall_positive_rate": 0.4511,
+        "fold_hits": [
+          0.524,
+          0.4628,
+          0.4674,
+          0.4639,
+          0.4376,
+          0.4628,
+          0.4032,
+          0.3872
+        ],
+        "folds_underperforming_hit": 2,
+        "folds_non_positive_mean": 8,
+        "pbo_proxy_fold": 0.25,
+        "interpretation": "high if many folds weak \u2014 single-strategy CSCV-lite, not full Bailey PBO"
+      },
+      "lockbox_overfit_proxy": {
+        "status": "no_reference"
+      }
+    },
+    {
+      "asset": "xrp",
+      "csv": "xrp_1h.csv",
+      "status": "ok",
+      "holdout_test": {
+        "hit_rate": 0.5218,
+        "lift": 0.0218,
+        "p_value": 0.0033,
+        "p_holm_atom_sets": 0.0231,
+        "coverage": 16278,
+        "verdict": "PASS - base edge survives strict out-of-sample holdout."
+      },
+      "signal_sharpe": {
+        "fee_bps_round_trip": 10.0,
+        "sharpe_annualized": -7.874,
+        "skew": -0.3152,
+        "kurtosis_excess": 24.8073,
+        "n_signals": 6193
+      },
+      "dsr_conservative_n39": {
+        "sr_hat": -7.874,
+        "sr0_expected_max": 2.1795,
+        "dsr_statistic": -40.4216,
+        "p_approx": 1.0,
+        "dsr_pass": false,
+        "n_obs": 6193,
+        "n_trials_used": 39
+      },
+      "dsr_liberal_n18": {
+        "sr_hat": -7.874,
+        "sr0_expected_max": 1.8539,
+        "dsr_statistic": -39.1126,
+        "p_approx": 1.0,
+        "dsr_pass": false,
+        "n_obs": 6193,
+        "n_trials_used": 18
+      },
+      "fold_instability": {
+        "n_folds": 8,
+        "overall_positive_rate": 0.465,
+        "fold_hits": [
+          0.4555,
+          0.4832,
+          0.4858,
+          0.4858,
+          0.4625,
+          0.4638,
+          0.4677,
+          0.416
+        ],
+        "folds_underperforming_hit": 1,
+        "folds_non_positive_mean": 8,
+        "pbo_proxy_fold": 0.125,
+        "interpretation": "high if many folds weak \u2014 single-strategy CSCV-lite, not full Bailey PBO"
+      },
+      "lockbox_overfit_proxy": {
+        "status": "no_reference"
+      }
+    },
+    {
+      "asset": "ada",
+      "csv": "ada_1h.csv",
+      "status": "ok",
+      "holdout_test": {
+        "hit_rate": 0.5232,
+        "lift": 0.0232,
+        "p_value": 0.0033,
+        "p_holm_atom_sets": 0.0231,
+        "coverage": 17926,
+        "verdict": "PASS - base edge survives strict out-of-sample holdout."
+      },
+      "signal_sharpe": {
+        "fee_bps_round_trip": 10.0,
+        "sharpe_annualized": -5.3644,
+        "skew": 1.9403,
+        "kurtosis_excess": 91.947,
+        "n_signals": 10210
+      },
+      "dsr_conservative_n39": {
+        "sr_hat": -5.3644,
+        "sr0_expected_max": 2.1795,
+        "dsr_statistic": -29.3841,
+        "p_approx": 1.0,
+        "dsr_pass": false,
+        "n_obs": 10210,
+        "n_trials_used": 39
+      },
+      "dsr_liberal_n18": {
+        "sr_hat": -5.3644,
+        "sr0_expected_max": 1.8539,
+        "dsr_statistic": -28.1159,
+        "p_approx": 1.0,
+        "dsr_pass": false,
+        "n_obs": 10210,
+        "n_trials_used": 18
+      },
+      "fold_instability": {
+        "n_folds": 8,
+        "overall_positive_rate": 0.4813,
+        "fold_hits": [
+          0.4777,
+          0.4652,
+          0.4882,
+          0.4929,
+          0.5024,
+          0.482,
+          0.4655,
+          0.4765
+        ],
+        "folds_underperforming_hit": 0,
+        "folds_non_positive_mean": 8,
+        "pbo_proxy_fold": 0.0,
+        "interpretation": "high if many folds weak \u2014 single-strategy CSCV-lite, not full Bailey PBO"
+      },
+      "lockbox_overfit_proxy": {
+        "status": "no_reference"
+      }
+    },
+    {
+      "asset": "avax",
+      "csv": "avax_1h.csv",
+      "status": "ok",
+      "holdout_test": {
+        "hit_rate": 0.5305,
+        "lift": 0.0305,
+        "p_value": 0.0033,
+        "p_holm_atom_sets": 0.0231,
+        "coverage": 11248,
+        "verdict": "PASS - base edge survives strict out-of-sample holdout."
+      },
+      "signal_sharpe": {
+        "fee_bps_round_trip": 10.0,
+        "sharpe_annualized": -9.0553,
+        "skew": -0.5696,
+        "kurtosis_excess": 11.6165,
+        "n_signals": 7159
+      },
+      "dsr_conservative_n39": {
+        "sr_hat": -9.0553,
+        "sr0_expected_max": 2.1795,
+        "dsr_statistic": -62.1403,
+        "p_approx": 1.0,
+        "dsr_pass": false,
+        "n_obs": 7159,
+        "n_trials_used": 39
+      },
+      "dsr_liberal_n18": {
+        "sr_hat": -9.0553,
+        "sr0_expected_max": 1.8539,
+        "dsr_statistic": -60.3395,
+        "p_approx": 1.0,
+        "dsr_pass": false,
+        "n_obs": 7159,
+        "n_trials_used": 18
+      },
+      "fold_instability": {
+        "n_folds": 8,
+        "overall_positive_rate": 0.4577,
+        "fold_hits": [
+          0.4994,
+          0.4905,
+          0.4391,
+          0.4615,
+          0.4123,
+          0.467,
+          0.4637,
+          0.4284
+        ],
+        "folds_underperforming_hit": 2,
+        "folds_non_positive_mean": 8,
+        "pbo_proxy_fold": 0.25,
+        "interpretation": "high if many folds weak \u2014 single-strategy CSCV-lite, not full Bailey PBO"
+      },
+      "lockbox_overfit_proxy": {
+        "status": "no_reference"
+      }
+    },
+    {
+      "asset": "link",
+      "csv": "link_1h.csv",
+      "status": "ok",
+      "holdout_test": {
+        "hit_rate": 0.5116,
+        "lift": 0.0116,
+        "p_value": 0.0033,
+        "p_holm_atom_sets": 0.0231,
+        "coverage": 13834,
+        "verdict": "PASS - base edge survives strict out-of-sample holdout."
+      },
+      "signal_sharpe": {
+        "fee_bps_round_trip": 10.0,
+        "sharpe_annualized": -4.9934,
+        "skew": -0.329,
+        "kurtosis_excess": 10.439,
+        "n_signals": 6355
+      },
+      "dsr_conservative_n39": {
+        "sr_hat": -4.9934,
+        "sr0_expected_max": 2.1795,
+        "dsr_statistic": -71.2323,
+        "p_approx": 1.0,
+        "dsr_pass": false,
+        "n_obs": 6355,
+        "n_trials_used": 39
+      },
+      "dsr_liberal_n18": {
+        "sr_hat": -4.9934,
+        "sr0_expected_max": 1.8539,
+        "dsr_statistic": -67.999,
+        "p_approx": 1.0,
+        "dsr_pass": false,
+        "n_obs": 6355,
+        "n_trials_used": 18
+      },
+      "fold_instability": {
+        "n_folds": 8,
+        "overall_positive_rate": 0.4804,
+        "fold_hits": [
+          0.4553,
+          0.4805,
+          0.527,
+          0.4899,
+          0.4987,
+          0.4685,
+          0.4786,
+          0.4446
+        ],
+        "folds_underperforming_hit": 2,
+        "folds_non_positive_mean": 7,
+        "pbo_proxy_fold": 0.25,
+        "interpretation": "high if many folds weak \u2014 single-strategy CSCV-lite, not full Bailey PBO"
+      },
+      "lockbox_overfit_proxy": {
+        "status": "no_reference"
+      }
+    },
+    {
+      "asset": "doge",
+      "csv": "doge_1h.csv",
+      "status": "ok",
+      "holdout_test": {
+        "hit_rate": 0.5233,
+        "lift": 0.0233,
+        "p_value": 0.0033,
+        "p_holm_atom_sets": 0.0231,
+        "coverage": 15946,
+        "verdict": "PASS - base edge survives strict out-of-sample holdout."
+      },
+      "signal_sharpe": {
+        "fee_bps_round_trip": 10.0,
+        "sharpe_annualized": -7.3545,
+        "skew": -0.4471,
+        "kurtosis_excess": 14.7665,
+        "n_signals": 11083
+      },
+      "dsr_conservative_n39": {
+        "sr_hat": -7.3545,
+        "sr0_expected_max": 2.1795,
+        "dsr_statistic": -71.4371,
+        "p_approx": 1.0,
+        "dsr_pass": false,
+        "n_obs": 11083,
+        "n_trials_used": 39
+      },
+      "dsr_liberal_n18": {
+        "sr_hat": -7.3545,
+        "sr0_expected_max": 1.8539,
+        "dsr_statistic": -68.9975,
+        "p_approx": 1.0,
+        "dsr_pass": false,
+        "n_obs": 11083,
+        "n_trials_used": 18
+      },
+      "fold_instability": {
+        "n_folds": 8,
+        "overall_positive_rate": 0.4624,
+        "fold_hits": [
+          0.4762,
+          0.5152,
+          0.4747,
+          0.4614,
+          0.4729,
+          0.4484,
+          0.4152,
+          0.4354
+        ],
+        "folds_underperforming_hit": 2,
+        "folds_non_positive_mean": 7,
+        "pbo_proxy_fold": 0.25,
+        "interpretation": "high if many folds weak \u2014 single-strategy CSCV-lite, not full Bailey PBO"
+      },
+      "lockbox_overfit_proxy": {
+        "status": "no_reference"
+      }
+    },
+    {
+      "asset": "ltc",
+      "csv": "ltc_1h.csv",
+      "status": "ok",
+      "holdout_test": {
+        "hit_rate": 0.5234,
+        "lift": 0.0234,
+        "p_value": 0.0033,
+        "p_holm_atom_sets": 0.0231,
+        "coverage": 19000,
+        "verdict": "PASS - base edge survives strict out-of-sample holdout."
+      },
+      "signal_sharpe": {
+        "fee_bps_round_trip": 10.0,
+        "sharpe_annualized": -9.0448,
+        "skew": -1.4242,
+        "kurtosis_excess": 26.3099,
+        "n_signals": 16876
+      },
+      "dsr_conservative_n39": {
+        "sr_hat": -9.0448,
+        "sr0_expected_max": 2.1795,
+        "dsr_statistic": -63.5623,
+        "p_approx": 1.0,
+        "dsr_pass": false,
+        "n_obs": 16876,
+        "n_trials_used": 39
+      },
+      "dsr_liberal_n18": {
+        "sr_hat": -9.0448,
+        "sr0_expected_max": 1.8539,
+        "dsr_statistic": -61.7185,
+        "p_approx": 1.0,
+        "dsr_pass": false,
+        "n_obs": 16876,
+        "n_trials_used": 18
+      },
+      "fold_instability": {
+        "n_folds": 8,
+        "overall_positive_rate": 0.4511,
+        "fold_hits": [
+          0.4659,
+          0.4327,
+          0.4673,
+          0.4782,
+          0.4576,
+          0.4538,
+          0.4263,
+          0.4272
+        ],
+        "folds_underperforming_hit": 2,
+        "folds_non_positive_mean": 8,
+        "pbo_proxy_fold": 0.25,
+        "interpretation": "high if many folds weak \u2014 single-strategy CSCV-lite, not full Bailey PBO"
+      },
+      "lockbox_overfit_proxy": {
+        "status": "no_reference"
+      }
+    },
+    {
+      "asset": "dot",
+      "csv": "dot_1h.csv",
+      "status": "ok",
+      "holdout_test": {
+        "hit_rate": 0.5228,
+        "lift": 0.0228,
+        "p_value": 0.0033,
+        "p_holm_atom_sets": 0.0231,
+        "coverage": 10991,
+        "verdict": "PASS - base edge survives strict out-of-sample holdout."
+      },
+      "signal_sharpe": {
+        "fee_bps_round_trip": 10.0,
+        "sharpe_annualized": -5.8029,
+        "skew": -1.5968,
+        "kurtosis_excess": 35.3136,
+        "n_signals": 5321
+      },
+      "dsr_conservative_n39": {
+        "sr_hat": -5.8029,
+        "sr0_expected_max": 2.1795,
+        "dsr_statistic": -34.2472,
+        "p_approx": 1.0,
+        "dsr_pass": false,
+        "n_obs": 5321,
+        "n_trials_used": 39
+      },
+      "dsr_liberal_n18": {
+        "sr_hat": -5.8029,
+        "sr0_expected_max": 1.8539,
+        "dsr_statistic": -32.8503,
+        "p_approx": 1.0,
+        "dsr_pass": false,
+        "n_obs": 5321,
+        "n_trials_used": 18
+      },
+      "fold_instability": {
+        "n_folds": 8,
+        "overall_positive_rate": 0.4843,
+        "fold_hits": [
+          0.5225,
+          0.4947,
+          0.4812,
+          0.4782,
+          0.4902,
+          0.4917,
+          0.4406,
+          0.4752
+        ],
+        "folds_underperforming_hit": 1,
+        "folds_non_positive_mean": 8,
+        "pbo_proxy_fold": 0.125,
+        "interpretation": "high if many folds weak \u2014 single-strategy CSCV-lite, not full Bailey PBO"
+      },
+      "lockbox_overfit_proxy": {
+        "status": "no_reference"
+      }
+    },
+    {
+      "asset": "near",
+      "csv": "near_1h.csv",
+      "status": "ok",
+      "holdout_test": {
+        "hit_rate": 0.5291,
+        "lift": 0.0291,
+        "p_value": 0.0033,
+        "p_holm_atom_sets": 0.0231,
+        "coverage": 13312,
+        "verdict": "PASS - base edge survives strict out-of-sample holdout."
+      },
+      "signal_sharpe": {
+        "fee_bps_round_trip": 10.0,
+        "sharpe_annualized": -5.9251,
+        "skew": -0.7091,
+        "kurtosis_excess": 10.3535,
+        "n_signals": 7019
+      },
+      "dsr_conservative_n39": {
+        "sr_hat": -5.9251,
+        "sr0_expected_max": 2.1795,
+        "dsr_statistic": -72.5128,
+        "p_approx": 1.0,
+        "dsr_pass": false,
+        "n_obs": 7019,
+        "n_trials_used": 39
+      },
+      "dsr_liberal_n18": {
+        "sr_hat": -5.9251,
+        "sr0_expected_max": 1.8539,
+        "dsr_statistic": -69.5998,
+        "p_approx": 1.0,
+        "dsr_pass": false,
+        "n_obs": 7019,
+        "n_trials_used": 18
+      },
+      "fold_instability": {
+        "n_folds": 8,
+        "overall_positive_rate": 0.4739,
+        "fold_hits": [
+          0.5057,
+          0.4647,
+          0.4977,
+          0.4743,
+          0.48,
+          0.4584,
+          0.4379,
+          0.4721
+        ],
+        "folds_underperforming_hit": 1,
+        "folds_non_positive_mean": 8,
+        "pbo_proxy_fold": 0.125,
+        "interpretation": "high if many folds weak \u2014 single-strategy CSCV-lite, not full Bailey PBO"
+      },
+      "lockbox_overfit_proxy": {
+        "status": "no_reference"
+      }
+    },
+    {
+      "asset": "arb",
+      "csv": "arb_1h.csv",
+      "status": "ok",
+      "holdout_test": {
+        "hit_rate": 0.5235,
+        "lift": 0.0235,
+        "p_value": 0.0066,
+        "p_holm_atom_sets": 0.0462,
+        "coverage": 6271,
+        "verdict": "PASS - base edge survives strict out-of-sample holdout."
+      },
+      "signal_sharpe": {
+        "fee_bps_round_trip": 10.0,
+        "sharpe_annualized": -11.7055,
+        "skew": -2.703,
+        "kurtosis_excess": 67.6502,
+        "n_signals": 4714
+      },
+      "dsr_conservative_n39": {
+        "sr_hat": -11.7055,
+        "sr0_expected_max": 2.1795,
+        "dsr_statistic": -19.9337,
+        "p_approx": 1.0,
+        "dsr_pass": false,
+        "n_obs": 4714,
+        "n_trials_used": 39
+      },
+      "dsr_liberal_n18": {
+        "sr_hat": -11.7055,
+        "sr0_expected_max": 1.8539,
+        "dsr_statistic": -19.4663,
+        "p_approx": 1.0,
+        "dsr_pass": false,
+        "n_obs": 4714,
+        "n_trials_used": 18
+      },
+      "fold_instability": {
+        "n_folds": 8,
+        "overall_positive_rate": 0.4468,
+        "fold_hits": [
+          0.4661,
+          0.4356,
+          0.4363,
+          0.4499,
+          0.4363,
+          0.3854,
+          0.4873,
+          0.4771
+        ],
+        "folds_underperforming_hit": 1,
+        "folds_non_positive_mean": 8,
+        "pbo_proxy_fold": 0.125,
+        "interpretation": "high if many folds weak \u2014 single-strategy CSCV-lite, not full Bailey PBO"
+      },
+      "lockbox_overfit_proxy": {
+        "status": "no_reference"
+      }
+    },
+    {
+      "asset": "op",
+      "csv": "op_1h.csv",
+      "status": "ok",
+      "holdout_test": {
+        "hit_rate": 0.5273,
+        "lift": 0.0273,
+        "p_value": 0.0066,
+        "p_holm_atom_sets": 0.0462,
+        "coverage": 9983,
+        "verdict": "PASS - base edge survives strict out-of-sample holdout."
+      },
+      "signal_sharpe": {
+        "fee_bps_round_trip": 10.0,
+        "sharpe_annualized": -10.2983,
+        "skew": -2.8717,
+        "kurtosis_excess": 64.4845,
+        "n_signals": 4798
+      },
+      "dsr_conservative_n39": {
+        "sr_hat": -10.2983,
+        "sr0_expected_max": 2.1795,
+        "dsr_statistic": -21.0774,
+        "p_approx": 1.0,
+        "dsr_pass": false,
+        "n_obs": 4798,
+        "n_trials_used": 39
+      },
+      "dsr_liberal_n18": {
+        "sr_hat": -10.2983,
+        "sr0_expected_max": 1.8539,
+        "dsr_statistic": -20.5275,
+        "p_approx": 1.0,
+        "dsr_pass": false,
+        "n_obs": 4798,
+        "n_trials_used": 18
+      },
+      "fold_instability": {
+        "n_folds": 8,
+        "overall_positive_rate": 0.4629,
+        "fold_hits": [
+          0.4783,
+          0.515,
+          0.48,
+          0.4567,
+          0.455,
+          0.4233,
+          0.429,
+          0.4658
+        ],
+        "folds_underperforming_hit": 2,
+        "folds_non_positive_mean": 8,
+        "pbo_proxy_fold": 0.25,
+        "interpretation": "high if many folds weak \u2014 single-strategy CSCV-lite, not full Bailey PBO"
+      },
+      "lockbox_overfit_proxy": {
+        "status": "no_reference"
+      }
+    }
+  ],
+  "summary": {
+    "assets_ok": 14,
+    "any_dsr_pass_conservative": false,
+    "interpretation": "BTC: DSR(n=39) pass=False, holdout-lockbox=0.51pp, fold_pbo=0.375; ETH: DSR(n=39) pass=False, holdout-lockbox=0.53pp, fold_pbo=0.125; SOL: DSR(n=39) pass=False, holdout-lockbox=Nonepp, fold_pbo=0.125; BNB: DSR(n=39) pass=False, holdout-lockbox=Nonepp, fold_pbo=0.25; XRP: DSR(n=39) pass=False, holdout-lockbox=Nonepp, fold_pbo=0.125; ADA: DSR(n=39) pass=False, holdout-lockbox=Nonepp, fold_pbo=0.0; AVAX: DSR(n=39) pass=False, holdout-lockbox=Nonepp, fold_pbo=0.25; LINK: DSR(n=39) pass=False, holdout-lockbox=Nonepp, fold_pbo=0.25; DOGE: DSR(n=39) pass=False, holdout-lockbox=Nonepp, fold_pbo=0.25; LTC: DSR(n=39) pass=False, holdout-lockbox=Nonepp, fold_pbo=0.25; DOT: DSR(n=39) pass=False, holdout-lockbox=Nonepp, fold_pbo=0.125; NEAR: DSR(n=39) pass=False, holdout-lockbox=Nonepp, fold_pbo=0.125; ARB: DSR(n=39) pass=False, holdout-lockbox=Nonepp, fold_pbo=0.125; OP: DSR(n=39) pass=False, holdout-lockbox=Nonepp, fold_pbo=0.25"
+  },
+  "council_recommendation": "WATCH \u2014 edge may be real but inflated by trials; prioritize forward Track A",
+  "scope_check": {
+    "no_lookahead": true,
+    "no_ml_in_core": true,
+    "no_new_mining": true,
+    "historical_csv_only": true
+  }
+}

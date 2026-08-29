@@ -1058,7 +1058,108 @@
         "interpretation": "The abstain mechanism works as hypothesized but streak>=2 contrarian is not the right base signal for this holdout. A stronger base signal (path_lean3 with min_hold, or the production engine) would be a natural follow-up but requires its own pre-registration.",
         "preferred_threshold": "Q75 (most restrictive) was best on 12/14 assets"
       }
+    },
+    {
+      "study_id": "funding_carry_v1",
+      "pre_registered_utc": "2026-08-29T21:24:57.391948+00:00",
+      "hypothesis": "Delta-neutral cash-and-carry (long spot + short perp) on BTC/ETH earns positive net yield from funding, with zero price prediction.",
+      "variants": {
+        "passive": "always in carry \u2014 gross ceiling",
+        "gated": "in carry only while trailing 7d mean funding > 0 (threshold 0 fixed a priori, no fitting)"
+      },
+      "costs": {
+        "taker_round_trip_bps": 20,
+        "maker_round_trip_bps": 8,
+        "note": "2 legs (spot+perp), fee charged on each enter/exit"
+      },
+      "data_split": "holdout_70_30_chronological",
+      "success_criteria": {
+        "primary": "gated annualized net carry > 3% on holdout, both assets",
+        "secondary": "abs(max_drawdown) < annualized return"
+      },
+      "leakage_guard": "gate uses trailing 7d funding mean only; threshold fixed at 0",
+      "not_atoms": "income strategy \u2014 no price prediction, no path_lean3",
+      "on_failure": "REJECT \u2014 do not tune gate window or threshold on holdout",
+      "evaluated_utc": "2026-08-29T21:26:49.360777+00:00",
+      "verdict": "PASS -- gated carry clears 3% net annualized on both assets with tiny drawdown. BTC gated taker +3.92%/yr (Sharpe 9.4), ETH +3.73%/yr (Sharpe 8.4); maker variants +4.7%/4.6%. Passive variant even better (~+5.0%/yr both). First PASS in the research program.",
+      "summary": {
+        "btc_gated_taker_ann": 0.0392,
+        "eth_gated_taker_ann": 0.0373,
+        "btc_maker_ann": 0.0473,
+        "eth_maker_ann": 0.0462,
+        "note": "Income from market structure, zero prediction. Passive beats gated on this holdout (gate cost > savings) -- both reported, gated was the pre-registered primary and passes anyway."
+      }
+    },
+    {
+      "study_id": "rank_portfolio_weekly_v1",
+      "pre_registered_utc": "2026-08-29T21:25:08.058104+00:00",
+      "hypotheses": {
+        "H1_primary": "weekly reversal \u2014 long bottom-quintile 7d losers, short top-quintile winners, positive net Sharpe",
+        "H2_secondary": "weekly momentum (opposite legs) \u2014 reported only"
+      },
+      "construction": {
+        "rebalance": "Monday 00:00 UTC",
+        "ranking": "trailing 7d return from hourly closes (<= t only)",
+        "legs": "long bottom quintile / short top quintile, equal weight",
+        "hold": "one week",
+        "min_assets_ranked": 10
+      },
+      "panel": "37 crypto 1h series (root *_1h.csv excl SPY, AAPL)",
+      "costs": {
+        "taker_bps_side": 5,
+        "maker_bps_side": 2,
+        "charged_on": "actual turnover per leg"
+      },
+      "data_split": "holdout_70_30_chronological_weekly",
+      "success_criteria": {
+        "primary": "H1 holdout: annualized net Sharpe > 0.5 (taker), total_return > 0, >= 30 weeks"
+      },
+      "leakage_guard": "rankings use closes <= rebalance timestamp only",
+      "not_atoms": "cross-sectional portfolio \u2014 no path_lean3 vocabulary",
+      "on_failure": "REJECT \u2014 do not tune quintile, window, or frequency on holdout",
+      "evaluated_utc": "2026-08-29T21:26:49.360777+00:00",
+      "verdict": "REJECT -- H1 reversal holdout Sharpe -0.02 (need >0.5), return -6.1%. H2 momentum: dev +556% but holdout -20% -- textbook regime shift. Clean rejection of both weekly cross-sectional constructions.",
+      "summary": {
+        "h1_holdout_sharpe": -0.024,
+        "h1_holdout_return": -0.061,
+        "h2_dev_return": 5.566,
+        "h2_holdout_return": -0.2,
+        "note": "dev momentum edge did not survive; do not chase."
+      }
+    },
+    {
+      "study_id": "pepe_followup_v1",
+      "pre_registered_utc": "2026-08-29T21:25:23.339333+00:00",
+      "hypothesis": "path_lean3 on PEPE (0.6082 holdout hit in altcoin_screen_v1, flagged ADVANCE, never followed up) survives on true OOS data accumulated after the screen's evaluation date.",
+      "oos_definition": "all bars after 2026-07-05T13:10:00+00:00 (screen evaluation time)",
+      "method": "mine + freeze path_lean3 rules on data <= cutoff (walk_forward on dev, stable-rule selection, calibration on dev); apply frozen rules unchanged to post-cutoff bars",
+      "pnl_variants": {
+        "min_hold_bars": [
+          1,
+          24,
+          48
+        ],
+        "taker_bps_side": 5.0,
+        "maker_bps_side": 2.0
+      },
+      "success_criteria": {
+        "primary": "OOS directional hit >= 0.56",
+        "secondary": "at least one min_hold variant net-positive at 5 bps taker"
+      },
+      "known_risks": "~2 years history only; memecoin liquidity/spread worse than majors; OOS window is ~8 weeks (n~1300 bars)",
+      "leakage_guard": "rules, thresholds, calibration all frozen on <= cutoff",
+      "on_failure": "REJECT \u2014 do not re-mine or adjust min_hold on the OOS window",
+      "evaluated_utc": "2026-08-29T21:26:49.360777+00:00",
+      "verdict": "PASS -- true-OOS hit 0.6572 (se 0.019, n=601 covered bars) vs original screen 0.6082. min_hold=48 net +68.3% taker over 8 weeks vs buy-hold -18.6%; min_hold=1 also +33% despite 21.9% cost drag. Caveats: 8-week window, 12 trades at mh48.",
+      "summary": {
+        "oos_hit": 0.6572,
+        "oos_hit_se": 0.0194,
+        "n_covered": 601,
+        "best_variant": "taker_min_hold_48 +68.3%",
+        "buy_hold_oos": -0.186,
+        "caveat": "short OOS window; n_trades small at mh48; memecoin liquidity risk. Next step: forward validation, NOT a bigger backtest."
+      }
     }
   ],
-  "updated_utc": "2026-08-29T19:34:10.189506+00:00"
+  "updated_utc": "2026-08-29T21:26:49.360777+00:00"
 }

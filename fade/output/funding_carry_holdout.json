@@ -1,0 +1,97 @@
+{
+  "study_id": "funding_carry_v1",
+  "evaluated_at_utc": "2026-08-29T21:24:57.483127+00:00",
+  "overall_verdict": "PASS \u2014 gated carry clears 3% net annualized with contained DD on both assets",
+  "results": {
+    "btc": {
+      "asset": "btc",
+      "status": "evaluated",
+      "n_periods_total": 7637,
+      "n_periods_holdout": 2292,
+      "holdout_span": "2024-07-27 00:00:00+00:00 -> 2026-08-29 16:00:00.002000+00:00",
+      "funding_mean_annualized_holdout": 0.0496,
+      "fees": {
+        "taker": {
+          "passive": {
+            "total_return": 0.1072,
+            "annual_return": 0.0499,
+            "sharpe": 22.85,
+            "max_drawdown": -0.0041
+          },
+          "gated": {
+            "total_return": 0.0838,
+            "annual_return": 0.0392,
+            "sharpe": 9.391,
+            "max_drawdown": -0.0127,
+            "n_switches": 27,
+            "active_periods": 1950,
+            "coverage_pct": 85.1
+          }
+        },
+        "maker": {
+          "passive": {
+            "total_return": 0.1085,
+            "annual_return": 0.0505,
+            "sharpe": 25.337,
+            "max_drawdown": -0.0041
+          },
+          "gated": {
+            "total_return": 0.1015,
+            "annual_return": 0.0473,
+            "sharpe": 19.596,
+            "max_drawdown": -0.0049,
+            "n_switches": 27,
+            "active_periods": 1950,
+            "coverage_pct": 85.1
+          }
+        }
+      },
+      "passes": true
+    },
+    "eth": {
+      "asset": "eth",
+      "status": "evaluated",
+      "n_periods_total": 7403,
+      "n_periods_holdout": 2221,
+      "holdout_span": "2024-08-19 16:00:00.002000+00:00 -> 2026-08-29 16:00:00.002000+00:00",
+      "funding_mean_annualized_holdout": 0.049,
+      "fees": {
+        "taker": {
+          "passive": {
+            "total_return": 0.1023,
+            "annual_return": 0.0492,
+            "sharpe": 20.511,
+            "max_drawdown": -0.006
+          },
+          "gated": {
+            "total_return": 0.0771,
+            "annual_return": 0.0373,
+            "sharpe": 8.402,
+            "max_drawdown": -0.0134,
+            "n_switches": 29,
+            "active_periods": 1928,
+            "coverage_pct": 86.8
+          }
+        },
+        "maker": {
+          "passive": {
+            "total_return": 0.1037,
+            "annual_return": 0.0498,
+            "sharpe": 22.596,
+            "max_drawdown": -0.006
+          },
+          "gated": {
+            "total_return": 0.096,
+            "annual_return": 0.0462,
+            "sharpe": 17.831,
+            "max_drawdown": -0.0055,
+            "n_switches": 29,
+            "active_periods": 1928,
+            "coverage_pct": 86.8
+          }
+        }
+      },
+      "passes": true
+    }
+  }
+}
