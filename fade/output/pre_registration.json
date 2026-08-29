@@ -23,6 +23,134 @@
         {
           "track_id": "universe_mh48_path_lean3",
           "asset": "btc_1h",
+          "status": "BURNED",
+          "n_available": 846,
+          "n_lockbox": 846,
+          "sha256_prefix": "f61e2de06596bd55"
+        },
+        {
+          "track_id": "universe_mh48_path_lean3",
+          "asset": "eth_1h",
+          "status": "BURNED",
+          "n_available": 846,
+          "n_lockbox": 846,
+          "sha256_prefix": "05e4d6816381e690"
+        },
+        {
+          "track_id": "universe_mh48_path_lean3",
+          "asset": "sol_1h",
+          "status": "BURNED",
+          "n_available": 846,
+          "n_lockbox": 846,
+          "sha256_prefix": "4fca11c3a48fb50b"
+        },
+        {
+          "track_id": "universe_mh48_path_lean3",
+          "asset": "bnb_1h",
+          "status": "BURNED",
+          "n_available": 846,
+          "n_lockbox": 846,
+          "sha256_prefix": "e6d59ea10c3e5f7b"
+        },
+        {
+          "track_id": "universe_mh48_path_lean3",
+          "asset": "xrp_1h",
+          "status": "BURNED",
+          "n_available": 846,
+          "n_lockbox": 846,
+          "sha256_prefix": "c3d9f5e6e4096d48"
+        },
+        {
+          "track_id": "universe_mh48_path_lean3",
+          "asset": "ada_1h",
+          "status": "BURNED",
+          "n_available": 846,
+          "n_lockbox": 846,
+          "sha256_prefix": "c70e85a6e91994cd"
+        },
+        {
+          "track_id": "universe_mh48_path_lean3",
+          "asset": "avax_1h",
+          "status": "BURNED",
+          "n_available": 846,
+          "n_lockbox": 846,
+          "sha256_prefix": "da8b8bd42d30c980"
+        },
+        {
+          "track_id": "universe_mh48_path_lean3",
+          "asset": "link_1h",
+          "status": "BURNED",
+          "n_available": 846,
+          "n_lockbox": 846,
+          "sha256_prefix": "af45dab9a258c839"
+        },
+        {
+          "track_id": "universe_mh48_path_lean3",
+          "asset": "doge_1h",
+          "status": "BURNED",
+          "n_available": 846,
+          "n_lockbox": 846,
+          "sha256_prefix": "934092343f1a0298"
+        },
+        {
+          "track_id": "universe_mh48_path_lean3",
+          "asset": "ltc_1h",
+          "status": "BURNED",
+          "n_available": 846,
+          "n_lockbox": 846,
+          "sha256_prefix": "5b036aae9f2677e8"
+        },
+        {
+          "track_id": "universe_mh48_path_lean3",
+          "asset": "dot_1h",
+          "status": "BURNED",
+          "n_available": 846,
+          "n_lockbox": 846,
+          "sha256_prefix": "1e62392661b84d3e"
+        },
+        {
+          "track_id": "universe_mh48_path_lean3",
+          "asset": "near_1h",
+          "status": "BURNED",
+          "n_available": 846,
+          "n_lockbox": 846,
+          "sha256_prefix": "33b0b700ed10a24a"
+        },
+        {
+          "track_id": "universe_mh48_path_lean3",
+          "asset": "arb_1h",
+          "status": "BURNED",
+          "n_available": 846,
+          "n_lockbox": 846,
+          "sha256_prefix": "2f5d32ea052966fd"
+        },
+        {
+          "track_id": "universe_mh48_path_lean3",
+          "asset": "op_1h",
+          "status": "BURNED",
+          "n_available": 846,
+          "n_lockbox": 846,
+          "sha256_prefix": "ce9629136dfd8f74"
+        },
+        {
+          "track_id": "universe_mh48_path_lean3",
+          "asset": "spy_1h",
+          "status": "WAITING",
+          "n_available": 189,
+          "n_lockbox": null,
+          "sha256_prefix": null
+        },
+        {
+          "track_id": "universe_mh48_path_lean3",
+          "asset": "aapl_1h",
+          "status": "WAITING",
+          "n_available": 189,
+          "n_lockbox": null,
+          "sha256_prefix": null
+        },
+        {
+          "track_id": "universe_mh48_path_lean3",
+          "asset": "btc_1h",
           "status": "WAITING",
           "n_available": 0,
           "n_lockbox": null,
@@ -131,25 +259,9 @@
           "n_available": 0,
           "n_lockbox": null,
           "sha256_prefix": null
-        },
-        {
-          "track_id": "universe_mh48_path_lean3",
-          "asset": "spy_1h",
-          "status": "WAITING",
-          "n_available": 0,
-          "n_lockbox": null,
-          "sha256_prefix": null
-        },
-        {
-          "track_id": "universe_mh48_path_lean3",
-          "asset": "aapl_1h",
-          "status": "WAITING",
-          "n_available": 0,
-          "n_lockbox": null,
-          "sha256_prefix": null
         }
       ],
-      "updated_utc": "2026-07-23T12:01:00.911373+00:00"
+      "updated_utc": "2026-08-29T19:38:59.599645+00:00"
     }
   },
   "candidates": [
@@ -802,7 +914,151 @@
       "not_atoms": true,
       "sandbox": true,
       "artifact": "fade/output/compression_reversal_holdout.json"
+    },
+    {
+      "study_id": "oi_magnitude_v1",
+      "pre_registered_utc": "2026-08-29T19:15:31.749659+00:00",
+      "hypothesis": "Changes in OI (%delta open_interest over N=1,6,24h) and derivatives positioning ratios predict |return_{t+1}| better than a rolling-volatility baseline.",
+      "features": {
+        "oi_pct_chg": [
+          "oi_pchg_1h",
+          "oi_pchg_6h",
+          "oi_pchg_24h"
+        ],
+        "ratios": [
+          "toptrader_ls_account_ratio",
+          "toptrader_ls_position_ratio",
+          "global_ls_account_ratio",
+          "taker_buysell_vol_ratio"
+        ],
+        "total": 7
+      },
+      "target": "|return_{t+1}| (absolute next-bar return)",
+      "baseline": "rolling 24h std of 1h returns (same as volatility atom)",
+      "model": "Ridge regression (alpha=1.0, no tuning on holdout)",
+      "data_split": "holdout_70_30_chronological",
+      "success_criteria": {
+        "primary": "MAE(OI ridge) < MAE(rolling vol) on holdout",
+        "significance": "p < 0.05 via permutation test (300 shuffles)",
+        "pass_rule": "10+ of 14 assets must pass both criteria",
+        "secondary": "quartile lift \u2014 mean |ret| in top-25% predicted magnitude vs overall mean |ret|"
+      },
+      "leakage_guard": "All OI features at time t built from data <= t only. Rolling vol baseline uses same causal window.",
+      "not_atoms": "magnitude gate study only \u2014 not path_lean3 vocabulary",
+      "on_failure": "REJECT \u2014 do not tune model or features on holdout",
+      "evaluated_utc": "2026-08-29T19:20:28.003101+00:00",
+      "verdict": "REJECT -- only 5/14 assets pass (need 10+). OI features do not reliably predict magnitude better than rolling volatility.",
+      "summary": {
+        "n_pass": 5,
+        "n_fail": 9,
+        "n_total": 14,
+        "passers": [
+          "eth",
+          "ada",
+          "dot",
+          "arb",
+          "op"
+        ],
+        "note": "Most majors (BTC, SOL, XRP, LINK, DOGE, LTC) fail. OI pct-change coefficients near zero across assets."
+      }
+    },
+    {
+      "study_id": "cross_sectional_magnitude_v1",
+      "pre_registered_utc": "2026-08-29T19:29:10.511944+00:00",
+      "hypotheses": {
+        "H1": "BTC lag-1 return predicts |alt return_{t+1}| across the basket (extending the BTC->ETH 52.65% finding to magnitude)",
+        "H2": "Breadth (fraction of alts up at t) predicts |return_{t+1}| for individual assets (market-wide momentum -> bigger moves)",
+        "H3": "Cross-sectional rank of asset return at t predicts |return_{t+1}| (relative strength -> magnitude)"
+      },
+      "features": [
+        "btc_ret_lag1 (BTC 1h return at t)",
+        "breadth (fraction of panel with ret > 0 at t)",
+        "breadth_strength (mean panel return at t)",
+        "cross_rank (percentile rank of asset return at t)"
+      ],
+      "panel": "37 crypto 1h series (all root-level *_1h.csv excl SPY, AAPL)",
+      "target": "|return_{t+1}| (absolute next-bar return)",
+      "baseline": "rolling 24h std of 1h returns",
+      "model": "Ridge regression (alpha=1.0, no tuning on holdout)",
+      "data_split": "holdout_70_30_chronological",
+      "success_criteria": {
+        "primary": "MAE(cross-sectional ridge) < MAE(rolling vol) on holdout",
+        "significance": "p < 0.05 via paired sign-flip permutation test (300 shuffles)",
+        "pass_rule": "10+ of 14 lockbox assets must pass both criteria",
+        "secondary": "quartile lift -- mean |ret| in top-25% predicted magnitude vs overall mean |ret|"
+      },
+      "leakage_guard": "All features at time t use only returns at t (known at close of bar t). Breadth/rank computed from contemporaneous returns, not future. BTC return at t predicts OTHER assets at t+1, not BTC itself.",
+      "not_atoms": "magnitude gate study only -- not path_lean3 vocabulary",
+      "on_failure": "REJECT -- do not tune model or features on holdout",
+      "evaluated_utc": "2026-08-29T19:29:31.671239+00:00",
+      "verdict": "REJECT -- only 6/14 assets pass (need 10+). Cross-sectional features do not reliably predict magnitude better than rolling volatility.",
+      "summary": {
+        "n_pass": 6,
+        "n_fail": 8,
+        "n_total": 14,
+        "passers": [
+          "eth",
+          "ada",
+          "doge",
+          "dot",
+          "arb",
+          "op"
+        ],
+        "failers": [
+          "btc",
+          "sol",
+          "bnb",
+          "xrp",
+          "avax",
+          "link",
+          "ltc",
+          "near"
+        ],
+        "avg_btc_lead_lag1_hit_holdout": 0.4724,
+        "note": "BTC lead-lag1 directional hit below 50% on holdout (47.2%). Breadth features help some smaller alts but hurt majors (SOL -23.6%, BNB -23.2%). Similar pass set to OI study (eth, ada, dot, arb, op)."
+      }
+    },
+    {
+      "study_id": "vol_gated_abstain_v1",
+      "pre_registered_utc": "2026-08-29T19:33:42.481804+00:00",
+      "hypothesis": "Gating a streak>=2 contrarian signal by rolling 24h volatility > dev-fitted threshold produces higher NET PnL than always-on, because low-vol bars cannot cover ~10bps round-trip costs.",
+      "base_signal": "streak>=2 contrarian (long streak<=-2, short streak>=+2)",
+      "gate": "rolling 24h std(1h return) > threshold",
+      "gate_thresholds_frozen": [
+        "Q50",
+        "Q66",
+        "Q75"
+      ],
+      "fees": {
+        "per_side_bps": 5.0,
+        "round_trip_bps": 10.0,
+        "slippage_bps": 0.0
+      },
+      "data_split": "holdout_70_30_chronological",
+      "success_criteria": {
+        "primary": "best vol-gate variant net_return > always_on net_return",
+        "secondary": "best vol-gate variant net_return > 0",
+        "pass_rule": "10+ of 14 lockbox assets must pass both criteria"
+      },
+      "leakage_guard": "Vol threshold quantile computed on DEV rolling-vol distribution only. Threshold applied unchanged to holdout.",
+      "not_atoms": "gating study \u2014 reuses streak signal and _equity/_stats from pnl_sim; does not modify path_lean3 vocabulary.",
+      "on_failure": "REJECT \u2014 do not tune threshold, signal, or fees on holdout",
+      "evaluated_utc": "2026-08-29T19:34:10.189488+00:00",
+      "verdict": "REJECT (partial signal) -- only 2/14 assets net positive (need 10+). BUT: vol-gate beats always-on on 14/14 assets (mechanism works). Base signal streak>=2 contrarian is too weak on this holdout to be net positive even with gating.",
+      "summary": {
+        "n_positive": 2,
+        "n_beats_always_on": 14,
+        "n_pass": 2,
+        "n_total": 14,
+        "positive_assets": [
+          "xrp (+19.9%)",
+          "ada (+19.8%)"
+        ],
+        "mechanism_confirmation": "Vol-gate cuts cost drag substantially (e.g. BTC always_on -99.4% -> Q75 gate -3.4%; XRP -98.2% -> +19.9%)",
+        "interpretation": "The abstain mechanism works as hypothesized but streak>=2 contrarian is not the right base signal for this holdout. A stronger base signal (path_lean3 with min_hold, or the production engine) would be a natural follow-up but requires its own pre-registration.",
+        "preferred_threshold": "Q75 (most restrictive) was best on 12/14 assets"
+      }
     }
   ],
-  "updated_utc": "2026-07-23T11:45:22.226774+00:00"
+  "updated_utc": "2026-08-29T19:34:10.189506+00:00"
 }

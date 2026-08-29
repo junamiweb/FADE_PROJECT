@@ -1,11 +1,11 @@
 {
-  "generated_utc": "2026-08-27T18:23:27.611078+00:00",
+  "generated_utc": "2026-08-29T19:38:59.614495+00:00",
   "track_id": "universe_mh48_path_lean3",
   "autonomous": true,
   "universe_n": 16,
   "refresh_ok": 16,
   "refresh_fail": 0,
-  "seals_waiting": 2,
+  "seals_waiting": 16,
   "seals_sealed": 0,
   "seals_burned": 14,
   "contract_passes": 0,
@@ -13,15 +13,99 @@
   "waiting": [
     {
       "asset": "spy_1h",
-      "n_available": 180,
-      "bars_still_needed": 120,
+      "n_available": 189,
+      "bars_still_needed": 111,
       "blind_after_utc": "2026-07-23 12:01:00.847616+00:00"
     },
     {
       "asset": "aapl_1h",
-      "n_available": 180,
-      "bars_still_needed": 120,
+      "n_available": 189,
+      "bars_still_needed": 111,
       "blind_after_utc": "2026-07-23 12:01:00.909337+00:00"
+    },
+    {
+      "asset": "btc_1h",
+      "n_available": 0,
+      "bars_still_needed": 500,
+      "blind_after_utc": "2026-08-29 19:38:57.759763+00:00"
+    },
+    {
+      "asset": "eth_1h",
+      "n_available": 0,
+      "bars_still_needed": 500,
+      "blind_after_utc": "2026-08-29 19:38:57.911543+00:00"
+    },
+    {
+      "asset": "sol_1h",
+      "n_available": 0,
+      "bars_still_needed": 500,
+      "blind_after_utc": "2026-08-29 19:38:58.030366+00:00"
+    },
+    {
+      "asset": "bnb_1h",
+      "n_available": 0,
+      "bars_still_needed": 500,
+      "blind_after_utc": "2026-08-29 19:38:58.180277+00:00"
+    },
+    {
+      "asset": "xrp_1h",
+      "n_available": 0,
+      "bars_still_needed": 500,
+      "blind_after_utc": "2026-08-29 19:38:58.316980+00:00"
+    },
+    {
+      "asset": "ada_1h",
+      "n_available": 0,
+      "bars_still_needed": 500,
+      "blind_after_utc": "2026-08-29 19:38:58.460152+00:00"
+    },
+    {
+      "asset": "avax_1h",
+      "n_available": 0,
+      "bars_still_needed": 500,
+      "blind_after_utc": "2026-08-29 19:38:58.579206+00:00"
+    },
+    {
+      "asset": "link_1h",
+      "n_available": 0,
+      "bars_still_needed": 500,
+      "blind_after_utc": "2026-08-29 19:38:58.704388+00:00"
+    },
+    {
+      "asset": "doge_1h",
+      "n_available": 0,
+      "bars_still_needed": 500,
+      "blind_after_utc": "2026-08-29 19:38:58.853717+00:00"
+    },
+    {
+      "asset": "ltc_1h",
+      "n_available": 0,
+      "bars_still_needed": 500,
+      "blind_after_utc": "2026-08-29 19:38:59.019602+00:00"
+    },
+    {
+      "asset": "dot_1h",
+      "n_available": 0,
+      "bars_still_needed": 500,
+      "blind_after_utc": "2026-08-29 19:38:59.149652+00:00"
+    },
+    {
+      "asset": "near_1h",
+      "n_available": 0,
+      "bars_still_needed": 500,
+      "blind_after_utc": "2026-08-29 19:38:59.274837+00:00"
+    },
+    {
+      "asset": "arb_1h",
+      "n_available": 0,
+      "bars_still_needed": 500,
+      "blind_after_utc": "2026-08-29 19:38:59.370024+00:00"
+    },
+    {
+      "asset": "op_1h",
+      "n_available": 0,
+      "bars_still_needed": 500,
+      "blind_after_utc": "2026-08-29 19:38:59.477126+00:00"
     }
   ],
   "burned_summary": [
@@ -127,198 +211,114 @@
   "last_events": [
     {
       "asset": "btc",
-      "seal_status": "SEALED",
-      "n_available": null,
-      "bars_still_needed": null,
-      "n_lockbox": 846,
-      "reveal": {
-        "status": "BURNED",
-        "pass": false,
-        "ret": -0.0209,
-        "bh": 0.1316
-      }
+      "seal_status": "WAITING",
+      "n_available": 0,
+      "bars_still_needed": 500,
+      "n_lockbox": null
     },
     {
       "asset": "eth",
-      "seal_status": "SEALED",
-      "n_available": null,
-      "bars_still_needed": null,
-      "n_lockbox": 846,
-      "reveal": {
-        "status": "BURNED",
-        "pass": false,
-        "ret": 0.0889,
-        "bh": 0.0882
-      }
+      "seal_status": "WAITING",
+      "n_available": 0,
+      "bars_still_needed": 500,
+      "n_lockbox": null
     },
     {
       "asset": "sol",
-      "seal_status": "SEALED",
-      "n_available": null,
-      "bars_still_needed": null,
-      "n_lockbox": 846,
-      "reveal": {
-        "status": "BURNED",
-        "pass": false,
-        "ret": -0.093,
-        "bh": 0.2028
-      }
+      "seal_status": "WAITING",
+      "n_available": 0,
+      "bars_still_needed": 500,
+      "n_lockbox": null
     },
     {
       "asset": "bnb",
-      "seal_status": "SEALED",
-      "n_available": null,
-      "bars_still_needed": null,
-      "n_lockbox": 846,
-      "reveal": {
-        "status": "BURNED",
-        "pass": false,
-        "ret": -0.0425,
-        "bh": 0.0546
-      }
+      "seal_status": "WAITING",
+      "n_available": 0,
+      "bars_still_needed": 500,
+      "n_lockbox": null
     },
     {
       "asset": "xrp",
-      "seal_status": "SEALED",
-      "n_available": null,
-      "bars_still_needed": null,
-      "n_lockbox": 846,
-      "reveal": {
-        "status": "BURNED",
-        "pass": false,
-        "ret": -0.0989,
-        "bh": 0.1629
-      }
+      "seal_status": "WAITING",
+      "n_available": 0,
+      "bars_still_needed": 500,
+      "n_lockbox": null
     },
     {
       "asset": "ada",
-      "seal_status": "SEALED",
-      "n_available": null,
-      "bars_still_needed": null,
-      "n_lockbox": 846,
-      "reveal": {
-        "status": "BURNED",
-        "pass": false,
-        "ret": -0.1238,
-        "bh": 0.1751
-      }
+      "seal_status": "WAITING",
+      "n_available": 0,
+      "bars_still_needed": 500,
+      "n_lockbox": null
     },
     {
       "asset": "avax",
-      "seal_status": "SEALED",
-      "n_available": null,
-      "bars_still_needed": null,
-      "n_lockbox": 846,
-      "reveal": {
-        "status": "BURNED",
-        "pass": false,
-        "ret": 0.1244,
-        "bh": 0.0935
-      }
+      "seal_status": "WAITING",
+      "n_available": 0,
+      "bars_still_needed": 500,
+      "n_lockbox": null
     },
     {
       "asset": "link",
-      "seal_status": "SEALED",
-      "n_available": null,
-      "bars_still_needed": null,
-      "n_lockbox": 846,
-      "reveal": {
-        "status": "BURNED",
-        "pass": false,
-        "ret": -0.086,
-        "bh": 0.1246
-      }
+      "seal_status": "WAITING",
+      "n_available": 0,
+      "bars_still_needed": 500,
+      "n_lockbox": null
     },
     {
       "asset": "doge",
-      "seal_status": "SEALED",
-      "n_available": null,
-      "bars_still_needed": null,
-      "n_lockbox": 846,
-      "reveal": {
-        "status": "BURNED",
-        "pass": false,
-        "ret": -0.1583,
-        "bh": -0.0733
-      }
+      "seal_status": "WAITING",
+      "n_available": 0,
+      "bars_still_needed": 500,
+      "n_lockbox": null
     },
     {
       "asset": "ltc",
-      "seal_status": "SEALED",
-      "n_available": null,
-      "bars_still_needed": null,
-      "n_lockbox": 846,
-      "reveal": {
-        "status": "BURNED",
-        "pass": false,
-        "ret": 0.1473,
-        "bh": 0.0985
-      }
+      "seal_status": "WAITING",
+      "n_available": 0,
+      "bars_still_needed": 500,
+      "n_lockbox": null
     },
     {
       "asset": "dot",
-      "seal_status": "SEALED",
-      "n_available": null,
-      "bars_still_needed": null,
-      "n_lockbox": 846,
-      "reveal": {
-        "status": "BURNED",
-        "pass": false,
-        "ret": 0.1013,
-        "bh": -0.0092
-      }
+      "seal_status": "WAITING",
+      "n_available": 0,
+      "bars_still_needed": 500,
+      "n_lockbox": null
     },
     {
       "asset": "near",
-      "seal_status": "SEALED",
-      "n_available": null,
-      "bars_still_needed": null,
-      "n_lockbox": 846,
-      "reveal": {
-        "status": "BURNED",
-        "pass": false,
-        "ret": 0.0156,
-        "bh": 0.0171
-      }
+      "seal_status": "WAITING",
+      "n_available": 0,
+      "bars_still_needed": 500,
+      "n_lockbox": null
     },
     {
       "asset": "arb",
-      "seal_status": "SEALED",
-      "n_available": null,
-      "bars_still_needed": null,
-      "n_lockbox": 846,
-      "reveal": {
-        "status": "BURNED",
-        "pass": false,
-        "ret": 0.0747,
-        "bh": -0.1075
-      }
+      "seal_status": "WAITING",
+      "n_available": 0,
+      "bars_still_needed": 500,
+      "n_lockbox": null
     },
     {
       "asset": "op",
-      "seal_status": "SEALED",
-      "n_available": null,
-      "bars_still_needed": null,
-      "n_lockbox": 846,
-      "reveal": {
-        "status": "BURNED",
-        "pass": false,
-        "ret": -0.0874,
-        "bh": 0.1461
-      }
+      "seal_status": "WAITING",
+      "n_available": 0,
+      "bars_still_needed": 500,
+      "n_lockbox": null
     },
     {
       "asset": "spy",
       "seal_status": "WAITING",
-      "n_available": 180,
-      "bars_still_needed": 120,
+      "n_available": 189,
+      "bars_still_needed": 111,
       "n_lockbox": null
     },
     {
       "asset": "aapl",
       "seal_status": "WAITING",
-      "n_available": 180,
-      "bars_still_needed": 120,
+      "n_available": 189,
+      "bars_still_needed": 111,
       "n_lockbox": null
     }
   ],
