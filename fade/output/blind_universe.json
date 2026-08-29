@@ -33,6 +33,8 @@
     {"id": "near", "csv": "near_1h.csv", "source": "binance", "symbol": "NEARUSDT", "min_bars": 500},
     {"id": "arb", "csv": "arb_1h.csv", "source": "binance", "symbol": "ARBUSDT", "min_bars": 500},
     {"id": "op", "csv": "op_1h.csv", "source": "binance", "symbol": "OPUSDT", "min_bars": 500},
+    {"id": "pepe", "csv": "pepe_1h.csv", "source": "binance", "symbol": "PEPEUSDT", "min_bars": 500,
+     "added_utc": "2026-08-30", "added_reason": "pepe_followup_v1 PASS (OOS hit 0.6572, mh48 +68.3% net); promoted to blind forward validation"},
     {"id": "spy", "csv": "spy_1h.csv", "source": "yahoo", "symbol": "SPY", "min_bars": 300},
     {"id": "aapl", "csv": "aapl_1h.csv", "source": "yahoo", "symbol": "AAPL", "min_bars": 300}
   ]

@@ -75,7 +75,7 @@ jobs:
           git add btc_*.csv eth_*.csv \
             sol_1h.csv bnb_1h.csv xrp_1h.csv ada_1h.csv avax_1h.csv link_1h.csv \
             doge_1h.csv ltc_1h.csv dot_1h.csv near_1h.csv arb_1h.csv op_1h.csv \
-            spy_1h.csv aapl_1h.csv \
+            pepe_1h.csv spy_1h.csv aapl_1h.csv \
             fade/output/*.jsonl fade/output/eth_candidate_state.json \
             fade/output/forward_validation_snapshot.json \
             fade/output/ultra_next_bar_holdout.json fade/output/ultra_active_rule.json \
