@@ -27,10 +27,12 @@ from __future__ import annotations
 
 import argparse
 import json
+import os
 from datetime import datetime, timezone
 from pathlib import Path
 
 import pandas as pd
+import requests
 
 GATE_WINDOW = 21            # 7d x 3 periods/day, matches funding_carry_v1
 REGIME_WINDOW = 90          # 30d x 3 periods/day
@@ -152,11 +154,71 @@ def report() -> dict:
     return out
 
 
+def _last_two_hot_flags(asset: str) -> tuple[bool | None, bool | None]:
+    """Return (previous_hot, current_hot) for an asset from the ledger tail."""
+    if not LEDGER_PATH.exists():
+        return None, None
+    flags = []
+    with LEDGER_PATH.open(encoding="utf-8") as fh:
+        for line in fh:
+            try:
+                rec = json.loads(line)
+            except json.JSONDecodeError:
+                continue
+            if rec.get("asset") == asset and rec.get("regime_hot") is not None:
+                flags.append(rec["regime_hot"])
+    if len(flags) < 2:
+        return None, flags[-1] if flags else None
+    return flags[-2], flags[-1]
+
+
+def _send_whatsapp(text: str) -> dict:
+    """Send via CallMeBot. Reads phone + api key from env only — never hardcoded."""
+    phone = os.environ.get("CALLMEBOT_PHONE", "").strip()
+    apikey = os.environ.get("CALLMEBOT_APIKEY", "").strip()
+    if not phone or not apikey:
+        return {"sent": False, "reason": "CALLMEBOT_PHONE/CALLMEBOT_APIKEY not set"}
+    try:
+        resp = requests.get(
+            "https://api.callmebot.com/whatsapp.php",
+            params={"phone": phone, "text": text, "apikey": apikey},
+            timeout=20,
+        )
+        return {"sent": resp.status_code == 200, "status_code": resp.status_code}
+    except requests.RequestException as exc:
+        return {"sent": False, "reason": str(exc)}
+
+
+def check_and_alert() -> dict:
+    """Detect a regime transition into HOT per asset; alert once on the edge."""
+    alerts = []
+    for asset in ASSETS:
+        prev_hot, cur_hot = _last_two_hot_flags(asset)
+        if prev_hot is False and cur_hot is True:
+            rep = report()
+            info = rep.get("assets", {}).get(asset, {})
+            regime = info.get("current_regime_30d_annualized")
+            text = (
+                f"FADE funding-carry alert: {asset.upper()} regime turned HOT "
+                f"({regime*100:.1f}%/yr trailing 30d, threshold {HOT_REGIME_ANNUALIZED*100:.0f}%). "
+                f"Worth re-checking funding_carry_v1 economics."
+            )
+            send_result = _send_whatsapp(text)
+            alerts.append({"asset": asset, "text": text, **send_result})
+    return {"status": "ok", "alerts": alerts, "n_alerts": len(alerts)}
+
+
 def main() -> None:
     parser = argparse.ArgumentParser(description="Funding carry forward tracker")
-    parser.add_argument("cmd", choices=("tick", "report"), default="tick", nargs="?")
+    parser.add_argument("cmd", choices=("tick", "report", "check-alert"),
+                        default="tick", nargs="?")
     args = parser.parse_args()
-    result = tick() if args.cmd == "tick" else report()
+    if args.cmd == "tick":
+        result = tick()
+    elif args.cmd == "check-alert":
+        result = check_and_alert()
+    else:
+        result = report()
     print(json.dumps(result, indent=2, ensure_ascii=False))
 
 

@@ -72,6 +72,15 @@ jobs:
         continue-on-error: true
         run: python -m fade.pipeline.funding_carry_tracker tick
 
+      # Alert (WhatsApp via CallMeBot) only on a regime transition into HOT.
+      # No-op silently if CALLMEBOT_PHONE/CALLMEBOT_APIKEY secrets are unset.
+      - name: Funding carry regime alert
+        continue-on-error: true
+        env:
+          CALLMEBOT_PHONE: ${{ secrets.CALLMEBOT_PHONE }}
+          CALLMEBOT_APIKEY: ${{ secrets.CALLMEBOT_APIKEY }}
+        run: python -m fade.pipeline.funding_carry_tracker check-alert
+
       - name: Commit and push updated data/ledgers
         run: |
           git config user.name "fade-bot"
