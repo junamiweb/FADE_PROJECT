@@ -3,6 +3,7 @@
 Run:
     python -m fade.pipeline.plot btc.csv
     python -m fade.pipeline.plot btc.csv --bars 500
+    python -m fade.pipeline.plot btc_1h.csv --kid   # Hebrew kid-friendly charts
 """
 
 from __future__ import annotations
@@ -23,15 +24,18 @@ def main() -> None:
     parser.add_argument("csv", help="path to OHLCV CSV")
     parser.add_argument("--bars", type=int, default=336,
                         help="bars shown on price chart (default 336 ~ 2 weeks)")
+    parser.add_argument("--kid", action="store_true",
+                        help="kid-friendly Hebrew labels, star rankings, simpler charts")
     args = parser.parse_args()
 
     if not Path(args.csv).exists():
         log.error("File not found: %s", args.csv)
         sys.exit(1)
 
-    result = generate_charts(args.csv, Config(), last_bars=args.bars)
+    result = generate_charts(args.csv, Config(), last_bars=args.bars, kid_friendly=args.kid)
     print("\n" + "=" * 60)
-    print(f"FADE CHARTS — {result['asset'].upper()}")
+    mode = " (מצב ילדים)" if args.kid else ""
+    print(f"FADE CHARTS{mode} — {result['asset'].upper()}")
     print("=" * 60)
     print(f"  Output dir: {result['output_dir']}")
     for name, path in result["charts"].items():
