@@ -52,7 +52,7 @@ def _load_funding(path: Path) -> pd.Series:
 
 
 def _refresh(symbol: str, path: Path) -> pd.Series:
-    from download_derivatives import fetch_funding
+    from download_funding import fetch_funding
     existing = _load_funding(path) if path.exists() else pd.Series(dtype=float)
     start = (existing.index.max() - pd.Timedelta(hours=1)).strftime("%Y-%m-%d") \
         if len(existing) else "2019-09-01"
