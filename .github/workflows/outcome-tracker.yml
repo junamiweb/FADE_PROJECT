@@ -101,6 +101,8 @@ jobs:
             fade/output/lockbox_v2_manifest.json fade/output/lockbox_v2_reveal_*.json \
             fade/output/pre_registration.json \
             fade/pipeline/blind_autonomy.py fade/pipeline/lockbox_v2.py \
-            .github/workflows/outcome-tracker.yml || true
+            .github/workflows/outcome-tracker.yml
+          # council_*.json are optional (council_session.py absent on some branches)
+          git add fade/output/council_digest.json fade/output/council_board.json 2>/dev/null || true
           git diff --cached --quiet || git commit -m "auto: refresh + outcome tracker + blind autonomy $(date -u +'%Y-%m-%d %H:%M UTC')"
           git push
