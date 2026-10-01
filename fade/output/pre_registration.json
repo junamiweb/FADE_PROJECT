@@ -10,7 +10,7 @@
     },
     "v2": {
       "status": "WAITING",
-      "manifest_file": "fade\\output\\lockbox_v2_manifest.json",
+      "manifest_file": "fade/output/lockbox_v2_manifest.json",
       "seals_summary": [
         {
           "track_id": "eth_path_lean3_minhold48",
@@ -135,141 +135,141 @@
         {
           "track_id": "universe_mh48_path_lean3",
           "asset": "spy_1h",
-          "status": "WAITING",
-          "n_available": 189,
-          "n_lockbox": null,
-          "sha256_prefix": null
+          "status": "BURNED",
+          "n_available": 343,
+          "n_lockbox": 343,
+          "sha256_prefix": "6d83a30ab076b4a1"
         },
         {
           "track_id": "universe_mh48_path_lean3",
           "asset": "aapl_1h",
-          "status": "WAITING",
-          "n_available": 189,
-          "n_lockbox": null,
-          "sha256_prefix": null
+          "status": "BURNED",
+          "n_available": 343,
+          "n_lockbox": 343,
+          "sha256_prefix": "519c1c0a6eff3538"
         },
         {
           "track_id": "universe_mh48_path_lean3",
           "asset": "btc_1h",
-          "status": "WAITING",
-          "n_available": 2,
-          "n_lockbox": null,
-          "sha256_prefix": null
+          "status": "BURNED",
+          "n_available": 783,
+          "n_lockbox": 783,
+          "sha256_prefix": "97cc4f4aac73aec7"
         },
         {
           "track_id": "universe_mh48_path_lean3",
           "asset": "eth_1h",
-          "status": "WAITING",
-          "n_available": 2,
-          "n_lockbox": null,
-          "sha256_prefix": null
+          "status": "BURNED",
+          "n_available": 783,
+          "n_lockbox": 783,
+          "sha256_prefix": "c6414d3cfab21d4c"
         },
         {
           "track_id": "universe_mh48_path_lean3",
           "asset": "sol_1h",
-          "status": "WAITING",
-          "n_available": 2,
-          "n_lockbox": null,
-          "sha256_prefix": null
+          "status": "BURNED",
+          "n_available": 783,
+          "n_lockbox": 783,
+          "sha256_prefix": "4de8431a6e377f66"
         },
         {
           "track_id": "universe_mh48_path_lean3",
           "asset": "bnb_1h",
-          "status": "WAITING",
-          "n_available": 2,
-          "n_lockbox": null,
-          "sha256_prefix": null
+          "status": "BURNED",
+          "n_available": 783,
+          "n_lockbox": 783,
+          "sha256_prefix": "f1e3f31be2b13d26"
         },
         {
           "track_id": "universe_mh48_path_lean3",
           "asset": "xrp_1h",
-          "status": "WAITING",
-          "n_available": 2,
-          "n_lockbox": null,
-          "sha256_prefix": null
+          "status": "BURNED",
+          "n_available": 783,
+          "n_lockbox": 783,
+          "sha256_prefix": "ca88f32b03d5e70c"
         },
         {
           "track_id": "universe_mh48_path_lean3",
           "asset": "ada_1h",
-          "status": "WAITING",
-          "n_available": 2,
-          "n_lockbox": null,
-          "sha256_prefix": null
+          "status": "BURNED",
+          "n_available": 783,
+          "n_lockbox": 783,
+          "sha256_prefix": "27f5fa63c18e6f90"
         },
         {
           "track_id": "universe_mh48_path_lean3",
           "asset": "avax_1h",
-          "status": "WAITING",
-          "n_available": 2,
-          "n_lockbox": null,
-          "sha256_prefix": null
+          "status": "BURNED",
+          "n_available": 783,
+          "n_lockbox": 783,
+          "sha256_prefix": "fb2eaf7922f09d2a"
         },
         {
           "track_id": "universe_mh48_path_lean3",
           "asset": "link_1h",
-          "status": "WAITING",
-          "n_available": 2,
-          "n_lockbox": null,
-          "sha256_prefix": null
+          "status": "BURNED",
+          "n_available": 783,
+          "n_lockbox": 783,
+          "sha256_prefix": "519a1e366d45b764"
         },
         {
           "track_id": "universe_mh48_path_lean3",
           "asset": "doge_1h",
-          "status": "WAITING",
-          "n_available": 2,
-          "n_lockbox": null,
-          "sha256_prefix": null
+          "status": "BURNED",
+          "n_available": 783,
+          "n_lockbox": 783,
+          "sha256_prefix": "fc5e06e35e1c9252"
         },
         {
           "track_id": "universe_mh48_path_lean3",
           "asset": "ltc_1h",
-          "status": "WAITING",
-          "n_available": 2,
-          "n_lockbox": null,
-          "sha256_prefix": null
+          "status": "BURNED",
+          "n_available": 783,
+          "n_lockbox": 783,
+          "sha256_prefix": "c1dbf9bedc1bb206"
         },
         {
           "track_id": "universe_mh48_path_lean3",
           "asset": "dot_1h",
-          "status": "WAITING",
-          "n_available": 2,
-          "n_lockbox": null,
-          "sha256_prefix": null
+          "status": "BURNED",
+          "n_available": 783,
+          "n_lockbox": 783,
+          "sha256_prefix": "d4873d12b5e0267e"
         },
         {
           "track_id": "universe_mh48_path_lean3",
           "asset": "near_1h",
-          "status": "WAITING",
-          "n_available": 2,
-          "n_lockbox": null,
-          "sha256_prefix": null
+          "status": "BURNED",
+          "n_available": 783,
+          "n_lockbox": 783,
+          "sha256_prefix": "1188fa1fe09b61fb"
         },
         {
           "track_id": "universe_mh48_path_lean3",
           "asset": "arb_1h",
-          "status": "WAITING",
-          "n_available": 2,
-          "n_lockbox": null,
-          "sha256_prefix": null
+          "status": "BURNED",
+          "n_available": 783,
+          "n_lockbox": 783,
+          "sha256_prefix": "c84cd27c1a00dbec"
         },
         {
           "track_id": "universe_mh48_path_lean3",
           "asset": "op_1h",
-          "status": "WAITING",
-          "n_available": 2,
-          "n_lockbox": null,
-          "sha256_prefix": null
+          "status": "BURNED",
+          "n_available": 783,
+          "n_lockbox": 783,
+          "sha256_prefix": "99d058e4c8a89453"
         },
         {
           "track_id": "universe_mh48_path_lean3",
           "asset": "pepe_1h",
-          "status": "WAITING",
-          "n_available": 0,
-          "n_lockbox": null,
-          "sha256_prefix": null
+          "status": "BURNED",
+          "n_available": 781,
+          "n_lockbox": 781,
+          "sha256_prefix": "223ceaff0fbff4e0"
         }
       ],
-      "updated_utc": "2026-08-29T21:32:10.449529+00:00"
+      "updated_utc": "2026-10-01T10:29:49.540040+00:00"
     }
   },
   "candidates": [

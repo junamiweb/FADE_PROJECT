@@ -4,30 +4,30 @@
   "autonomous": true,
   "seal": {
     "asset": "xrp_1h",
-    "n_lockbox": 846,
-    "lockbox_start": "2026-07-23 13:00:00+00:00",
-    "lockbox_end": "2026-08-27 18:00:00+00:00",
-    "sha256": "c3d9f5e6e4096d48acf6a4ead8f9557d074450672215ca99deb0874bee27bbbd"
+    "n_lockbox": 783,
+    "lockbox_start": "2026-08-29 20:00:00+00:00",
+    "lockbox_end": "2026-10-01 10:00:00+00:00",
+    "sha256": "ca88f32b03d5e70c69c7106839ff839a2084672becf0ab9bd1c347bc4ba2d2e9"
   },
   "result": {
     "status": "ok",
-    "n_rules": 11,
-    "n_scored": 270,
+    "n_rules": 12,
+    "n_scored": 372,
     "min_hold": 48,
     "fee_bps_per_side": 5.0,
     "strategy": {
-      "total_return": -0.0989,
-      "annual_return": -0.9659,
-      "sharpe": -2.883,
-      "max_drawdown": -0.2136,
-      "n_changes": 6,
-      "cost_drag": 0.0055
+      "total_return": -0.0346,
+      "annual_return": -0.5638,
+      "sharpe": -0.789,
+      "max_drawdown": -0.1291,
+      "n_changes": 8,
+      "cost_drag": 0.0075
     },
     "buy_and_hold": {
-      "total_return": 0.1629,
-      "annual_return": 132.7974,
-      "sharpe": 5.414,
-      "max_drawdown": -0.175
+      "total_return": 0.0842,
+      "annual_return": 5.7169,
+      "sharpe": 2.998,
+      "max_drawdown": -0.0952
     },
     "success_contract_pass": false
   },

@@ -1,0 +1,36 @@
+{
+  "status": "BURNED",
+  "track_id": "universe_mh48_path_lean3",
+  "autonomous": true,
+  "seal": {
+    "asset": "pepe_1h",
+    "n_lockbox": 781,
+    "lockbox_start": "2026-08-29 22:00:00+00:00",
+    "lockbox_end": "2026-10-01 10:00:00+00:00",
+    "sha256": "223ceaff0fbff4e004e8fde96aebb670533dd2a7a79d25007d09a1e99808b3bc"
+  },
+  "result": {
+    "status": "ok",
+    "n_rules": 14,
+    "n_scored": 395,
+    "min_hold": 48,
+    "fee_bps_per_side": 5.0,
+    "strategy": {
+      "total_return": -0.3136,
+      "annual_return": -0.9998,
+      "sharpe": -6.763,
+      "max_drawdown": -0.3999,
+      "n_changes": 7,
+      "cost_drag": 0.0065
+    },
+    "buy_and_hold": {
+      "total_return": -0.1632,
+      "annual_return": -0.9808,
+      "sharpe": -2.911,
+      "max_drawdown": -0.3172
+    },
+    "success_contract_pass": false
+  },
+  "metrics_revealed": true,
+  "note_he": "\u05d4\u05d7\u05dc\u05d5\u05df \u05e9\u05e8\u05d5\u05e3 \u2014 \u05d0\u05e1\u05d5\u05e8 \u05d1\u05d3\u05d9\u05e7\u05d4 \u05e0\u05d5\u05e1\u05e4\u05ea \u05e2\u05dc \u05d0\u05d5\u05ea\u05d5 \u05d7\u05dc\u05d5\u05df."
+}
