@@ -95,7 +95,6 @@ jobs:
             fade/output/ultra_next_bar_holdout.json fade/output/ultra_active_rule.json \
             fade/output/ultra_rule_search.json fade/output/ultra_rule_search_1h.json \
             fade/output/ultra_lockbox_eval.json fade/output/ultra_refinement_log.jsonl \
-            fade/output/council_digest.json fade/output/council_board.json \
             fade/output/blind_universe.json fade/output/blind_autonomy_board.json \
             fade/output/funding_carry_ledger.jsonl \
             fade/output/lockbox_v2_manifest.json fade/output/lockbox_v2_reveal_*.json \
