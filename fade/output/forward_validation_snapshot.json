@@ -1,15 +1,15 @@
 {
-  "snapshot_utc": "2026-10-03T17:06:53.329283+00:00",
+  "snapshot_utc": "2026-10-03T19:49:50.719555+00:00",
   "phase2_track_a": {
     "track_id": "A",
     "study_id": "phase2_a_sparse_product_v1",
-    "sparse_primary_logged": 302,
-    "sparse_scored": 23,
-    "overall_hit": 0.5652,
-    "recent_hit": 0.5652,
+    "sparse_primary_logged": 304,
+    "sparse_scored": 24,
+    "overall_hit": 0.5417,
+    "recent_hit": 0.5417,
     "target_hit": 0.58,
     "target_min_signals": 500,
-    "progress": "23/500 scored signals",
+    "progress": "24/500 scored signals",
     "status": "collecting",
     "note": "forward live truth \u2014 holdout replay is exploratory only"
   },
@@ -43,25 +43,25 @@
     "track_id": "E",
     "study_id": "phase2_e_decay_meter_v1",
     "status": "waiting_data",
-    "forward_scored": 23,
+    "forward_scored": 24,
     "min_for_90d_proxy": 90,
     "note": "decay meter activates when PRIMARY ledger has ~90d of scored sparse signals"
   },
   "primary_report": {
     "ledger": "/home/runner/work/FADE_PROJECT/FADE_PROJECT/fade/output/primary_outcomes.jsonl",
     "track_id": null,
-    "total_logged": 302,
-    "total_scored": 23,
-    "pending": 1,
-    "overall_hit_rate": 0.5652,
-    "recent_n": 23,
-    "recent_hit_rate": 0.5652,
+    "total_logged": 304,
+    "total_scored": 24,
+    "pending": 0,
+    "overall_hit_rate": 0.5417,
+    "recent_n": 24,
+    "recent_hit_rate": 0.5417,
     "by_asset": {
       "btc_1h": {
-        "n": 10,
-        "hit_rate": 0.5,
+        "n": 11,
+        "hit_rate": 0.4545,
         "hits": 5,
-        "misses": 5
+        "misses": 6
       },
       "eth_1h": {
         "n": 13,
@@ -72,10 +72,10 @@
     },
     "by_source": {
       "conviction": {
-        "n": 22,
-        "hit_rate": 0.5455,
+        "n": 23,
+        "hit_rate": 0.5217,
         "hits": 12,
-        "misses": 10
+        "misses": 11
       },
       "frequent": {
         "n": 1,
@@ -85,15 +85,6 @@
       }
     },
     "last_5": [
-      {
-        "asset": "btc_1h",
-        "bar_ts": "2026-07-18 17:00:00+00:00",
-        "direction": "DOWN",
-        "source": "conviction",
-        "track_id": null,
-        "outcome": "miss",
-        "forward_return_pct": 0.3317
-      },
       {
         "asset": "btc_1h",
         "bar_ts": "2026-07-18 21:00:00+00:00",
@@ -129,13 +120,22 @@
         "track_id": null,
         "outcome": "hit",
         "forward_return_pct": -0.1493
+      },
+      {
+        "asset": "btc_1h",
+        "bar_ts": "2026-10-03 17:00:00+00:00",
+        "direction": "DOWN",
+        "source": "conviction",
+        "track_id": null,
+        "outcome": "miss",
+        "forward_return_pct": 0.0836
       }
     ]
   },
   "eth_candidate_report": {
     "ledger": "fade/output/eth_candidate_outcomes.jsonl",
     "track_id": "eth_low_vr_minhold12",
-    "total_logged": 152,
+    "total_logged": 153,
     "pre_fix_next_bar_only": {
       "n": 1,
       "note": "pre-fix, next-bar metric only \u2014 excluded from n=100 hold-cycle criterion",
@@ -207,7 +207,7 @@
   "ultra_report": {
     "ledger": "fade/output/ultra_primary_outcomes.jsonl",
     "track_id": "ultra_cross_elite_v1",
-    "total_logged": 15,
+    "total_logged": 16,
     "total_scored": 0,
     "pending": 0,
     "overall_hit_rate": null,
