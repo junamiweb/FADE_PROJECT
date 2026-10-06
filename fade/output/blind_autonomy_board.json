@@ -1,5 +1,5 @@
 {
-  "generated_utc": "2026-10-06T20:06:17.984441+00:00",
+  "generated_utc": "2026-10-06T23:48:29.713150+00:00",
   "track_id": "universe_mh48_path_lean3",
   "autonomous": true,
   "universe_n": 17,
@@ -13,92 +13,92 @@
   "waiting": [
     {
       "asset": "btc_1h",
-      "n_available": 129,
-      "bars_still_needed": 371,
+      "n_available": 132,
+      "bars_still_needed": 368,
       "blind_after_utc": "2026-10-01 11:09:34.161527+00:00"
     },
     {
       "asset": "eth_1h",
-      "n_available": 129,
-      "bars_still_needed": 371,
+      "n_available": 132,
+      "bars_still_needed": 368,
       "blind_after_utc": "2026-10-01 11:09:34.267476+00:00"
     },
     {
       "asset": "sol_1h",
-      "n_available": 129,
-      "bars_still_needed": 371,
+      "n_available": 132,
+      "bars_still_needed": 368,
       "blind_after_utc": "2026-10-01 11:09:34.341423+00:00"
     },
     {
       "asset": "bnb_1h",
-      "n_available": 129,
-      "bars_still_needed": 371,
+      "n_available": 132,
+      "bars_still_needed": 368,
       "blind_after_utc": "2026-10-01 11:09:34.443686+00:00"
     },
     {
       "asset": "xrp_1h",
-      "n_available": 129,
-      "bars_still_needed": 371,
+      "n_available": 132,
+      "bars_still_needed": 368,
       "blind_after_utc": "2026-10-01 11:09:34.542484+00:00"
     },
     {
       "asset": "ada_1h",
-      "n_available": 129,
-      "bars_still_needed": 371,
+      "n_available": 132,
+      "bars_still_needed": 368,
       "blind_after_utc": "2026-10-01 11:09:34.641583+00:00"
     },
     {
       "asset": "avax_1h",
-      "n_available": 129,
-      "bars_still_needed": 371,
+      "n_available": 132,
+      "bars_still_needed": 368,
       "blind_after_utc": "2026-10-01 11:09:34.714107+00:00"
     },
     {
       "asset": "link_1h",
-      "n_available": 129,
-      "bars_still_needed": 371,
+      "n_available": 132,
+      "bars_still_needed": 368,
       "blind_after_utc": "2026-10-01 11:09:34.804038+00:00"
     },
     {
       "asset": "doge_1h",
-      "n_available": 129,
-      "bars_still_needed": 371,
+      "n_available": 132,
+      "bars_still_needed": 368,
       "blind_after_utc": "2026-10-01 11:09:34.893693+00:00"
     },
     {
       "asset": "ltc_1h",
-      "n_available": 129,
-      "bars_still_needed": 371,
+      "n_available": 132,
+      "bars_still_needed": 368,
       "blind_after_utc": "2026-10-01 11:09:34.994572+00:00"
     },
     {
       "asset": "dot_1h",
-      "n_available": 129,
-      "bars_still_needed": 371,
+      "n_available": 132,
+      "bars_still_needed": 368,
       "blind_after_utc": "2026-10-01 11:09:35.067498+00:00"
     },
     {
       "asset": "near_1h",
-      "n_available": 129,
-      "bars_still_needed": 371,
+      "n_available": 132,
+      "bars_still_needed": 368,
       "blind_after_utc": "2026-10-01 11:09:35.139098+00:00"
     },
     {
       "asset": "arb_1h",
-      "n_available": 129,
-      "bars_still_needed": 371,
+      "n_available": 132,
+      "bars_still_needed": 368,
       "blind_after_utc": "2026-10-01 11:09:35.184629+00:00"
     },
     {
       "asset": "op_1h",
-      "n_available": 129,
-      "bars_still_needed": 371,
+      "n_available": 132,
+      "bars_still_needed": 368,
       "blind_after_utc": "2026-10-01 11:09:35.236589+00:00"
     },
     {
       "asset": "pepe_1h",
-      "n_available": 129,
-      "bars_still_needed": 371,
+      "n_available": 132,
+      "bars_still_needed": 368,
       "blind_after_utc": "2026-10-01 11:09:35.281808+00:00"
     },
     {
@@ -337,106 +337,106 @@
     {
       "asset": "btc",
       "seal_status": "WAITING",
-      "n_available": 129,
-      "bars_still_needed": 371,
+      "n_available": 132,
+      "bars_still_needed": 368,
       "n_lockbox": null
     },
     {
       "asset": "eth",
       "seal_status": "WAITING",
-      "n_available": 129,
-      "bars_still_needed": 371,
+      "n_available": 132,
+      "bars_still_needed": 368,
       "n_lockbox": null
     },
     {
       "asset": "sol",
       "seal_status": "WAITING",
-      "n_available": 129,
-      "bars_still_needed": 371,
+      "n_available": 132,
+      "bars_still_needed": 368,
       "n_lockbox": null
     },
     {
       "asset": "bnb",
       "seal_status": "WAITING",
-      "n_available": 129,
-      "bars_still_needed": 371,
+      "n_available": 132,
+      "bars_still_needed": 368,
       "n_lockbox": null
     },
     {
       "asset": "xrp",
       "seal_status": "WAITING",
-      "n_available": 129,
-      "bars_still_needed": 371,
+      "n_available": 132,
+      "bars_still_needed": 368,
       "n_lockbox": null
     },
     {
       "asset": "ada",
       "seal_status": "WAITING",
-      "n_available": 129,
-      "bars_still_needed": 371,
+      "n_available": 132,
+      "bars_still_needed": 368,
       "n_lockbox": null
     },
     {
       "asset": "avax",
       "seal_status": "WAITING",
-      "n_available": 129,
-      "bars_still_needed": 371,
+      "n_available": 132,
+      "bars_still_needed": 368,
       "n_lockbox": null
     },
     {
       "asset": "link",
       "seal_status": "WAITING",
-      "n_available": 129,
-      "bars_still_needed": 371,
+      "n_available": 132,
+      "bars_still_needed": 368,
       "n_lockbox": null
     },
     {
       "asset": "doge",
       "seal_status": "WAITING",
-      "n_available": 129,
-      "bars_still_needed": 371,
+      "n_available": 132,
+      "bars_still_needed": 368,
       "n_lockbox": null
     },
     {
       "asset": "ltc",
       "seal_status": "WAITING",
-      "n_available": 129,
-      "bars_still_needed": 371,
+      "n_available": 132,
+      "bars_still_needed": 368,
       "n_lockbox": null
     },
     {
       "asset": "dot",
       "seal_status": "WAITING",
-      "n_available": 129,
-      "bars_still_needed": 371,
+      "n_available": 132,
+      "bars_still_needed": 368,
       "n_lockbox": null
     },
     {
       "asset": "near",
       "seal_status": "WAITING",
-      "n_available": 129,
-      "bars_still_needed": 371,
+      "n_available": 132,
+      "bars_still_needed": 368,
       "n_lockbox": null
     },
     {
       "asset": "arb",
       "seal_status": "WAITING",
-      "n_available": 129,
-      "bars_still_needed": 371,
+      "n_available": 132,
+      "bars_still_needed": 368,
       "n_lockbox": null
     },
     {
       "asset": "op",
       "seal_status": "WAITING",
-      "n_available": 129,
-      "bars_still_needed": 371,
+      "n_available": 132,
+      "bars_still_needed": 368,
       "n_lockbox": null
     },
     {
       "asset": "pepe",
       "seal_status": "WAITING",
-      "n_available": 129,
-      "bars_still_needed": 371,
+      "n_available": 132,
+      "bars_still_needed": 368,
       "n_lockbox": null
     },
     {
