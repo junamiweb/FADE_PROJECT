@@ -272,7 +272,7 @@
           "track_id": "universe_mh48_path_lean3",
           "asset": "btc_1h",
           "status": "WAITING",
-          "n_available": 144,
+          "n_available": 151,
           "n_lockbox": null,
           "sha256_prefix": null
         },
@@ -280,7 +280,7 @@
           "track_id": "universe_mh48_path_lean3",
           "asset": "eth_1h",
           "status": "WAITING",
-          "n_available": 144,
+          "n_available": 151,
           "n_lockbox": null,
           "sha256_prefix": null
         },
@@ -288,7 +288,7 @@
           "track_id": "universe_mh48_path_lean3",
           "asset": "sol_1h",
           "status": "WAITING",
-          "n_available": 144,
+          "n_available": 151,
           "n_lockbox": null,
           "sha256_prefix": null
         },
@@ -296,7 +296,7 @@
           "track_id": "universe_mh48_path_lean3",
           "asset": "bnb_1h",
           "status": "WAITING",
-          "n_available": 144,
+          "n_available": 151,
           "n_lockbox": null,
           "sha256_prefix": null
         },
@@ -304,7 +304,7 @@
           "track_id": "universe_mh48_path_lean3",
           "asset": "xrp_1h",
           "status": "WAITING",
-          "n_available": 144,
+          "n_available": 151,
           "n_lockbox": null,
           "sha256_prefix": null
         },
@@ -312,7 +312,7 @@
           "track_id": "universe_mh48_path_lean3",
           "asset": "ada_1h",
           "status": "WAITING",
-          "n_available": 144,
+          "n_available": 151,
           "n_lockbox": null,
           "sha256_prefix": null
         },
@@ -320,7 +320,7 @@
           "track_id": "universe_mh48_path_lean3",
           "asset": "avax_1h",
           "status": "WAITING",
-          "n_available": 144,
+          "n_available": 151,
           "n_lockbox": null,
           "sha256_prefix": null
         },
@@ -328,7 +328,7 @@
           "track_id": "universe_mh48_path_lean3",
           "asset": "link_1h",
           "status": "WAITING",
-          "n_available": 144,
+          "n_available": 151,
           "n_lockbox": null,
           "sha256_prefix": null
         },
@@ -336,7 +336,7 @@
           "track_id": "universe_mh48_path_lean3",
           "asset": "doge_1h",
           "status": "WAITING",
-          "n_available": 144,
+          "n_available": 151,
           "n_lockbox": null,
           "sha256_prefix": null
         },
@@ -344,7 +344,7 @@
           "track_id": "universe_mh48_path_lean3",
           "asset": "ltc_1h",
           "status": "WAITING",
-          "n_available": 144,
+          "n_available": 151,
           "n_lockbox": null,
           "sha256_prefix": null
         },
@@ -352,7 +352,7 @@
           "track_id": "universe_mh48_path_lean3",
           "asset": "dot_1h",
           "status": "WAITING",
-          "n_available": 144,
+          "n_available": 151,
           "n_lockbox": null,
           "sha256_prefix": null
         },
@@ -360,7 +360,7 @@
           "track_id": "universe_mh48_path_lean3",
           "asset": "near_1h",
           "status": "WAITING",
-          "n_available": 144,
+          "n_available": 151,
           "n_lockbox": null,
           "sha256_prefix": null
         },
@@ -368,7 +368,7 @@
           "track_id": "universe_mh48_path_lean3",
           "asset": "arb_1h",
           "status": "WAITING",
-          "n_available": 144,
+          "n_available": 151,
           "n_lockbox": null,
           "sha256_prefix": null
         },
@@ -376,7 +376,7 @@
           "track_id": "universe_mh48_path_lean3",
           "asset": "op_1h",
           "status": "WAITING",
-          "n_available": 144,
+          "n_available": 151,
           "n_lockbox": null,
           "sha256_prefix": null
         },
@@ -384,7 +384,7 @@
           "track_id": "universe_mh48_path_lean3",
           "asset": "pepe_1h",
           "status": "WAITING",
-          "n_available": 144,
+          "n_available": 151,
           "n_lockbox": null,
           "sha256_prefix": null
         },
@@ -392,7 +392,7 @@
           "track_id": "universe_mh48_path_lean3",
           "asset": "spy_1h",
           "status": "WAITING",
-          "n_available": 28,
+          "n_available": 34,
           "n_lockbox": null,
           "sha256_prefix": null
         },
@@ -400,12 +400,12 @@
           "track_id": "universe_mh48_path_lean3",
           "asset": "aapl_1h",
           "status": "WAITING",
-          "n_available": 28,
+          "n_available": 34,
           "n_lockbox": null,
           "sha256_prefix": null
         }
       ],
-      "updated_utc": "2026-10-07T11:44:24.758983+00:00"
+      "updated_utc": "2026-10-07T18:41:33.862525+00:00"
     }
   },
   "candidates": [
