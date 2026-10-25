@@ -1,9 +1,9 @@
 {
-  "snapshot_utc": "2026-10-25T05:51:06.087717+00:00",
+  "snapshot_utc": "2026-10-25T11:00:54.499141+00:00",
   "phase2_track_a": {
     "track_id": "A",
     "study_id": "phase2_a_sparse_product_v1",
-    "sparse_primary_logged": 514,
+    "sparse_primary_logged": 516,
     "sparse_scored": 46,
     "overall_hit": 0.6739,
     "recent_hit": 0.7333,
@@ -50,7 +50,7 @@
   "primary_report": {
     "ledger": "/home/runner/work/FADE_PROJECT/FADE_PROJECT/fade/output/primary_outcomes.jsonl",
     "track_id": null,
-    "total_logged": 514,
+    "total_logged": 516,
     "total_scored": 46,
     "pending": 0,
     "overall_hit_rate": 0.6739,
@@ -135,7 +135,7 @@
   "eth_candidate_report": {
     "ledger": "fade/output/eth_candidate_outcomes.jsonl",
     "track_id": "eth_low_vr_minhold12",
-    "total_logged": 258,
+    "total_logged": 259,
     "pre_fix_next_bar_only": {
       "n": 1,
       "note": "pre-fix, next-bar metric only \u2014 excluded from n=100 hold-cycle criterion",
@@ -207,7 +207,7 @@
   "ultra_report": {
     "ledger": "fade/output/ultra_primary_outcomes.jsonl",
     "track_id": "ultra_cross_elite_v1",
-    "total_logged": 121,
+    "total_logged": 122,
     "total_scored": 0,
     "pending": 0,
     "overall_hit_rate": null,
