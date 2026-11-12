@@ -392,7 +392,7 @@
           "track_id": "universe_mh48_path_lean3",
           "asset": "spy_1h",
           "status": "WAITING",
-          "n_available": 210,
+          "n_available": 212,
           "n_lockbox": null,
           "sha256_prefix": null
         },
@@ -400,132 +400,132 @@
           "track_id": "universe_mh48_path_lean3",
           "asset": "aapl_1h",
           "status": "WAITING",
-          "n_available": 210,
+          "n_available": 212,
           "n_lockbox": null,
           "sha256_prefix": null
         },
         {
           "track_id": "universe_mh48_path_lean3",
           "asset": "btc_1h",
-          "status": "WAITING",
-          "n_available": 497,
-          "n_lockbox": null,
-          "sha256_prefix": null
+          "status": "BURNED",
+          "n_available": 506,
+          "n_lockbox": 506,
+          "sha256_prefix": "2a1a88238f6cf88e"
         },
         {
           "track_id": "universe_mh48_path_lean3",
           "asset": "eth_1h",
-          "status": "WAITING",
-          "n_available": 497,
-          "n_lockbox": null,
-          "sha256_prefix": null
+          "status": "BURNED",
+          "n_available": 506,
+          "n_lockbox": 506,
+          "sha256_prefix": "063a7c933181ea5c"
         },
         {
           "track_id": "universe_mh48_path_lean3",
           "asset": "sol_1h",
-          "status": "WAITING",
-          "n_available": 497,
-          "n_lockbox": null,
-          "sha256_prefix": null
+          "status": "BURNED",
+          "n_available": 506,
+          "n_lockbox": 506,
+          "sha256_prefix": "563d22fb1ec837a8"
         },
         {
           "track_id": "universe_mh48_path_lean3",
           "asset": "bnb_1h",
-          "status": "WAITING",
-          "n_available": 497,
-          "n_lockbox": null,
-          "sha256_prefix": null
+          "status": "BURNED",
+          "n_available": 506,
+          "n_lockbox": 506,
+          "sha256_prefix": "d0623a58f38bf9e6"
         },
         {
           "track_id": "universe_mh48_path_lean3",
           "asset": "xrp_1h",
-          "status": "WAITING",
-          "n_available": 497,
-          "n_lockbox": null,
-          "sha256_prefix": null
+          "status": "BURNED",
+          "n_available": 506,
+          "n_lockbox": 506,
+          "sha256_prefix": "497d7b2f669687d1"
         },
         {
           "track_id": "universe_mh48_path_lean3",
           "asset": "ada_1h",
-          "status": "WAITING",
-          "n_available": 497,
-          "n_lockbox": null,
-          "sha256_prefix": null
+          "status": "BURNED",
+          "n_available": 506,
+          "n_lockbox": 506,
+          "sha256_prefix": "91c97128adbc10e3"
         },
         {
           "track_id": "universe_mh48_path_lean3",
           "asset": "avax_1h",
-          "status": "WAITING",
-          "n_available": 497,
-          "n_lockbox": null,
-          "sha256_prefix": null
+          "status": "BURNED",
+          "n_available": 506,
+          "n_lockbox": 506,
+          "sha256_prefix": "a5eac3a92ac28621"
         },
         {
           "track_id": "universe_mh48_path_lean3",
           "asset": "link_1h",
-          "status": "WAITING",
-          "n_available": 497,
-          "n_lockbox": null,
-          "sha256_prefix": null
+          "status": "BURNED",
+          "n_available": 506,
+          "n_lockbox": 506,
+          "sha256_prefix": "2ebb23e141c21949"
         },
         {
           "track_id": "universe_mh48_path_lean3",
           "asset": "doge_1h",
-          "status": "WAITING",
-          "n_available": 497,
-          "n_lockbox": null,
-          "sha256_prefix": null
+          "status": "BURNED",
+          "n_available": 506,
+          "n_lockbox": 506,
+          "sha256_prefix": "0a2c50e73ba4df20"
         },
         {
           "track_id": "universe_mh48_path_lean3",
           "asset": "ltc_1h",
-          "status": "WAITING",
-          "n_available": 497,
-          "n_lockbox": null,
-          "sha256_prefix": null
+          "status": "BURNED",
+          "n_available": 506,
+          "n_lockbox": 506,
+          "sha256_prefix": "e74eb2bd0223d4c2"
         },
         {
           "track_id": "universe_mh48_path_lean3",
           "asset": "dot_1h",
-          "status": "WAITING",
-          "n_available": 497,
-          "n_lockbox": null,
-          "sha256_prefix": null
+          "status": "BURNED",
+          "n_available": 506,
+          "n_lockbox": 506,
+          "sha256_prefix": "ceebb4644698579c"
         },
         {
           "track_id": "universe_mh48_path_lean3",
           "asset": "near_1h",
-          "status": "WAITING",
-          "n_available": 497,
-          "n_lockbox": null,
-          "sha256_prefix": null
+          "status": "BURNED",
+          "n_available": 506,
+          "n_lockbox": 506,
+          "sha256_prefix": "ccfb9559f067ffa4"
         },
         {
           "track_id": "universe_mh48_path_lean3",
           "asset": "arb_1h",
-          "status": "WAITING",
-          "n_available": 497,
-          "n_lockbox": null,
-          "sha256_prefix": null
+          "status": "BURNED",
+          "n_available": 506,
+          "n_lockbox": 506,
+          "sha256_prefix": "51e0c90cf080ee4e"
         },
         {
           "track_id": "universe_mh48_path_lean3",
           "asset": "op_1h",
-          "status": "WAITING",
-          "n_available": 497,
-          "n_lockbox": null,
-          "sha256_prefix": null
+          "status": "BURNED",
+          "n_available": 506,
+          "n_lockbox": 506,
+          "sha256_prefix": "561e86ebdda1988f"
         },
         {
           "track_id": "universe_mh48_path_lean3",
           "asset": "pepe_1h",
-          "status": "WAITING",
-          "n_available": 497,
-          "n_lockbox": null,
-          "sha256_prefix": null
+          "status": "BURNED",
+          "n_available": 506,
+          "n_lockbox": 506,
+          "sha256_prefix": "31457825d0e17a02"
         }
       ],
-      "updated_utc": "2026-11-12T06:28:03.256640+00:00"
+      "updated_utc": "2026-11-12T15:56:13.062084+00:00"
     }
   },
   "candidates": [
