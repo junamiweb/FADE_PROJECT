@@ -528,7 +528,7 @@
           "track_id": "universe_mh48_path_lean3",
           "asset": "btc_1h",
           "status": "WAITING",
-          "n_available": 0,
+          "n_available": 5,
           "n_lockbox": null,
           "sha256_prefix": null
         },
@@ -536,7 +536,7 @@
           "track_id": "universe_mh48_path_lean3",
           "asset": "eth_1h",
           "status": "WAITING",
-          "n_available": 0,
+          "n_available": 5,
           "n_lockbox": null,
           "sha256_prefix": null
         },
@@ -544,7 +544,7 @@
           "track_id": "universe_mh48_path_lean3",
           "asset": "sol_1h",
           "status": "WAITING",
-          "n_available": 0,
+          "n_available": 5,
           "n_lockbox": null,
           "sha256_prefix": null
         },
@@ -552,7 +552,7 @@
           "track_id": "universe_mh48_path_lean3",
           "asset": "bnb_1h",
           "status": "WAITING",
-          "n_available": 0,
+          "n_available": 5,
           "n_lockbox": null,
           "sha256_prefix": null
         },
@@ -560,7 +560,7 @@
           "track_id": "universe_mh48_path_lean3",
           "asset": "xrp_1h",
           "status": "WAITING",
-          "n_available": 0,
+          "n_available": 5,
           "n_lockbox": null,
           "sha256_prefix": null
         },
@@ -568,7 +568,7 @@
           "track_id": "universe_mh48_path_lean3",
           "asset": "ada_1h",
           "status": "WAITING",
-          "n_available": 0,
+          "n_available": 5,
           "n_lockbox": null,
           "sha256_prefix": null
         },
@@ -576,7 +576,7 @@
           "track_id": "universe_mh48_path_lean3",
           "asset": "avax_1h",
           "status": "WAITING",
-          "n_available": 0,
+          "n_available": 5,
           "n_lockbox": null,
           "sha256_prefix": null
         },
@@ -584,7 +584,7 @@
           "track_id": "universe_mh48_path_lean3",
           "asset": "link_1h",
           "status": "WAITING",
-          "n_available": 0,
+          "n_available": 5,
           "n_lockbox": null,
           "sha256_prefix": null
         },
@@ -592,7 +592,7 @@
           "track_id": "universe_mh48_path_lean3",
           "asset": "doge_1h",
           "status": "WAITING",
-          "n_available": 0,
+          "n_available": 5,
           "n_lockbox": null,
           "sha256_prefix": null
         },
@@ -600,7 +600,7 @@
           "track_id": "universe_mh48_path_lean3",
           "asset": "ltc_1h",
           "status": "WAITING",
-          "n_available": 0,
+          "n_available": 5,
           "n_lockbox": null,
           "sha256_prefix": null
         },
@@ -608,7 +608,7 @@
           "track_id": "universe_mh48_path_lean3",
           "asset": "dot_1h",
           "status": "WAITING",
-          "n_available": 0,
+          "n_available": 5,
           "n_lockbox": null,
           "sha256_prefix": null
         },
@@ -616,7 +616,7 @@
           "track_id": "universe_mh48_path_lean3",
           "asset": "near_1h",
           "status": "WAITING",
-          "n_available": 0,
+          "n_available": 5,
           "n_lockbox": null,
           "sha256_prefix": null
         },
@@ -624,7 +624,7 @@
           "track_id": "universe_mh48_path_lean3",
           "asset": "arb_1h",
           "status": "WAITING",
-          "n_available": 0,
+          "n_available": 5,
           "n_lockbox": null,
           "sha256_prefix": null
         },
@@ -632,7 +632,7 @@
           "track_id": "universe_mh48_path_lean3",
           "asset": "op_1h",
           "status": "WAITING",
-          "n_available": 0,
+          "n_available": 5,
           "n_lockbox": null,
           "sha256_prefix": null
         },
@@ -640,12 +640,12 @@
           "track_id": "universe_mh48_path_lean3",
           "asset": "pepe_1h",
           "status": "WAITING",
-          "n_available": 0,
+          "n_available": 5,
           "n_lockbox": null,
           "sha256_prefix": null
         }
       ],
-      "updated_utc": "2026-11-12T22:09:34.803014+00:00"
+      "updated_utc": "2026-11-13T03:19:02.003694+00:00"
     }
   },
   "candidates": [
