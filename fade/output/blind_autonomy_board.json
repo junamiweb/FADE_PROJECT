@@ -1,5 +1,5 @@
 {
-  "generated_utc": "2026-11-13T19:27:11.964391+00:00",
+  "generated_utc": "2026-11-14T00:49:12.412611+00:00",
   "track_id": "universe_mh48_path_lean3",
   "autonomous": true,
   "universe_n": 17,
@@ -13,104 +13,104 @@
   "waiting": [
     {
       "asset": "spy_1h",
-      "n_available": 222,
-      "bars_still_needed": 78,
+      "n_available": 224,
+      "bars_still_needed": 76,
       "blind_after_utc": "2026-10-01 11:09:35.295734+00:00"
     },
     {
       "asset": "aapl_1h",
-      "n_available": 222,
-      "bars_still_needed": 78,
+      "n_available": 224,
+      "bars_still_needed": 76,
       "blind_after_utc": "2026-10-01 11:09:35.309826+00:00"
     },
     {
       "asset": "btc_1h",
-      "n_available": 21,
-      "bars_still_needed": 479,
+      "n_available": 26,
+      "bars_still_needed": 474,
       "blind_after_utc": "2026-11-12 22:09:34.349642+00:00"
     },
     {
       "asset": "eth_1h",
-      "n_available": 21,
-      "bars_still_needed": 479,
+      "n_available": 26,
+      "bars_still_needed": 474,
       "blind_after_utc": "2026-11-12 22:09:34.384516+00:00"
     },
     {
       "asset": "sol_1h",
-      "n_available": 21,
-      "bars_still_needed": 479,
+      "n_available": 26,
+      "bars_still_needed": 474,
       "blind_after_utc": "2026-11-12 22:09:34.413703+00:00"
     },
     {
       "asset": "bnb_1h",
-      "n_available": 21,
-      "bars_still_needed": 479,
+      "n_available": 26,
+      "bars_still_needed": 474,
       "blind_after_utc": "2026-11-12 22:09:34.455178+00:00"
     },
     {
       "asset": "xrp_1h",
-      "n_available": 21,
-      "bars_still_needed": 479,
+      "n_available": 26,
+      "bars_still_needed": 474,
       "blind_after_utc": "2026-11-12 22:09:34.490040+00:00"
     },
     {
       "asset": "ada_1h",
-      "n_available": 21,
-      "bars_still_needed": 479,
+      "n_available": 26,
+      "bars_still_needed": 474,
       "blind_after_utc": "2026-11-12 22:09:34.523526+00:00"
     },
     {
       "asset": "avax_1h",
-      "n_available": 21,
-      "bars_still_needed": 479,
+      "n_available": 26,
+      "bars_still_needed": 474,
       "blind_after_utc": "2026-11-12 22:09:34.552402+00:00"
     },
     {
       "asset": "link_1h",
-      "n_available": 21,
-      "bars_still_needed": 479,
+      "n_available": 26,
+      "bars_still_needed": 474,
       "blind_after_utc": "2026-11-12 22:09:34.584958+00:00"
     },
     {
       "asset": "doge_1h",
-      "n_available": 21,
-      "bars_still_needed": 479,
+      "n_available": 26,
+      "bars_still_needed": 474,
       "blind_after_utc": "2026-11-12 22:09:34.619824+00:00"
     },
     {
       "asset": "ltc_1h",
-      "n_available": 21,
-      "bars_still_needed": 479,
+      "n_available": 26,
+      "bars_still_needed": 474,
       "blind_after_utc": "2026-11-12 22:09:34.672336+00:00"
     },
     {
       "asset": "dot_1h",
-      "n_available": 21,
-      "bars_still_needed": 479,
+      "n_available": 26,
+      "bars_still_needed": 474,
       "blind_after_utc": "2026-11-12 22:09:34.698299+00:00"
     },
     {
       "asset": "near_1h",
-      "n_available": 21,
-      "bars_still_needed": 479,
+      "n_available": 26,
+      "bars_still_needed": 474,
       "blind_after_utc": "2026-11-12 22:09:34.725990+00:00"
     },
     {
       "asset": "arb_1h",
-      "n_available": 21,
-      "bars_still_needed": 479,
+      "n_available": 26,
+      "bars_still_needed": 474,
       "blind_after_utc": "2026-11-12 22:09:34.745815+00:00"
     },
     {
       "asset": "op_1h",
-      "n_available": 21,
-      "bars_still_needed": 479,
+      "n_available": 26,
+      "bars_still_needed": 474,
       "blind_after_utc": "2026-11-12 22:09:34.765710+00:00"
     },
     {
       "asset": "pepe_1h",
-      "n_available": 21,
-      "bars_still_needed": 479,
+      "n_available": 26,
+      "bars_still_needed": 474,
       "blind_after_utc": "2026-11-12 22:09:34.783539+00:00"
     }
   ],
@@ -547,120 +547,120 @@
     {
       "asset": "btc",
       "seal_status": "WAITING",
-      "n_available": 21,
-      "bars_still_needed": 479,
+      "n_available": 26,
+      "bars_still_needed": 474,
       "n_lockbox": null
     },
     {
       "asset": "eth",
       "seal_status": "WAITING",
-      "n_available": 21,
-      "bars_still_needed": 479,
+      "n_available": 26,
+      "bars_still_needed": 474,
       "n_lockbox": null
     },
     {
       "asset": "sol",
       "seal_status": "WAITING",
-      "n_available": 21,
-      "bars_still_needed": 479,
+      "n_available": 26,
+      "bars_still_needed": 474,
       "n_lockbox": null
     },
     {
       "asset": "bnb",
       "seal_status": "WAITING",
-      "n_available": 21,
-      "bars_still_needed": 479,
+      "n_available": 26,
+      "bars_still_needed": 474,
       "n_lockbox": null
     },
     {
       "asset": "xrp",
       "seal_status": "WAITING",
-      "n_available": 21,
-      "bars_still_needed": 479,
+      "n_available": 26,
+      "bars_still_needed": 474,
       "n_lockbox": null
     },
     {
       "asset": "ada",
       "seal_status": "WAITING",
-      "n_available": 21,
-      "bars_still_needed": 479,
+      "n_available": 26,
+      "bars_still_needed": 474,
       "n_lockbox": null
     },
     {
       "asset": "avax",
       "seal_status": "WAITING",
-      "n_available": 21,
-      "bars_still_needed": 479,
+      "n_available": 26,
+      "bars_still_needed": 474,
       "n_lockbox": null
     },
     {
       "asset": "link",
       "seal_status": "WAITING",
-      "n_available": 21,
-      "bars_still_needed": 479,
+      "n_available": 26,
+      "bars_still_needed": 474,
       "n_lockbox": null
     },
     {
       "asset": "doge",
       "seal_status": "WAITING",
-      "n_available": 21,
-      "bars_still_needed": 479,
+      "n_available": 26,
+      "bars_still_needed": 474,
       "n_lockbox": null
     },
     {
       "asset": "ltc",
       "seal_status": "WAITING",
-      "n_available": 21,
-      "bars_still_needed": 479,
+      "n_available": 26,
+      "bars_still_needed": 474,
       "n_lockbox": null
     },
     {
       "asset": "dot",
       "seal_status": "WAITING",
-      "n_available": 21,
-      "bars_still_needed": 479,
+      "n_available": 26,
+      "bars_still_needed": 474,
       "n_lockbox": null
     },
     {
       "asset": "near",
       "seal_status": "WAITING",
-      "n_available": 21,
-      "bars_still_needed": 479,
+      "n_available": 26,
+      "bars_still_needed": 474,
       "n_lockbox": null
     },
     {
       "asset": "arb",
       "seal_status": "WAITING",
-      "n_available": 21,
-      "bars_still_needed": 479,
+      "n_available": 26,
+      "bars_still_needed": 474,
       "n_lockbox": null
     },
     {
       "asset": "op",
       "seal_status": "WAITING",
-      "n_available": 21,
-      "bars_still_needed": 479,
+      "n_available": 26,
+      "bars_still_needed": 474,
       "n_lockbox": null
     },
     {
       "asset": "pepe",
       "seal_status": "WAITING",
-      "n_available": 21,
-      "bars_still_needed": 479,
+      "n_available": 26,
+      "bars_still_needed": 474,
       "n_lockbox": null
     },
     {
       "asset": "spy",
       "seal_status": "WAITING",
-      "n_available": 222,
-      "bars_still_needed": 78,
+      "n_available": 224,
+      "bars_still_needed": 76,
       "n_lockbox": null
     },
     {
       "asset": "aapl",
       "seal_status": "WAITING",
-      "n_available": 222,
-      "bars_still_needed": 78,
+      "n_available": 224,
+      "bars_still_needed": 76,
       "n_lockbox": null
     }
   ],
