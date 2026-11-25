@@ -1746,7 +1746,7 @@
       "n_available": 273,
       "available_start": "2026-10-01 13:30:00+00:00",
       "available_end": "2026-11-24 20:30:00+00:00",
-      "last_seal_check_utc": "2026-11-25T03:32:20.960537+00:00",
+      "last_seal_check_utc": "2026-11-25T14:03:38.199410+00:00",
       "bars_still_needed": 27
     },
     {
@@ -1769,7 +1769,7 @@
       "n_available": 273,
       "available_start": "2026-10-01 13:30:00+00:00",
       "available_end": "2026-11-24 20:30:00+00:00",
-      "last_seal_check_utc": "2026-11-25T03:32:20.968809+00:00",
+      "last_seal_check_utc": "2026-11-25T14:03:38.210418+00:00",
       "bars_still_needed": 27
     },
     {
@@ -2344,11 +2344,11 @@
       },
       "created_at_utc": "2026-11-12T22:09:34.349690+00:00",
       "note_he": "\u05d7\u05dc\u05d5\u05df \u05e2\u05d9\u05d5\u05d5\u05e8 \u05de\u05ea\u05d7\u05d9\u05dc \u05d0\u05d7\u05e8\u05d9 blind_after \u2014 \u05d1\u05dc\u05d9 PnL \u05e2\u05d3 reveal",
-      "n_available": 293,
+      "n_available": 304,
       "available_start": "2026-11-12 23:00:00+00:00",
-      "available_end": "2026-11-25 03:00:00+00:00",
-      "last_seal_check_utc": "2026-11-25T03:32:20.451748+00:00",
-      "bars_still_needed": 207
+      "available_end": "2026-11-25 14:00:00+00:00",
+      "last_seal_check_utc": "2026-11-25T14:03:37.595887+00:00",
+      "bars_still_needed": 196
     },
     {
       "track_id": "universe_mh48_path_lean3",
@@ -2367,11 +2367,11 @@
       },
       "created_at_utc": "2026-11-12T22:09:34.384566+00:00",
       "note_he": "\u05d7\u05dc\u05d5\u05df \u05e2\u05d9\u05d5\u05d5\u05e8 \u05de\u05ea\u05d7\u05d9\u05dc \u05d0\u05d7\u05e8\u05d9 blind_after \u2014 \u05d1\u05dc\u05d9 PnL \u05e2\u05d3 reveal",
-      "n_available": 293,
+      "n_available": 304,
       "available_start": "2026-11-12 23:00:00+00:00",
-      "available_end": "2026-11-25 03:00:00+00:00",
-      "last_seal_check_utc": "2026-11-25T03:32:20.490593+00:00",
-      "bars_still_needed": 207
+      "available_end": "2026-11-25 14:00:00+00:00",
+      "last_seal_check_utc": "2026-11-25T14:03:37.649164+00:00",
+      "bars_still_needed": 196
     },
     {
       "track_id": "universe_mh48_path_lean3",
@@ -2390,11 +2390,11 @@
       },
       "created_at_utc": "2026-11-12T22:09:34.413753+00:00",
       "note_he": "\u05d7\u05dc\u05d5\u05df \u05e2\u05d9\u05d5\u05d5\u05e8 \u05de\u05ea\u05d7\u05d9\u05dc \u05d0\u05d7\u05e8\u05d9 blind_after \u2014 \u05d1\u05dc\u05d9 PnL \u05e2\u05d3 reveal",
-      "n_available": 293,
+      "n_available": 304,
       "available_start": "2026-11-12 23:00:00+00:00",
-      "available_end": "2026-11-25 03:00:00+00:00",
-      "last_seal_check_utc": "2026-11-25T03:32:20.523731+00:00",
-      "bars_still_needed": 207
+      "available_end": "2026-11-25 14:00:00+00:00",
+      "last_seal_check_utc": "2026-11-25T14:03:37.691601+00:00",
+      "bars_still_needed": 196
     },
     {
       "track_id": "universe_mh48_path_lean3",
@@ -2413,11 +2413,11 @@
       },
       "created_at_utc": "2026-11-12T22:09:34.455230+00:00",
       "note_he": "\u05d7\u05dc\u05d5\u05df \u05e2\u05d9\u05d5\u05d5\u05e8 \u05de\u05ea\u05d7\u05d9\u05dc \u05d0\u05d7\u05e8\u05d9 blind_after \u2014 \u05d1\u05dc\u05d9 PnL \u05e2\u05d3 reveal",
-      "n_available": 293,
+      "n_available": 304,
       "available_start": "2026-11-12 23:00:00+00:00",
-      "available_end": "2026-11-25 03:00:00+00:00",
-      "last_seal_check_utc": "2026-11-25T03:32:20.569202+00:00",
-      "bars_still_needed": 207
+      "available_end": "2026-11-25 14:00:00+00:00",
+      "last_seal_check_utc": "2026-11-25T14:03:37.748097+00:00",
+      "bars_still_needed": 196
     },
     {
       "track_id": "universe_mh48_path_lean3",
@@ -2436,11 +2436,11 @@
       },
       "created_at_utc": "2026-11-12T22:09:34.490090+00:00",
       "note_he": "\u05d7\u05dc\u05d5\u05df \u05e2\u05d9\u05d5\u05d5\u05e8 \u05de\u05ea\u05d7\u05d9\u05dc \u05d0\u05d7\u05e8\u05d9 blind_after \u2014 \u05d1\u05dc\u05d9 PnL \u05e2\u05d3 reveal",
-      "n_available": 293,
+      "n_available": 304,
       "available_start": "2026-11-12 23:00:00+00:00",
-      "available_end": "2026-11-25 03:00:00+00:00",
-      "last_seal_check_utc": "2026-11-25T03:32:20.614495+00:00",
-      "bars_still_needed": 207
+      "available_end": "2026-11-25 14:00:00+00:00",
+      "last_seal_check_utc": "2026-11-25T14:03:37.798690+00:00",
+      "bars_still_needed": 196
     },
     {
       "track_id": "universe_mh48_path_lean3",
@@ -2459,11 +2459,11 @@
       },
       "created_at_utc": "2026-11-12T22:09:34.523580+00:00",
       "note_he": "\u05d7\u05dc\u05d5\u05df \u05e2\u05d9\u05d5\u05d5\u05e8 \u05de\u05ea\u05d7\u05d9\u05dc \u05d0\u05d7\u05e8\u05d9 blind_after \u2014 \u05d1\u05dc\u05d9 PnL \u05e2\u05d3 reveal",
-      "n_available": 293,
+      "n_available": 304,
       "available_start": "2026-11-12 23:00:00+00:00",
-      "available_end": "2026-11-25 03:00:00+00:00",
-      "last_seal_check_utc": "2026-11-25T03:32:20.659116+00:00",
-      "bars_still_needed": 207
+      "available_end": "2026-11-25 14:00:00+00:00",
+      "last_seal_check_utc": "2026-11-25T14:03:37.849620+00:00",
+      "bars_still_needed": 196
     },
     {
       "track_id": "universe_mh48_path_lean3",
@@ -2482,11 +2482,11 @@
       },
       "created_at_utc": "2026-11-12T22:09:34.552449+00:00",
       "note_he": "\u05d7\u05dc\u05d5\u05df \u05e2\u05d9\u05d5\u05d5\u05e8 \u05de\u05ea\u05d7\u05d9\u05dc \u05d0\u05d7\u05e8\u05d9 blind_after \u2014 \u05d1\u05dc\u05d9 PnL \u05e2\u05d3 reveal",
-      "n_available": 293,
+      "n_available": 304,
       "available_start": "2026-11-12 23:00:00+00:00",
-      "available_end": "2026-11-25 03:00:00+00:00",
-      "last_seal_check_utc": "2026-11-25T03:32:20.692536+00:00",
-      "bars_still_needed": 207
+      "available_end": "2026-11-25 14:00:00+00:00",
+      "last_seal_check_utc": "2026-11-25T14:03:37.887033+00:00",
+      "bars_still_needed": 196
     },
     {
       "track_id": "universe_mh48_path_lean3",
@@ -2505,11 +2505,11 @@
       },
       "created_at_utc": "2026-11-12T22:09:34.585005+00:00",
       "note_he": "\u05d7\u05dc\u05d5\u05df \u05e2\u05d9\u05d5\u05d5\u05e8 \u05de\u05ea\u05d7\u05d9\u05dc \u05d0\u05d7\u05e8\u05d9 blind_after \u2014 \u05d1\u05dc\u05d9 PnL \u05e2\u05d3 reveal",
-      "n_available": 293,
+      "n_available": 304,
       "available_start": "2026-11-12 23:00:00+00:00",
-      "available_end": "2026-11-25 03:00:00+00:00",
-      "last_seal_check_utc": "2026-11-25T03:32:20.734012+00:00",
-      "bars_still_needed": 207
+      "available_end": "2026-11-25 14:00:00+00:00",
+      "last_seal_check_utc": "2026-11-25T14:03:37.932623+00:00",
+      "bars_still_needed": 196
     },
     {
       "track_id": "universe_mh48_path_lean3",
@@ -2528,11 +2528,11 @@
       },
       "created_at_utc": "2026-11-12T22:09:34.619868+00:00",
       "note_he": "\u05d7\u05dc\u05d5\u05df \u05e2\u05d9\u05d5\u05d5\u05e8 \u05de\u05ea\u05d7\u05d9\u05dc \u05d0\u05d7\u05e8\u05d9 blind_after \u2014 \u05d1\u05dc\u05d9 PnL \u05e2\u05d3 reveal",
-      "n_available": 293,
+      "n_available": 304,
       "available_start": "2026-11-12 23:00:00+00:00",
-      "available_end": "2026-11-25 03:00:00+00:00",
-      "last_seal_check_utc": "2026-11-25T03:32:20.772905+00:00",
-      "bars_still_needed": 207
+      "available_end": "2026-11-25 14:00:00+00:00",
+      "last_seal_check_utc": "2026-11-25T14:03:37.978017+00:00",
+      "bars_still_needed": 196
     },
     {
       "track_id": "universe_mh48_path_lean3",
@@ -2551,11 +2551,11 @@
       },
       "created_at_utc": "2026-11-12T22:09:34.672383+00:00",
       "note_he": "\u05d7\u05dc\u05d5\u05df \u05e2\u05d9\u05d5\u05d5\u05e8 \u05de\u05ea\u05d7\u05d9\u05dc \u05d0\u05d7\u05e8\u05d9 blind_after \u2014 \u05d1\u05dc\u05d9 PnL \u05e2\u05d3 reveal",
-      "n_available": 293,
+      "n_available": 304,
       "available_start": "2026-11-12 23:00:00+00:00",
-      "available_end": "2026-11-25 03:00:00+00:00",
-      "last_seal_check_utc": "2026-11-25T03:32:20.817918+00:00",
-      "bars_still_needed": 207
+      "available_end": "2026-11-25 14:00:00+00:00",
+      "last_seal_check_utc": "2026-11-25T14:03:38.027098+00:00",
+      "bars_still_needed": 196
     },
     {
       "track_id": "universe_mh48_path_lean3",
@@ -2574,11 +2574,11 @@
       },
       "created_at_utc": "2026-11-12T22:09:34.698338+00:00",
       "note_he": "\u05d7\u05dc\u05d5\u05df \u05e2\u05d9\u05d5\u05d5\u05e8 \u05de\u05ea\u05d7\u05d9\u05dc \u05d0\u05d7\u05e8\u05d9 blind_after \u2014 \u05d1\u05dc\u05d9 PnL \u05e2\u05d3 reveal",
-      "n_available": 293,
+      "n_available": 304,
       "available_start": "2026-11-12 23:00:00+00:00",
-      "available_end": "2026-11-25 03:00:00+00:00",
-      "last_seal_check_utc": "2026-11-25T03:32:20.852230+00:00",
-      "bars_still_needed": 207
+      "available_end": "2026-11-25 14:00:00+00:00",
+      "last_seal_check_utc": "2026-11-25T14:03:38.064772+00:00",
+      "bars_still_needed": 196
     },
     {
       "track_id": "universe_mh48_path_lean3",
@@ -2597,11 +2597,11 @@
       },
       "created_at_utc": "2026-11-12T22:09:34.726034+00:00",
       "note_he": "\u05d7\u05dc\u05d5\u05df \u05e2\u05d9\u05d5\u05d5\u05e8 \u05de\u05ea\u05d7\u05d9\u05dc \u05d0\u05d7\u05e8\u05d9 blind_after \u2014 \u05d1\u05dc\u05d9 PnL \u05e2\u05d3 reveal",
-      "n_available": 293,
+      "n_available": 304,
       "available_start": "2026-11-12 23:00:00+00:00",
-      "available_end": "2026-11-25 03:00:00+00:00",
-      "last_seal_check_utc": "2026-11-25T03:32:20.885469+00:00",
-      "bars_still_needed": 207
+      "available_end": "2026-11-25 14:00:00+00:00",
+      "last_seal_check_utc": "2026-11-25T14:03:38.102482+00:00",
+      "bars_still_needed": 196
     },
     {
       "track_id": "universe_mh48_path_lean3",
@@ -2620,11 +2620,11 @@
       },
       "created_at_utc": "2026-11-12T22:09:34.745869+00:00",
       "note_he": "\u05d7\u05dc\u05d5\u05df \u05e2\u05d9\u05d5\u05d5\u05e8 \u05de\u05ea\u05d7\u05d9\u05dc \u05d0\u05d7\u05e8\u05d9 blind_after \u2014 \u05d1\u05dc\u05d9 PnL \u05e2\u05d3 reveal",
-      "n_available": 293,
+      "n_available": 304,
       "available_start": "2026-11-12 23:00:00+00:00",
-      "available_end": "2026-11-25 03:00:00+00:00",
-      "last_seal_check_utc": "2026-11-25T03:32:20.906734+00:00",
-      "bars_still_needed": 207
+      "available_end": "2026-11-25 14:00:00+00:00",
+      "last_seal_check_utc": "2026-11-25T14:03:38.127899+00:00",
+      "bars_still_needed": 196
     },
     {
       "track_id": "universe_mh48_path_lean3",
@@ -2643,11 +2643,11 @@
       },
       "created_at_utc": "2026-11-12T22:09:34.765752+00:00",
       "note_he": "\u05d7\u05dc\u05d5\u05df \u05e2\u05d9\u05d5\u05d5\u05e8 \u05de\u05ea\u05d7\u05d9\u05dc \u05d0\u05d7\u05e8\u05d9 blind_after \u2014 \u05d1\u05dc\u05d9 PnL \u05e2\u05d3 reveal",
-      "n_available": 293,
+      "n_available": 304,
       "available_start": "2026-11-12 23:00:00+00:00",
-      "available_end": "2026-11-25 03:00:00+00:00",
-      "last_seal_check_utc": "2026-11-25T03:32:20.932628+00:00",
-      "bars_still_needed": 207
+      "available_end": "2026-11-25 14:00:00+00:00",
+      "last_seal_check_utc": "2026-11-25T14:03:38.161806+00:00",
+      "bars_still_needed": 196
     },
     {
       "track_id": "universe_mh48_path_lean3",
@@ -2666,11 +2666,11 @@
       },
       "created_at_utc": "2026-11-12T22:09:34.783578+00:00",
       "note_he": "\u05d7\u05dc\u05d5\u05df \u05e2\u05d9\u05d5\u05d5\u05e8 \u05de\u05ea\u05d7\u05d9\u05dc \u05d0\u05d7\u05e8\u05d9 blind_after \u2014 \u05d1\u05dc\u05d9 PnL \u05e2\u05d3 reveal",
-      "n_available": 293,
+      "n_available": 304,
       "available_start": "2026-11-12 23:00:00+00:00",
-      "available_end": "2026-11-25 03:00:00+00:00",
-      "last_seal_check_utc": "2026-11-25T03:32:20.952125+00:00",
-      "bars_still_needed": 207
+      "available_end": "2026-11-25 14:00:00+00:00",
+      "last_seal_check_utc": "2026-11-25T14:03:38.188064+00:00",
+      "bars_still_needed": 196
     }
   ]
 }
