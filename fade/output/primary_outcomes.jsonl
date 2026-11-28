@@ -758,3 +758,5 @@
 {"asset": "eth_1h", "bar_ts": "2026-11-27 17:00:00+00:00", "logged_at": "2026-11-27T17:59:39.550404+00:00", "primary_status": "no_signal", "reason": "sparse_abstain", "sparse_mode": true, "outcome": null}
 {"asset": "btc_1h", "bar_ts": "2026-11-28 01:00:00+00:00", "logged_at": "2026-11-28T01:17:09.652250+00:00", "primary_status": "no_signal", "reason": "sparse_abstain", "sparse_mode": true, "outcome": null}
 {"asset": "eth_1h", "bar_ts": "2026-11-28 01:00:00+00:00", "logged_at": "2026-11-28T01:17:13.422765+00:00", "primary_status": "no_signal", "reason": "sparse_abstain", "sparse_mode": true, "outcome": null}
+{"asset": "btc_1h", "bar_ts": "2026-11-28 09:00:00+00:00", "logged_at": "2026-11-28T09:59:43.960119+00:00", "primary_status": "no_signal", "reason": "sparse_abstain", "sparse_mode": true, "outcome": null}
+{"asset": "eth_1h", "bar_ts": "2026-11-28 09:00:00+00:00", "logged_at": "2026-11-28T09:59:49.041982+00:00", "primary_status": "no_signal", "reason": "sparse_abstain", "sparse_mode": true, "outcome": null}
